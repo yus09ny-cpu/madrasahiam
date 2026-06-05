@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Audit Jiwa — Kenali punca sebenar masalah hidup anda. App muhasabah harian oleh Madrasah I AM.">
 <meta property="og:title" content="Audit Jiwa · Madrasah I AM">
-<meta property="og:description" content="Bukan app agama biasa. Audit jiwa anda dalam 3 minit dan temui punca sebenar masalah hidup anda.">
-<meta property="og:url" content="https://madrasahiam.com">
+<meta property="og:url" content="https://auditjiwa.com">
 <title>Audit Jiwa · Madrasah I AM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +23,14 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);background:var(--ink);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
+/* LANG SWITCHER */
+.lang-bar{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:center;gap:4px;padding:6px 1rem;background:rgba(4,52,44,0.95);backdrop-filter:blur(8px);border-bottom:0.5px solid rgba(29,158,117,0.2)}
+.lang-btn{padding:4px 14px;border-radius:14px;font-size:11px;font-weight:500;letter-spacing:.5px;border:0.5px solid rgba(29,158,117,0.3);background:transparent;color:rgba(255,255,255,0.5);cursor:pointer;transition:all .2s}
+.lang-btn.active{background:var(--teal);color:white;border-color:var(--teal)}
+.lang-btn:hover:not(.active){color:white;border-color:rgba(29,158,117,0.6)}
+
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:rgba(17,22,18,0.9);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(29,158,117,0.2)}
+nav{position:fixed;top:32px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.875rem 1.5rem;background:rgba(17,22,18,0.9);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(29,158,117,0.2)}
 .nav-logo{display:flex;align-items:center;gap:10px}
 .nav-logo-ic{width:34px;height:34px;border-radius:50%;background:var(--teal-light);display:flex;align-items:center;justify-content:center}
 .nav-logo-ic i{font-size:17px;color:var(--teal-dark)}
@@ -35,7 +40,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-cta:hover{opacity:.85}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8rem 1.5rem 4rem;text-align:center;position:relative;overflow:hidden}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:9rem 1.5rem 4rem;text-align:center;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(29,158,117,0.18) 0%,transparent 70%)}
 .hero-pattern{position:absolute;inset:0;z-index:0;opacity:.04;background-image:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,.5) 40px,rgba(255,255,255,.5) 41px),repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(255,255,255,.5) 40px,rgba(255,255,255,.5) 41px)}
 .hero-content{position:relative;z-index:1;max-width:640px}
@@ -47,10 +52,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-ayat-ref{font-size:11px;color:var(--teal);letter-spacing:1px;margin-bottom:2rem;animation:fadeUp .8s .3s ease both}
 .hero-sub{font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto;animation:fadeUp .8s .35s ease both}
 .hero-cta-row{display:flex;flex-direction:column;align-items:center;gap:12px;animation:fadeUp .8s .45s ease both}
-.btn-hero{display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:white;padding:16px 32px;border-radius:14px;font-size:16px;font-weight:500;text-decoration:none;transition:all .2s;width:100%;max-width:320px;justify-content:center;border:none;cursor:pointer}
+.btn-hero{display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:white;padding:16px 32px;border-radius:14px;font-size:16px;font-weight:500;text-decoration:none;transition:all .2s;width:100%;max-width:340px;justify-content:center;border:none;cursor:pointer}
 .btn-hero:hover{background:#0F6E56;transform:translateY(-1px)}
 .btn-hero i{font-size:20px}
-.btn-hero-sub{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.5);border:0.5px solid rgba(255,255,255,.15);padding:12px 24px;border-radius:14px;font-size:13px;text-decoration:none;transition:all .2s;width:100%;max-width:320px;justify-content:center;cursor:pointer}
+.btn-hero-sub{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.5);border:0.5px solid rgba(255,255,255,.15);padding:12px 24px;border-radius:14px;font-size:13px;text-decoration:none;transition:all .2s;width:100%;max-width:340px;justify-content:center}
 .btn-hero-sub:hover{border-color:rgba(255,255,255,.3);color:white}
 .hero-domain{margin-top:.75rem;font-size:11px;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:5px;justify-content:center}
 .hero-domain span{color:var(--teal)}
@@ -60,8 +65,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .section-tag{font-size:11px;color:var(--teal);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.75rem;font-weight:500}
 .section-title{font-family:var(--font-display);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:500;line-height:1.2;color:var(--white);margin-bottom:1rem}
 .section-sub{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:2.5rem}
-
-/* MASALAH GRID */
 .masalah-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:2.5rem}
 @media(min-width:480px){.masalah-grid{grid-template-columns:repeat(3,1fr)}}
 .masalah-item{background:rgba(255,255,255,.04);border:0.5px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 12px;text-align:center;transition:all .2s}
@@ -69,8 +72,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .masalah-item i{font-size:22px;color:var(--teal);display:block;margin-bottom:6px}
 .masalah-item-t{font-size:12px;font-weight:500;color:var(--white);line-height:1.3}
 .masalah-item-s{font-size:10px;color:rgba(255,255,255,.45);margin-top:3px}
-
-/* PUNCA */
 .punca-section{padding:4rem 1.5rem;background:rgba(29,158,117,.07);border-top:0.5px solid rgba(29,158,117,.15);border-bottom:0.5px solid rgba(29,158,117,.15)}
 .punca-inner{max-width:720px;margin:0 auto}
 .punca-center{text-align:center;margin-bottom:2.5rem}
@@ -80,8 +81,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .punca-card-num{width:32px;height:32px;border-radius:50%;background:rgba(29,158,117,.2);border:0.5px solid rgba(29,158,117,.4);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:var(--teal);flex-shrink:0}
 .punca-card-t{font-size:14px;font-weight:500;color:var(--white);margin-bottom:4px}
 .punca-card-s{font-size:12px;color:rgba(255,255,255,.5);line-height:1.6}
-
-/* FITUR */
 .fitur-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:2.5rem}
 .fitur-item{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.03);border:0.5px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;transition:all .2s}
 .fitur-item:hover{background:rgba(29,158,117,.08);border-color:rgba(29,158,117,.2)}
@@ -93,8 +92,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .badge-free{background:rgba(29,158,117,.2);color:var(--teal-mid)}
 .badge-pro{background:rgba(200,160,74,.2);color:var(--amber)}
 .badge-talkin{background:rgba(255,255,255,.1);color:rgba(255,255,255,.6)}
-
-/* CRED */
 .cred-section{padding:4rem 1.5rem;background:rgba(255,255,255,.02);border-top:0.5px solid rgba(255,255,255,.06)}
 .cred-inner{max-width:720px;margin:0 auto}
 .cred-grid{display:flex;flex-direction:column;gap:10px;margin-top:1.5rem}
@@ -103,9 +100,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .cred-t{font-size:13px;font-weight:500;color:var(--white)}
 .cred-s{font-size:11px;color:rgba(255,255,255,.45);margin-top:2px}
 
-/* ═══════════════════════════════
-   BOARDING SECTION
-   ═══════════════════════════════ */
+/* BOARDING */
 #boarding{padding:5rem 0;background:rgba(255,255,255,.02);border-top:0.5px solid rgba(29,158,117,.2)}
 .boarding-inner{max-width:520px;margin:0 auto;padding:0 1.25rem}
 .boarding-header{text-align:center;margin-bottom:2rem}
@@ -123,8 +118,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .b-cred-pill i{font-size:17px;color:var(--teal);flex-shrink:0}
 .b-cred-t{font-size:13px;font-weight:500;color:var(--white)}
 .b-cred-s{font-size:11px;color:rgba(255,255,255,.45);margin-top:1px}
-
-/* Masalah grid dalam boarding */
 .b-masalah-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:1.25rem}
 .bmk{border:0.5px solid rgba(255,255,255,.12);border-radius:10px;padding:12px;cursor:pointer;transition:all .15s;background:rgba(255,255,255,.04);text-align:left}
 .bmk.sel{background:rgba(29,158,117,.15);border-color:rgba(29,158,117,.5)}
@@ -133,8 +126,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .bmki{font-size:20px;color:rgba(255,255,255,.3);margin-bottom:5px;display:block;transition:color .15s}
 .bmkt{font-size:13px;font-weight:500;color:var(--white);line-height:1.3;transition:color .15s}
 .bmks{font-size:11px;color:rgba(255,255,255,.35);margin-top:2px}
-
-/* Slider cards */
 .b-slider-card{background:rgba(255,255,255,.04);border:0.5px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;margin-bottom:8px}
 .b-slider-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .b-slider-ic{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -145,14 +136,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .b-slider-lbl{font-size:12px;color:rgba(255,255,255,.45)}
 .b-slider-ends{display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,.3);margin-top:4px}
 input[type=range]{width:100%;accent-color:var(--teal)}
-
-/* Sains cards */
 .b-sains-card{border-radius:10px;padding:12px 14px;margin-bottom:8px;border:0.5px solid}
 .b-sains-head{display:flex;align-items:center;gap:8px;margin-bottom:5px}
 .b-sains-title{font-size:13px;font-weight:500}
 .b-sains-body{font-size:12px;line-height:1.6}
-
-/* Punca dalam boarding */
 .b-punca-box{background:rgba(83,74,183,.15);border:0.5px solid rgba(175,169,236,.3);border-radius:12px;padding:14px 16px;margin-bottom:1rem;text-align:center}
 .b-punca-tag{font-size:10px;color:#AFA9EC;letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;font-weight:500}
 .b-punca-title{font-size:17px;font-weight:500;color:#CECBF6;margin-bottom:5px}
@@ -161,8 +148,6 @@ input[type=range]{width:100%;accent-color:var(--teal)}
 .b-pr-num{width:26px;height:26px;border-radius:50%;background:rgba(83,74,183,.4);border:0.5px solid #7F77DD;color:#CECBF6;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .b-pr-t{font-size:13px;font-weight:500;color:var(--white);margin-bottom:2px}
 .b-pr-s{font-size:12px;color:rgba(255,255,255,.45);line-height:1.5}
-
-/* Result */
 .b-result-hero{border-radius:14px;padding:18px;margin-bottom:1.25rem;text-align:center;border:0.5px solid}
 .b-rh-tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-weight:600}
 .b-rh-score{font-size:48px;font-weight:500;line-height:1;margin-bottom:4px}
@@ -187,8 +172,6 @@ input[type=range]{width:100%;accent-color:var(--teal)}
 .b-ap-row i{font-size:17px;color:var(--teal);flex-shrink:0;margin-top:1px}
 .b-ap-t{font-size:13px;font-weight:500;color:#E1F5EE}
 .b-ap-s{font-size:11px;color:rgba(255,255,255,.45);margin-top:1px}
-
-/* Buttons */
 .btn-main{width:100%;padding:15px;border-radius:12px;background:var(--teal);color:white;font-size:15px;font-weight:500;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;text-decoration:none;transition:all .2s}
 .btn-main:hover{background:#0F6E56}
 .btn-main i{font-size:18px}
@@ -198,23 +181,23 @@ input[type=range]{width:100%;accent-color:var(--teal)}
 .btn-next:hover{background:#0F6E56}
 .domain-row{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:8px;font-size:11px;color:rgba(255,255,255,.35)}
 .domain-row strong{color:var(--teal);font-weight:500}
-
-/* BOTTOM CTA */
-.bottom-cta{padding:5rem 1.5rem;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(29,158,117,.15) 0%,transparent 70%)}
-.bottom-cta-title{font-family:var(--font-display);font-size:clamp(2rem,6vw,3.5rem);font-weight:500;color:var(--white);line-height:1.2;margin-bottom:1rem}
-.bottom-cta-sub{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:2rem;max-width:400px;margin-left:auto;margin-right:auto}
-
 footer{padding:2rem 1.5rem;border-top:0.5px solid rgba(255,255,255,.06);text-align:center;font-size:11px;color:rgba(255,255,255,.25)}
 footer a{color:var(--teal);text-decoration:none}
 footer strong{color:rgba(255,255,255,.4)}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
-@media(max-width:480px){.nav-cta{padding:7px 14px;font-size:12px}.hero{padding:7rem 1.25rem 3rem}.section{padding:3.5rem 1.25rem}}
+@media(max-width:480px){.nav-cta{padding:7px 14px;font-size:12px}.hero{padding:8rem 1.25rem 3rem}.section{padding:3.5rem 1.25rem}}
 </style>
 </head>
 <body>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('ms')">BM</button>
+  <button class="lang-btn" onclick="setLang('id')">BI</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -222,29 +205,22 @@ footer strong{color:rgba(255,255,255,.4)}
     <div class="nav-logo-ic"><i class="ti ti-heart-search"></i></div>
     <div><div class="nav-logo-txt">Audit Jiwa</div><div class="nav-logo-sub">Madrasah I AM</div></div>
   </div>
-  <a href="https://app.auditjiwa.com" class="nav-cta">Buka App <i class="ti ti-arrow-right" style="font-size:13px;vertical-align:-1px"></i></a>
+  <a href="https://auditjiwa.com" class="nav-cta" id="nav-cta-txt">Buka App <i class="ti ti-arrow-right" style="font-size:13px;vertical-align:-1px"></i></a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-pattern"></div>
+  <div class="hero-bg"></div><div class="hero-pattern"></div>
   <div class="hero-content">
-    <div class="hero-badge"><i class="ti ti-heart-spark"></i> Madrasah I AM · auditjiwa.com</div>
-    <h1 class="hero-title">Audit <em>Jiwa</em> anda<br>sebelum ia terlambat</h1>
-    <p class="hero-ayat">"Hendaklah setiap jiwa memperhatikan apa yang telah ia persembahkan untuk hari esok."</p>
+    <div class="hero-badge"><i class="ti ti-heart-spark"></i> <span id="badge-txt">Madrasah I AM · auditjiwa.com</span></div>
+    <h1 class="hero-title" id="hero-title">Audit <em>Jiwa</em> anda<br>sebelum ia terlambat</h1>
+    <p class="hero-ayat" id="hero-ayat">"Hendaklah setiap jiwa memperhatikan apa yang telah ia persembahkan untuk hari esok."</p>
     <p class="hero-ayat-ref">— Al-Hasyr: 18</p>
-    <p class="hero-sub">Bukan app agama biasa. Audit Jiwa membantu anda mengenal pasti punca sebenar masalah hidup — dan membimbing anda kembali kepada Allah, satu hari sekaligus.</p>
+    <p class="hero-sub" id="hero-sub">Bukan app agama biasa. Audit Jiwa membantu anda mengenal pasti punca sebenar masalah hidup — dan membimbing anda kembali kepada Allah, satu hari sekaligus.</p>
     <div class="hero-cta-row">
-      <a href="#boarding" class="btn-hero">
-        <i class="ti ti-clipboard-heart"></i>
-        Mula Audit Jiwa Saya — Percuma
-      </a>
-      <a href="#kenapa" class="btn-hero-sub">
-        <i class="ti ti-info-circle"></i>
-        Kenapa saya perlu ini?
-      </a>
-      <div class="hero-domain"><i class="ti ti-world" style="font-size:12px"></i> <span>app.auditjiwa.com</span> · Madrasah I AM</div>
+      <a href="#boarding" class="btn-hero"><i class="ti ti-clipboard-heart"></i> <span id="hero-cta1">Mula Audit Jiwa Saya — Percuma</span></a>
+      <a href="#kenapa" class="btn-hero-sub"><i class="ti ti-info-circle"></i> <span id="hero-cta2">Kenapa saya perlu ini?</span></a>
+      <div class="hero-domain"><i class="ti ti-world" style="font-size:12px"></i> <span>auditjiwa.com</span></div>
     </div>
   </div>
 </section>
@@ -252,92 +228,84 @@ footer strong{color:rgba(255,255,255,.4)}
 <!-- KENAPA -->
 <div id="kenapa">
 <div class="section reveal">
-  <div class="section-tag">Langkah 1 — kenali punca</div>
-  <h2 class="section-title">Adakah anda mengalami salah satu daripada ini?</h2>
-  <p class="section-sub">Semua masalah ini kelihatan berbeza di permukaan — tetapi kajian saintifik menunjukkan semuanya berkongsi satu punca yang sama.</p>
+  <div class="section-tag" id="st1">Langkah 1 — kenali punca</div>
+  <h2 class="section-title" id="sh1">Adakah anda mengalami salah satu daripada ini?</h2>
+  <p class="section-sub" id="ss1">Semua masalah ini kelihatan berbeza di permukaan — tetapi kajian saintifik menunjukkan semuanya berkongsi satu punca yang sama.</p>
   <div class="masalah-grid">
-    <div class="masalah-item"><i class="ti ti-cash"></i><div class="masalah-item-t">Kewangan tertekan</div><div class="masalah-item-s">Hutang, tidak cukup</div></div>
-    <div class="masalah-item"><i class="ti ti-mood-angry"></i><div class="masalah-item-t">Cepat marah</div><div class="masalah-item-s">Emosi tidak stabil</div></div>
-    <div class="masalah-item"><i class="ti ti-zzz"></i><div class="masalah-item-t">Tidur tidak lena</div><div class="masalah-item-s">Resah, penat</div></div>
-    <div class="masalah-item"><i class="ti ti-heartbeat"></i><div class="masalah-item-t">Darah tinggi</div><div class="masalah-item-s">Tekanan tidak terkawal</div></div>
-    <div class="masalah-item"><i class="ti ti-droplet"></i><div class="masalah-item-t">Kencing manis</div><div class="masalah-item-s">Gula tidak stabil</div></div>
-    <div class="masalah-item"><i class="ti ti-heart"></i><div class="masalah-item-t">Masalah jantung</div><div class="masalah-item-s">Risiko meningkat</div></div>
-    <div class="masalah-item"><i class="ti ti-brain"></i><div class="masalah-item-t">Kesihatan mental</div><div class="masalah-item-s">Anxiety, tertekan</div></div>
-    <div class="masalah-item"><i class="ti ti-ghost"></i><div class="masalah-item-t">Rasa kosong</div><div class="masalah-item-s">Hidup tidak bermakna</div></div>
-    <div class="masalah-item"><i class="ti ti-moon-stars"></i><div class="masalah-item-t">Ibadah tidak bermakna</div><div class="masalah-item-s">Solat ada, hati jauh</div></div>
+    <div class="masalah-item"><i class="ti ti-cash"></i><div class="masalah-item-t" data-key="m-kewangan">Kewangan tertekan</div><div class="masalah-item-s" data-key="m-kewangan-s">Hutang, tidak cukup</div></div>
+    <div class="masalah-item"><i class="ti ti-mood-angry"></i><div class="masalah-item-t" data-key="m-marah">Cepat marah</div><div class="masalah-item-s" data-key="m-marah-s">Emosi tidak stabil</div></div>
+    <div class="masalah-item"><i class="ti ti-zzz"></i><div class="masalah-item-t" data-key="m-tidur">Tidur tidak lena</div><div class="masalah-item-s" data-key="m-tidur-s">Resah, penat</div></div>
+    <div class="masalah-item"><i class="ti ti-heartbeat"></i><div class="masalah-item-t" data-key="m-darah">Darah tinggi</div><div class="masalah-item-s" data-key="m-darah-s">Tekanan tidak terkawal</div></div>
+    <div class="masalah-item"><i class="ti ti-droplet"></i><div class="masalah-item-t" data-key="m-gula">Kencing manis</div><div class="masalah-item-s" data-key="m-gula-s">Gula tidak stabil</div></div>
+    <div class="masalah-item"><i class="ti ti-heart"></i><div class="masalah-item-t" data-key="m-jantung">Masalah jantung</div><div class="masalah-item-s" data-key="m-jantung-s">Risiko meningkat</div></div>
+    <div class="masalah-item"><i class="ti ti-brain"></i><div class="masalah-item-t" data-key="m-mental">Kesihatan mental</div><div class="masalah-item-s" data-key="m-mental-s">Anxiety, tertekan</div></div>
+    <div class="masalah-item"><i class="ti ti-ghost"></i><div class="masalah-item-t" data-key="m-kosong">Rasa kosong</div><div class="masalah-item-s" data-key="m-kosong-s">Hidup tidak bermakna</div></div>
+    <div class="masalah-item"><i class="ti ti-moon-stars"></i><div class="masalah-item-t" data-key="m-ibadah">Ibadah tidak bermakna</div><div class="masalah-item-s" data-key="m-ibadah-s">Solat ada, hati jauh</div></div>
   </div>
   <div style="background:rgba(29,158,117,.1);border:0.5px solid rgba(29,158,117,.3);border-radius:12px;padding:16px;text-align:center">
     <div style="font-size:11px;color:#9FE1CB;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Harvard Medical School (2021)</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:white;line-height:1.6">Stres kronik meningkatkan risiko penyakit kardiovaskular 40%, mengganggu imun, dan mempercepat penuaan sel — semuanya bermula dari <em style="color:#9FE1CB">keadaan jiwa yang tidak tenang.</em></div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:white;line-height:1.6" id="harvard-quote">Stres kronik meningkatkan risiko penyakit kardiovaskular 40%, mengganggu imun, dan mempercepat penuaan sel — semuanya bermula dari <em style="color:#9FE1CB">keadaan jiwa yang tidak tenang.</em></div>
   </div>
 </div>
 </div>
 
-<!-- PUNCA SEBENAR -->
+<!-- PUNCA -->
 <section class="punca-section reveal">
   <div class="punca-inner">
     <div class="punca-center">
-      <div class="section-tag">Langkah 2 — diagnosis sebenar</div>
-      <h2 class="section-title">Di sebalik semua masalah ini<br>ada satu punca</h2>
+      <div class="section-tag" id="st2">Langkah 2 — diagnosis sebenar</div>
+      <h2 class="section-title" id="sh2">Di sebalik semua masalah ini<br>ada satu punca</h2>
       <div class="punca-arabic">وَأَنِيبُوا إِلَىٰ رَبِّكُمْ</div>
-      <p style="font-size:13px;color:rgba(255,255,255,.45);margin-bottom:2rem">"Dan kembalilah kepada Tuhanmu..." — Az-Zumar: 54</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.45);margin-bottom:2rem" id="punca-ayat-ref">"Dan kembalilah kepada Tuhanmu..." — Az-Zumar: 54</p>
     </div>
     <div class="punca-cards">
-      <div class="punca-card"><div class="punca-card-num">1</div><div><div class="punca-card-t">Nafsu ammārah — jiwa yang memerintah ke arah jahat</div><div class="punca-card-s">Menyebabkan keputusan buruk, marah, tamak, dan rasa tidak pernah cukup — walaupun secara zahir hidup nampak baik.</div></div></div>
-      <div class="punca-card"><div class="punca-card-num">2</div><div><div class="punca-card-t">Ghaflah — jiwa yang terlupa kepada Allah</div><div class="punca-card-s">Apabila jiwa lalai, ia kehilangan kompas. Setiap keputusan dibuat tanpa arah — maka hidup terasa berat dan kosong.</div></div></div>
-      <div class="punca-card"><div class="punca-card-num">3</div><div><div class="punca-card-t">Was-was syaitan — jiwa yang diserang dari dalam</div><div class="punca-card-s">Resah yang tidak bernama, fikiran negatif berulang — ada musuh yang nyata yang tidak boleh dirawat dengan ubat.</div></div></div>
+      <div class="punca-card"><div class="punca-card-num">1</div><div><div class="punca-card-t" id="p1t">Nafsu ammārah — jiwa yang memerintah ke arah jahat</div><div class="punca-card-s" id="p1s">Menyebabkan keputusan buruk, marah, tamak, dan rasa tidak pernah cukup — walaupun secara zahir hidup nampak baik.</div></div></div>
+      <div class="punca-card"><div class="punca-card-num">2</div><div><div class="punca-card-t" id="p2t">Ghaflah — jiwa yang terlupa kepada Allah</div><div class="punca-card-s" id="p2s">Apabila jiwa lalai, ia kehilangan kompas. Setiap keputusan dibuat tanpa arah — maka hidup terasa berat dan kosong.</div></div></div>
+      <div class="punca-card"><div class="punca-card-num">3</div><div><div class="punca-card-t" id="p3t">Was-was syaitan — jiwa yang diserang dari dalam</div><div class="punca-card-s" id="p3s">Resah yang tidak bernama, fikiran negatif berulang — ada musuh yang nyata yang tidak boleh dirawat dengan ubat.</div></div></div>
     </div>
     <div style="margin-top:2rem;text-align:center">
-      <a href="#boarding" class="btn-hero" style="max-width:340px;margin:0 auto">
-        <i class="ti ti-clipboard-heart"></i>
-        Audit Jiwa Saya Sekarang
-      </a>
+      <a href="#boarding" class="btn-hero" style="max-width:340px;margin:0 auto"><i class="ti ti-clipboard-heart"></i> <span id="punca-cta">Audit Jiwa Saya Sekarang</span></a>
     </div>
   </div>
 </section>
 
-<!-- CIRI APP -->
+<!-- FITUR -->
 <div class="section reveal">
-  <div class="section-tag">Penyelesaian</div>
-  <h2 class="section-title">Apa yang App Audit Jiwa lakukan untuk anda</h2>
-  <p class="section-sub">Sistem pemantauan jiwa yang lengkap — dibina atas ilmu Tasawwuf dan disokong oleh sains moden.</p>
+  <div class="section-tag" id="st3">Penyelesaian</div>
+  <h2 class="section-title" id="sh3">Apa yang App Audit Jiwa lakukan untuk anda</h2>
+  <p class="section-sub" id="ss3">Sistem pemantauan jiwa yang lengkap — dibina atas ilmu Tasawwuf dan disokong oleh sains moden.</p>
   <div class="fitur-grid">
-    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-checklist"></i></div><div><div class="fitur-t">Tracker amalan jiwa harian</div><div class="fitur-s">Solat 5 waktu, wirid, Al-Quran, zikir, sedekah — semua dalam satu skrin dengan progress ring harian.</div><span class="fitur-badge badge-free">Percuma</span></div></div>
-    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-mood-heart"></i></div><div><div class="fitur-t">Jejak mood & keadaan jiwa</div><div class="fitur-s">5 tahap perasaan direkod setiap hari — papar corak emosi sepanjang minggu dan bulan.</div><span class="fitur-badge badge-free">Percuma</span></div></div>
-    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-heart-search"></i></div><div><div class="fitur-t">Muhasabah harian, Jumaat & bulanan</div><div class="fitur-s">5 soalan audit jiwa yang mendalam — dijawab sendiri, disimpan secara peribadi.</div><span class="fitur-badge badge-free">Percuma</span></div></div>
-    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-sparkles"></i></div><div><div class="fitur-t">Refleksi selepas solat — AI</div><div class="fitur-s">Selepas setiap solat, app bertanya tentang kehadiran hati anda dan memberi bimbingan peribadi.</div><span class="fitur-badge badge-pro">Pro</span></div></div>
-    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-moon-stars"></i></div><div><div class="fitur-t">Program Inabah 40 hari</div><div class="fitur-s">Untuk mereka yang telah ditalkin — amalan harian berstruktur atas warisan Abah Anom.</div><span class="fitur-badge badge-talkin">Selepas Talkin</span></div></div>
+    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-checklist"></i></div><div><div class="fitur-t" id="f1t">Tracker amalan jiwa harian</div><div class="fitur-s" id="f1s">Solat 5 waktu, wirid, Al-Quran, zikir, sedekah — semua dalam satu skrin dengan progress ring harian.</div><span class="fitur-badge badge-free" id="f-free">Percuma</span></div></div>
+    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-mood-heart"></i></div><div><div class="fitur-t" id="f2t">Jejak mood & keadaan jiwa</div><div class="fitur-s" id="f2s">5 tahap perasaan direkod setiap hari — papar corak emosi sepanjang minggu dan bulan.</div><span class="fitur-badge badge-free">Percuma</span></div></div>
+    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-heart-search"></i></div><div><div class="fitur-t" id="f3t">Muhasabah harian, Jumaat & bulanan</div><div class="fitur-s" id="f3s">5 soalan audit jiwa yang mendalam — dijawab sendiri, disimpan secara peribadi.</div><span class="fitur-badge badge-free">Percuma</span></div></div>
+    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-sparkles"></i></div><div><div class="fitur-t" id="f4t">Refleksi selepas solat — AI</div><div class="fitur-s" id="f4s">Selepas setiap solat, app bertanya tentang kehadiran hati anda dan memberi bimbingan peribadi.</div><span class="fitur-badge badge-pro">Pro</span></div></div>
+    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-moon-stars"></i></div><div><div class="fitur-t" id="f5t">Program Inabah 40 hari</div><div class="fitur-s" id="f5s">Untuk mereka yang telah ditalkin — amalan harian berstruktur atas warisan Abah Anom.</div><span class="fitur-badge badge-talkin" id="f-talkin">Selepas Talkin</span></div></div>
   </div>
 </div>
 
 <!-- KREDIBILITI -->
 <section class="cred-section reveal">
   <div class="cred-inner">
-    <div class="section-tag">Siapa di sebalik Audit Jiwa</div>
-    <h2 class="section-title">Dibina atas amanah yang sahih</h2>
-    <p class="section-sub">Gabungan yang jarang ditemui — sistem kualiti, ilmu Islam, dan pengalaman ruhani yang dalam.</p>
+    <div class="section-tag" id="st4">Siapa di sebalik Audit Jiwa</div>
+    <h2 class="section-title" id="sh4">Dibina atas amanah yang sahih</h2>
+    <p class="section-sub" id="ss4">Gabungan yang jarang ditemui — sistem kualiti, ilmu Islam, dan pengalaman ruhani yang dalam.</p>
     <div class="cred-grid">
-      <div class="cred-item"><i class="ti ti-certificate"></i><div><div class="cred-t">Quality Management System (QMS)</div><div class="cred-s">Kelayakan antarabangsa dalam sistem kualiti — standard yang tinggi dan boleh dipercayai.</div></div></div>
-      <div class="cred-item"><i class="ti ti-school"></i><div><div class="cred-t">Pengajian Islam (Hons) — Islamic Management</div><div class="cred-s">Asas akademik yang kukuh — setiap ciri app disandarkan kepada sumber yang sahih.</div></div></div>
-      <div class="cred-item"><i class="ti ti-moon-stars"></i><div><div class="cred-t">Suluk Tasawwuf — hampir 4 dekad</div><div class="cred-s">Berguru dengan Mursyid Abah Anom, Pesantren Suryalaya — pengalaman ruhani yang hidup.</div></div></div>
+      <div class="cred-item"><i class="ti ti-certificate"></i><div><div class="cred-t">Quality Management System (QMS)</div><div class="cred-s" id="cred1s">Kelayakan antarabangsa dalam sistem kualiti — standard yang tinggi dan boleh dipercayai.</div></div></div>
+      <div class="cred-item"><i class="ti ti-school"></i><div><div class="cred-t">Pengajian Islam (Hons) — Islamic Management</div><div class="cred-s" id="cred2s">Asas akademik yang kukuh — setiap ciri app disandarkan kepada sumber yang sahih.</div></div></div>
+      <div class="cred-item"><i class="ti ti-moon-stars"></i><div><div class="cred-t" id="cred3t">Suluk Tasawwuf — hampir 4 dekad</div><div class="cred-s" id="cred3s">Berguru dengan Mursyid Abah Anom, Pesantren Suryalaya — pengalaman ruhani yang hidup.</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════
-     BOARDING INTERAKTIF
-     ═══════════════════════════════ -->
+<!-- BOARDING -->
 <section id="boarding">
 <div class="boarding-inner">
-
   <div class="boarding-header reveal">
-    <div class="section-tag" style="text-align:center">Audit jiwa anda</div>
-    <h2 class="section-title" style="text-align:center">Mulakan audit dalam 3 minit</h2>
-    <p style="font-size:13px;color:rgba(255,255,255,.5);text-align:center;line-height:1.6">Jawab soalan dengan jujur. Hasil audit akan tunjukkan keadaan jiwa anda dan cadangkan langkah seterusnya.</p>
+    <div class="section-tag" id="brd-tag" style="text-align:center">Audit jiwa anda</div>
+    <h2 class="section-title" id="brd-title" style="text-align:center">Mulakan audit dalam 3 minit</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,.5);text-align:center;line-height:1.6" id="brd-sub">Jawab soalan dengan jujur. Hasil audit akan tunjukkan keadaan jiwa anda dan cadangkan langkah seterusnya.</p>
   </div>
-
   <div style="background:rgba(255,255,255,.03);border:0.5px solid rgba(255,255,255,.08);border-radius:16px;padding:1.5rem 1.25rem;margin-top:1.5rem">
-
     <div class="pip-row">
       <div class="pip active" id="p0"></div>
       <div class="pip" id="p1"></div>
@@ -346,73 +314,73 @@ footer strong{color:rgba(255,255,255,.4)}
       <div class="pip" id="p4"></div>
     </div>
 
-    <!-- S0: Welcome boarding -->
+    <!-- S0 -->
     <div class="scr on" id="s0">
-      <div class="b-tagline">Selamat datang</div>
-      <div class="b-title">Sudah berapa lama anda tidak memeriksa jiwa anda?</div>
-      <div class="b-sub">Audit Jiwa membantu anda menilai keadaan batin dan mengesan tanda-tanda ghaflah sebelum ia meresap ke raga.</div>
-      <div class="b-ayat"><p>"Hendaklah setiap jiwa memperhatikan apa yang telah ia persembahkan untuk hari esok."</p><span>— Al-Hasyr: 18</span></div>
+      <div class="b-tagline" id="b0-tag">Selamat datang</div>
+      <div class="b-title" id="b0-title">Sudah berapa lama anda tidak memeriksa jiwa anda?</div>
+      <div class="b-sub" id="b0-sub">Audit Jiwa membantu anda menilai keadaan batin dan mengesan tanda-tanda ghaflah sebelum ia meresap ke raga.</div>
+      <div class="b-ayat"><p id="b0-ayat">"Hendaklah setiap jiwa memperhatikan apa yang telah ia persembahkan untuk hari esok."</p><span>— Al-Hasyr: 18</span></div>
       <div style="margin-bottom:1.25rem">
-        <div class="b-cred-pill"><i class="ti ti-certificate"></i><div><div class="b-cred-t">Quality Management System (QMS)</div><div class="b-cred-s">Pereka berasaskan sistem kualiti antarabangsa</div></div></div>
-        <div class="b-cred-pill"><i class="ti ti-school"></i><div><div class="b-cred-t">Pengajian Islam (Hons) — Islamic Management</div><div class="b-cred-s">Asas akademik yang kukuh dalam ilmu Islam</div></div></div>
-        <div class="b-cred-pill"><i class="ti ti-moon-stars"></i><div><div class="b-cred-t">Suluk Tasawwuf — hampir 4 dekad</div><div class="b-cred-s">Berguru dengan Mursyid Abah Anom, Suryalaya</div></div></div>
+        <div class="b-cred-pill"><i class="ti ti-certificate"></i><div><div class="b-cred-t">Quality Management System (QMS)</div><div class="b-cred-s" id="bc1">Pereka berasaskan sistem kualiti antarabangsa</div></div></div>
+        <div class="b-cred-pill"><i class="ti ti-school"></i><div><div class="b-cred-t">Pengajian Islam (Hons) — Islamic Management</div><div class="b-cred-s" id="bc2">Asas akademik yang kukuh dalam ilmu Islam</div></div></div>
+        <div class="b-cred-pill"><i class="ti ti-moon-stars"></i><div><div class="b-cred-t" id="bc3t">Suluk Tasawwuf — hampir 4 dekad</div><div class="b-cred-s" id="bc3">Berguru dengan Mursyid Abah Anom, Suryalaya</div></div></div>
       </div>
-      <button class="btn-next" onclick="goS(1)">Mula Audit Saya <i class="ti ti-arrow-right"></i></button>
+      <button class="btn-next" onclick="goS(1)" id="b0-btn">Mula Audit Saya <i class="ti ti-arrow-right"></i></button>
     </div>
 
-    <!-- S1: Pilih masalah -->
+    <!-- S1 -->
     <div class="scr" id="s1">
-      <div class="b-tagline">Langkah 1 — kenali masalah anda</div>
-      <div class="b-title">Apa yang paling menekan anda sekarang?</div>
-      <div class="b-sub">Pilih semua yang berkaitan. Jujur dengan diri sendiri — tiada jawapan yang salah.</div>
+      <div class="b-tagline" id="b1-tag">Langkah 1 — kenali masalah anda</div>
+      <div class="b-title" id="b1-title">Apa yang paling menekan anda sekarang?</div>
+      <div class="b-sub" id="b1-sub">Pilih semua yang berkaitan. Jujur dengan diri sendiri — tiada jawapan yang salah.</div>
       <div class="b-masalah-grid">
-        <div class="bmk" onclick="tog(this,'kewangan')"><i class="ti ti-cash bmki"></i><div class="bmkt">Kewangan tertekan</div><div class="bmks">Hutang, tidak cukup</div></div>
-        <div class="bmk" onclick="tog(this,'marah')"><i class="ti ti-mood-angry bmki"></i><div class="bmkt">Cepat marah</div><div class="bmks">Emosi tidak stabil</div></div>
-        <div class="bmk" onclick="tog(this,'tidur')"><i class="ti ti-zzz bmki"></i><div class="bmkt">Tidur tidak lena</div><div class="bmks">Resah, penat</div></div>
-        <div class="bmk" onclick="tog(this,'malas')"><i class="ti ti-battery-low bmki"></i><div class="bmkt">Malas, tiada semangat</div><div class="bmks">Tidak bermotivasi</div></div>
-        <div class="bmk" onclick="tog(this,'darah')"><i class="ti ti-heartbeat bmki"></i><div class="bmkt">Darah tinggi</div><div class="bmks">Tekanan tidak terkawal</div></div>
-        <div class="bmk" onclick="tog(this,'gula')"><i class="ti ti-droplet bmki"></i><div class="bmkt">Kencing manis</div><div class="bmks">Gula tidak stabil</div></div>
-        <div class="bmk" onclick="tog(this,'kolesterol')"><i class="ti ti-activity bmki"></i><div class="bmkt">Kolesterol tinggi</div><div class="bmks">Risiko jantung</div></div>
-        <div class="bmk" onclick="tog(this,'jantung')"><i class="ti ti-heart bmki"></i><div class="bmkt">Masalah jantung</div><div class="bmks">Dada berdebar</div></div>
-        <div class="bmk" onclick="tog(this,'mental')"><i class="ti ti-brain bmki"></i><div class="bmkt">Kesihatan mental</div><div class="bmks">Anxiety, tertekan</div></div>
-        <div class="bmk" onclick="tog(this,'kosong')"><i class="ti ti-ghost bmki"></i><div class="bmkt">Rasa kosong & hampa</div><div class="bmks">Hidup tidak bermakna</div></div>
-        <div class="bmk" onclick="tog(this,'ibadah')"><i class="ti ti-moon-stars bmki"></i><div class="bmkt">Ibadah tidak bermakna</div><div class="bmks">Solat ada, hati jauh</div></div>
-        <div class="bmk" onclick="tog(this,'hubungan')"><i class="ti ti-users bmki"></i><div class="bmkt">Hubungan retak</div><div class="bmks">Keluarga, pasangan</div></div>
+        <div class="bmk" onclick="tog(this,'kewangan')"><i class="ti ti-cash bmki"></i><div class="bmkt" data-key="m-kewangan">Kewangan tertekan</div><div class="bmks" data-key="m-kewangan-s">Hutang, tidak cukup</div></div>
+        <div class="bmk" onclick="tog(this,'marah')"><i class="ti ti-mood-angry bmki"></i><div class="bmkt" data-key="m-marah">Cepat marah</div><div class="bmks" data-key="m-marah-s">Emosi tidak stabil</div></div>
+        <div class="bmk" onclick="tog(this,'tidur')"><i class="ti ti-zzz bmki"></i><div class="bmkt" data-key="m-tidur">Tidur tidak lena</div><div class="bmks" data-key="m-tidur-s">Resah, penat</div></div>
+        <div class="bmk" onclick="tog(this,'malas')"><i class="ti ti-battery-low bmki"></i><div class="bmkt" data-key="m-malas">Malas, tiada semangat</div><div class="bmks" data-key="m-malas-s">Tidak bermotivasi</div></div>
+        <div class="bmk" onclick="tog(this,'darah')"><i class="ti ti-heartbeat bmki"></i><div class="bmkt" data-key="m-darah">Darah tinggi</div><div class="bmks" data-key="m-darah-s">Tekanan tidak terkawal</div></div>
+        <div class="bmk" onclick="tog(this,'gula')"><i class="ti ti-droplet bmki"></i><div class="bmkt" data-key="m-gula">Kencing manis</div><div class="bmks" data-key="m-gula-s">Gula tidak stabil</div></div>
+        <div class="bmk" onclick="tog(this,'kolesterol')"><i class="ti ti-activity bmki"></i><div class="bmkt" data-key="m-kolesterol">Kolesterol tinggi</div><div class="bmks" data-key="m-kolesterol-s">Risiko jantung</div></div>
+        <div class="bmk" onclick="tog(this,'jantung')"><i class="ti ti-heart bmki"></i><div class="bmkt" data-key="m-jantung">Masalah jantung</div><div class="bmks" data-key="m-jantung-s">Dada berdebar</div></div>
+        <div class="bmk" onclick="tog(this,'mental')"><i class="ti ti-brain bmki"></i><div class="bmkt" data-key="m-mental">Kesihatan mental</div><div class="bmks" data-key="m-mental-s">Anxiety, tertekan</div></div>
+        <div class="bmk" onclick="tog(this,'kosong')"><i class="ti ti-ghost bmki"></i><div class="bmkt" data-key="m-kosong">Rasa kosong & hampa</div><div class="bmks" data-key="m-kosong-s">Hidup tidak bermakna</div></div>
+        <div class="bmk" onclick="tog(this,'ibadah')"><i class="ti ti-moon-stars bmki"></i><div class="bmkt" data-key="m-ibadah">Ibadah tidak bermakna</div><div class="bmks" data-key="m-ibadah-s">Solat ada, hati jauh</div></div>
+        <div class="bmk" onclick="tog(this,'hubungan')"><i class="ti ti-users bmki"></i><div class="bmkt" data-key="m-hubungan">Hubungan retak</div><div class="bmks" data-key="m-hubungan-s">Keluarga, pasangan</div></div>
       </div>
-      <button class="btn-next" id="btn1" onclick="goS(2)" style="opacity:.4;pointer-events:none">Nilai tahap setiap masalah <i class="ti ti-arrow-right"></i></button>
+      <button class="btn-next" id="btn1" onclick="goS(2)" style="opacity:.4;pointer-events:none" data-key="b1-btn">Nilai tahap setiap masalah <i class="ti ti-arrow-right"></i></button>
     </div>
 
-    <!-- S2: Slider -->
+    <!-- S2 -->
     <div class="scr" id="s2">
-      <div class="b-tagline">Langkah 2 — nilai tahap masalah anda</div>
-      <div class="b-title">Seberapa teruk setiap masalah ini?</div>
-      <div class="b-sub">Gerakkan slider dengan jujur. Ini membantu mengira kesan kepada jiwa anda dengan tepat.</div>
+      <div class="b-tagline" id="b2-tag">Langkah 2 — nilai tahap masalah anda</div>
+      <div class="b-title" id="b2-title">Seberapa teruk setiap masalah ini?</div>
+      <div class="b-sub" id="b2-sub">Gerakkan slider dengan jujur. Ini membantu mengira kesan kepada jiwa anda dengan tepat.</div>
       <div id="slider-list"></div>
-      <button class="btn-next" onclick="goS(3)">Lihat apa kata sains <i class="ti ti-arrow-right"></i></button>
+      <button class="btn-next" onclick="goS(3)" id="b2-btn">Lihat apa kata sains <i class="ti ti-arrow-right"></i></button>
     </div>
 
-    <!-- S3: Sains + punca -->
+    <!-- S3 -->
     <div class="scr" id="s3">
-      <div class="b-tagline">Langkah 3 — apa kata kajian saintifik</div>
-      <div class="b-title">Sains sudah buktikan hubungan ini</div>
-      <div class="b-sub">Masalah yang anda pilih bukan berlaku secara kebetulan — semuanya berhubung kait dengan keadaan jiwa.</div>
+      <div class="b-tagline" id="b3-tag">Langkah 3 — apa kata kajian saintifik</div>
+      <div class="b-title" id="b3-title">Sains sudah buktikan hubungan ini</div>
+      <div class="b-sub" id="b3-sub">Masalah yang anda pilih bukan berlaku secara kebetulan — semuanya berhubung kait dengan keadaan jiwa.</div>
       <div id="sains-list" style="margin-bottom:1rem"></div>
       <div class="b-punca-box">
-        <div class="b-punca-tag">Diagnosis sebenar</div>
-        <div class="b-punca-title">Jiwa yang dikuasai nafsu dan syaitan</div>
-        <div class="b-punca-body">Bukan tuduhan — ini hakikat Al-Quran yang disahkan oleh jutaan pengalaman manusia sejak ribuan tahun.</div>
+        <div class="b-punca-tag" id="diag-tag">Diagnosis sebenar</div>
+        <div class="b-punca-title" id="diag-title">Jiwa yang dikuasai nafsu dan syaitan</div>
+        <div class="b-punca-body" id="diag-body">Bukan tuduhan — ini hakikat Al-Quran yang disahkan oleh jutaan pengalaman manusia sejak ribuan tahun.</div>
       </div>
-      <div class="b-pr-row"><div class="b-pr-num">1</div><div><div class="b-pr-t">Nafsu ammārah</div><div class="b-pr-s">Memerintah kepada kejahatan tanpa anda sedar — keputusan buruk, marah, tamak</div></div></div>
-      <div class="b-pr-row"><div class="b-pr-num">2</div><div><div class="b-pr-t">Ghaflah — lalai dari Allah</div><div class="b-pr-s">Jiwa hilang kompas — hidup terasa berat dan kosong tanpa sebab yang jelas</div></div></div>
-      <div class="b-pr-row"><div class="b-pr-num">3</div><div><div class="b-pr-t">Was-was syaitan</div><div class="b-pr-s">Resah tidak bernama, fikiran negatif berulang — ada musuh yang nyata</div></div></div>
-      <div class="b-ayat" style="margin-top:1rem;margin-bottom:1.25rem"><p>"Sesungguhnya nafsu itu sangat menyuruh kepada kejahatan, kecuali nafsu yang dirahmati Tuhanku."</p><span>— Yusuf: 53</span></div>
-      <button class="btn-next" onclick="goS(4)">Lihat hasil audit saya <i class="ti ti-chart-bar"></i></button>
+      <div class="b-pr-row"><div class="b-pr-num">1</div><div><div class="b-pr-t" id="pb1t">Nafsu ammārah</div><div class="b-pr-s" id="pb1s">Memerintah kepada kejahatan tanpa anda sedar — keputusan buruk, marah, tamak</div></div></div>
+      <div class="b-pr-row"><div class="b-pr-num">2</div><div><div class="b-pr-t" id="pb2t">Ghaflah — lalai dari Allah</div><div class="b-pr-s" id="pb2s">Jiwa hilang kompas — hidup terasa berat dan kosong tanpa sebab yang jelas</div></div></div>
+      <div class="b-pr-row"><div class="b-pr-num">3</div><div><div class="b-pr-t" id="pb3t">Was-was syaitan</div><div class="b-pr-s" id="pb3s">Resah tidak bernama, fikiran negatif berulang — ada musuh yang nyata</div></div></div>
+      <div class="b-ayat" style="margin-top:1rem;margin-bottom:1.25rem"><p id="b3-ayat">"Sesungguhnya nafsu itu sangat menyuruh kepada kejahatan, kecuali nafsu yang dirahmati Tuhanku."</p><span>— Yusuf: 53</span></div>
+      <button class="btn-next" onclick="goS(4)" id="b3-btn">Lihat hasil audit saya <i class="ti ti-chart-bar"></i></button>
     </div>
 
-    <!-- S4: Result + CTA -->
+    <!-- S4 -->
     <div class="scr" id="s4">
-      <div class="b-tagline">Hasil audit jiwa anda</div>
-      <div class="b-title">Laporan peribadi anda</div>
+      <div class="b-tagline" id="b4-tag">Hasil audit jiwa anda</div>
+      <div class="b-title" id="b4-title">Laporan peribadi anda</div>
       <div class="b-result-hero" id="result-hero">
         <div class="b-rh-tag" id="rh-tag">Skor Audit Jiwa</div>
         <div class="b-rh-score" id="rh-score">—</div>
@@ -420,56 +388,337 @@ footer strong{color:rgba(255,255,255,.4)}
         <div class="b-rh-sub" id="rh-sub"></div>
       </div>
       <div style="margin-bottom:1.25rem">
-        <div class="b-r-title">Laporan terperinci setiap dimensi</div>
+        <div class="b-r-title" id="b4-detail">Laporan terperinci setiap dimensi</div>
         <div id="radar-bars"></div>
       </div>
       <div class="b-stat-grid">
-        <div class="b-stat-box"><div class="b-stat-num" id="st1">0</div><div class="b-stat-lbl">masalah dikenal pasti</div></div>
-        <div class="b-stat-box"><div class="b-stat-num" id="st2">0%</div><div class="b-stat-lbl">kaitan dengan jiwa</div></div>
-        <div class="b-stat-box"><div class="b-stat-num" id="st3">0</div><div class="b-stat-lbl">masalah kritikal</div></div>
-        <div class="b-stat-box"><div class="b-stat-num" id="st4">—</div><div class="b-stat-lbl">tindakan diperlukan</div></div>
+        <div class="b-stat-box"><div class="b-stat-num" id="st-1">0</div><div class="b-stat-lbl" id="stl-1">masalah dikenal pasti</div></div>
+        <div class="b-stat-box"><div class="b-stat-num" id="st-2">0%</div><div class="b-stat-lbl" id="stl-2">kaitan dengan jiwa</div></div>
+        <div class="b-stat-box"><div class="b-stat-num" id="st-3">0</div><div class="b-stat-lbl" id="stl-3">masalah kritikal</div></div>
+        <div class="b-stat-box"><div class="b-stat-num" id="st-4">—</div><div class="b-stat-lbl" id="stl-4">tindakan diperlukan</div></div>
       </div>
       <div class="b-app-box">
-        <div class="b-app-box-title">App Audit Jiwa akan membantu anda</div>
-        <div class="b-ap-row"><i class="ti ti-checklist"></i><div><div class="b-ap-t">Kesan amalan jiwa harian</div><div class="b-ap-s">Solat, wirid, zikir, Al-Quran — semua dipantau</div></div></div>
-        <div class="b-ap-row"><i class="ti ti-mood-heart"></i><div><div class="b-ap-t">Jejak mood & keadaan jiwa</div><div class="b-ap-s">Graf emosi harian, mingguan dan bulanan</div></div></div>
-        <div class="b-ap-row"><i class="ti ti-heart-search"></i><div><div class="b-ap-t">Muhasabah harian berstruktur</div><div class="b-ap-s">5 soalan audit jiwa — harian, Jumaat, bulanan</div></div></div>
-        <div class="b-ap-row"><i class="ti ti-book"></i><div><div class="b-ap-t">Panduan Madrasah I AM</div><div class="b-ap-s">Bimbingan peribadi berasaskan jawapan anda</div></div></div>
-        <div class="b-ap-row"><i class="ti ti-moon-stars"></i><div><div class="b-ap-t">Program Inabah 40 hari</div><div class="b-ap-s">Jalan pulang yang berstruktur — apabila anda bersedia</div></div></div>
+        <div class="b-app-box-title" id="app-box-title">App Audit Jiwa akan membantu anda</div>
+        <div class="b-ap-row"><i class="ti ti-checklist"></i><div><div class="b-ap-t" id="ap1t">Kesan amalan jiwa harian</div><div class="b-ap-s" id="ap1s">Solat, wirid, zikir, Al-Quran — semua dipantau</div></div></div>
+        <div class="b-ap-row"><i class="ti ti-mood-heart"></i><div><div class="b-ap-t" id="ap2t">Jejak mood & keadaan jiwa</div><div class="b-ap-s" id="ap2s">Graf emosi harian, mingguan dan bulanan</div></div></div>
+        <div class="b-ap-row"><i class="ti ti-heart-search"></i><div><div class="b-ap-t" id="ap3t">Muhasabah harian berstruktur</div><div class="b-ap-s" id="ap3s">5 soalan audit jiwa — harian, Jumaat, bulanan</div></div></div>
+        <div class="b-ap-row"><i class="ti ti-book"></i><div><div class="b-ap-t" id="ap4t">Panduan Madrasah I AM</div><div class="b-ap-s" id="ap4s">Bimbingan peribadi berasaskan jawapan anda</div></div></div>
+        <div class="b-ap-row"><i class="ti ti-moon-stars"></i><div><div class="b-ap-t" id="ap5t">Program Inabah 40 hari</div><div class="b-ap-s" id="ap5s">Jalan pulang yang berstruktur — apabila anda bersedia</div></div></div>
       </div>
-      <a class="btn-main" href="https://app.auditjiwa.com">
-        <i class="ti ti-device-mobile-heart"></i>
-        Dapatkan App Audit Jiwa — Percuma
-      </a>
-      <div class="domain-row"><i class="ti ti-world" style="font-size:12px"></i><strong>app.auditjiwa.com</strong><span>· Madrasah I AM</span></div>
-      <button class="btn-ghost" onclick="goS(0)">Ulangi audit</button>
+      <a class="btn-main" href="https://auditjiwa.com"><i class="ti ti-device-mobile-heart"></i> <span id="final-cta">Dapatkan App Audit Jiwa — Percuma</span></a>
+      <div class="domain-row"><i class="ti ti-world" style="font-size:12px"></i><strong>auditjiwa.com</strong></div>
+      <button class="btn-ghost" onclick="goS(0)" id="retry-btn">Ulangi audit</button>
     </div>
-
   </div>
 </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div style="margin-bottom:.5rem"><strong>Audit Jiwa</strong> · oleh <a href="#">Madrasah I AM</a></div>
-  <div>© 2026 madrasahiam.com · Semua hak terpelihara</div>
-  <div style="margin-top:.5rem"><a href="https://app.auditjiwa.com">app.auditjiwa.com</a></div>
+  <div id="footer-copy">© 2026 auditjiwa.com · Semua hak terpelihara</div>
+  <div style="margin-top:.5rem"><a href="https://auditjiwa.com">auditjiwa.com</a></div>
 </footer>
 
 <script>
+// ═══════════════════════════
+// TERJEMAHAN
+// ═══════════════════════════
+var T = {
+  ms: {
+    'nav-cta':'Buka App','badge-txt':'Madrasah I AM · auditjiwa.com',
+    'hero-title':'Audit <em>Jiwa</em> anda<br>sebelum ia terlambat',
+    'hero-ayat':'"Hendaklah setiap jiwa memperhatikan apa yang telah ia persembahkan untuk hari esok."',
+    'hero-sub':'Bukan app agama biasa. Audit Jiwa membantu anda mengenal pasti punca sebenar masalah hidup — dan membimbing anda kembali kepada Allah, satu hari sekaligus.',
+    'hero-cta1':'Mula Audit Jiwa Saya — Percuma','hero-cta2':'Kenapa saya perlu ini?',
+    'st1':'Langkah 1 — kenali punca','sh1':'Adakah anda mengalami salah satu daripada ini?',
+    'ss1':'Semua masalah ini kelihatan berbeza di permukaan — tetapi kajian saintifik menunjukkan semuanya berkongsi satu punca yang sama.',
+    'harvard-quote':'Stres kronik meningkatkan risiko penyakit kardiovaskular 40%, mengganggu imun, dan mempercepat penuaan sel — semuanya bermula dari <em style="color:#9FE1CB">keadaan jiwa yang tidak tenang.</em>',
+    'st2':'Langkah 2 — diagnosis sebenar','sh2':'Di sebalik semua masalah ini ada satu punca',
+    'punca-ayat-ref':'"Dan kembalilah kepada Tuhanmu..." — Az-Zumar: 54',
+    'p1t':'Nafsu ammārah — jiwa yang memerintah ke arah jahat','p1s':'Menyebabkan keputusan buruk, marah, tamak, dan rasa tidak pernah cukup.',
+    'p2t':'Ghaflah — jiwa yang terlupa kepada Allah','p2s':'Apabila jiwa lalai, ia kehilangan kompas. Hidup terasa berat dan kosong.',
+    'p3t':'Was-was syaitan — jiwa yang diserang dari dalam','p3s':'Resah yang tidak bernama, fikiran negatif berulang — ada musuh yang nyata.',
+    'punca-cta':'Audit Jiwa Saya Sekarang',
+    'st3':'Penyelesaian','sh3':'Apa yang App Audit Jiwa lakukan untuk anda',
+    'ss3':'Sistem pemantauan jiwa yang lengkap — dibina atas ilmu Tasawwuf dan disokong oleh sains moden.',
+    'f1t':'Tracker amalan jiwa harian','f1s':'Solat 5 waktu, wirid, Al-Quran, zikir, sedekah — semua dalam satu skrin.',
+    'f2t':'Jejak mood & keadaan jiwa','f2s':'5 tahap perasaan direkod setiap hari — papar corak emosi minggu dan bulan.',
+    'f3t':'Muhasabah harian, Jumaat & bulanan','f3s':'5 soalan audit jiwa yang mendalam — dijawab sendiri, disimpan secara peribadi.',
+    'f4t':'Refleksi selepas solat — AI','f4s':'App bertanya tentang kehadiran hati anda dan memberi bimbingan peribadi.',
+    'f5t':'Program Inabah 40 hari','f5s':'Untuk mereka yang telah ditalkin — amalan harian atas warisan Abah Anom.',
+    'f-free':'Percuma','f-talkin':'Selepas Talkin',
+    'st4':'Siapa di sebalik Audit Jiwa','sh4':'Dibina atas amanah yang sahih',
+    'ss4':'Gabungan yang jarang ditemui — sistem kualiti, ilmu Islam, dan pengalaman ruhani.',
+    'cred1s':'Kelayakan antarabangsa dalam sistem kualiti — standard yang tinggi dan boleh dipercayai.',
+    'cred2s':'Asas akademik yang kukuh — setiap ciri app disandarkan kepada sumber yang sahih.',
+    'cred3t':'Suluk Tasawwuf — hampir 4 dekad','cred3s':'Berguru dengan Mursyid Abah Anom, Pesantren Suryalaya.',
+    'brd-tag':'Audit jiwa anda','brd-title':'Mulakan audit dalam 3 minit',
+    'brd-sub':'Jawab soalan dengan jujur. Hasil audit akan tunjukkan keadaan jiwa anda.',
+    'b0-tag':'Selamat datang','b0-title':'Sudah berapa lama anda tidak memeriksa jiwa anda?',
+    'b0-sub':'Audit Jiwa membantu anda menilai keadaan batin dan mengesan tanda-tanda ghaflah.',
+    'b0-ayat':'"Hendaklah setiap jiwa memperhatikan apa yang telah ia persembahkan untuk hari esok."',
+    'bc1':'Pereka berasaskan sistem kualiti antarabangsa','bc2':'Asas akademik yang kukuh dalam ilmu Islam',
+    'bc3t':'Suluk Tasawwuf — hampir 4 dekad','bc3':'Berguru dengan Mursyid Abah Anom, Suryalaya',
+    'b0-btn':'Mula Audit Saya',
+    'b1-tag':'Langkah 1 — kenali masalah anda','b1-title':'Apa yang paling menekan anda sekarang?',
+    'b1-sub':'Pilih semua yang berkaitan. Jujur dengan diri sendiri — tiada jawapan yang salah.',
+    'b1-btn':'Nilai tahap setiap masalah',
+    'b2-tag':'Langkah 2 — nilai tahap masalah anda','b2-title':'Seberapa teruk setiap masalah ini?',
+    'b2-sub':'Gerakkan slider dengan jujur. Ini membantu mengira kesan kepada jiwa anda dengan tepat.',
+    'b2-btn':'Lihat apa kata sains',
+    'b3-tag':'Langkah 3 — apa kata kajian saintifik','b3-title':'Sains sudah buktikan hubungan ini',
+    'b3-sub':'Masalah yang anda pilih bukan berlaku secara kebetulan — semuanya berhubung kait dengan keadaan jiwa.',
+    'b3-ayat':'"Sesungguhnya nafsu itu sangat menyuruh kepada kejahatan, kecuali nafsu yang dirahmati Tuhanku."',
+    'b3-btn':'Lihat hasil audit saya',
+    'diag-tag':'Diagnosis sebenar','diag-title':'Jiwa yang dikuasai nafsu dan syaitan',
+    'diag-body':'Bukan tuduhan — ini hakikat Al-Quran yang disahkan oleh jutaan pengalaman manusia sejak ribuan tahun.',
+    'pb1t':'Nafsu ammārah','pb1s':'Memerintah kepada kejahatan tanpa anda sedar — keputusan buruk, marah, tamak',
+    'pb2t':'Ghaflah — lalai dari Allah','pb2s':'Jiwa hilang kompas — hidup terasa berat dan kosong tanpa sebab yang jelas',
+    'pb3t':'Was-was syaitan','pb3s':'Resah tidak bernama, fikiran negatif berulang — ada musuh yang nyata',
+    'b4-tag':'Hasil audit jiwa anda','b4-title':'Laporan peribadi anda','b4-detail':'Laporan terperinci setiap dimensi',
+    'rh-tag':'Skor Audit Jiwa',
+    'stl-1':'masalah dikenal pasti','stl-2':'kaitan dengan jiwa','stl-3':'masalah kritikal','stl-4':'tindakan diperlukan',
+    'app-box-title':'App Audit Jiwa akan membantu anda',
+    'ap1t':'Kesan amalan jiwa harian','ap1s':'Solat, wirid, zikir, Al-Quran — semua dipantau',
+    'ap2t':'Jejak mood & keadaan jiwa','ap2s':'Graf emosi harian, mingguan dan bulanan',
+    'ap3t':'Muhasabah harian berstruktur','ap3s':'5 soalan audit jiwa — harian, Jumaat, bulanan',
+    'ap4t':'Panduan Madrasah I AM','ap4s':'Bimbingan peribadi berasaskan jawapan anda',
+    'ap5t':'Program Inabah 40 hari','ap5s':'Jalan pulang yang berstruktur — apabila anda bersedia',
+    'final-cta':'Dapatkan App Audit Jiwa — Percuma','retry-btn':'Ulangi audit',
+    'footer-copy':'© 2026 auditjiwa.com · Semua hak terpelihara',
+    'm-kewangan':'Kewangan tertekan','m-kewangan-s':'Hutang, tidak cukup',
+    'm-marah':'Cepat marah','m-marah-s':'Emosi tidak stabil',
+    'm-tidur':'Tidur tidak lena','m-tidur-s':'Resah, penat',
+    'm-malas':'Malas, tiada semangat','m-malas-s':'Tidak bermotivasi',
+    'm-darah':'Darah tinggi','m-darah-s':'Tekanan tidak terkawal',
+    'm-gula':'Kencing manis','m-gula-s':'Gula tidak stabil',
+    'm-kolesterol':'Kolesterol tinggi','m-kolesterol-s':'Risiko jantung',
+    'm-jantung':'Masalah jantung','m-jantung-s':'Dada berdebar',
+    'm-mental':'Kesihatan mental','m-mental-s':'Anxiety, tertekan',
+    'm-kosong':'Rasa kosong & hampa','m-kosong-s':'Hidup tidak bermakna',
+    'm-ibadah':'Ibadah tidak bermakna','m-ibadah-s':'Solat ada, hati jauh',
+    'm-hubungan':'Hubungan retak','m-hubungan-s':'Keluarga, pasangan',
+    'slider-ringan':'Ringan','slider-kritikal':'Kritikal',
+    'lbl-sangat-ringan':'Sangat ringan','lbl-ringan':'Ringan','lbl-sederhana':'Sederhana','lbl-teruk':'Teruk','lbl-kritikal':'Kritikal',
+    'result-kritikal-lbl':'Kritikal — jiwa sangat memerlukan perhatian segera',
+    'result-kritikal-sub':'Masalah yang anda rasa di luar adalah isyarat kuat dari jiwa yang lama tidak diaudit.',
+    'result-sederhana-lbl':'Sederhana — ada ruang besar untuk diperbaiki',
+    'result-sederhana-sub':'Anda sedar ada masalah — ini permulaan yang baik. Dengan audit harian, jiwa boleh dipulihkan.',
+    'result-baik-lbl':'Baik — jiwa boleh diperkukuh lagi',
+    'result-baik-sub':'Jangan tunggu sehingga teruk. Mulakan audit harian sekarang.',
+    'stat-segera':'Segera','stat-7hari':'7 hari','stat-mulakan':'Mulakan',
+  },
+  id: {
+    'nav-cta':'Buka Aplikasi','badge-txt':'Madrasah I AM · auditjiwa.com',
+    'hero-title':'Audit <em>Jiwa</em> Anda<br>sebelum terlambat',
+    'hero-ayat':'"Hendaklah setiap jiwa memperhatikan apa yang telah dipersiapkan untuk hari esok."',
+    'hero-sub':'Bukan aplikasi agama biasa. Audit Jiwa membantu Anda menemukan akar masalah hidup yang sebenarnya — dan membimbing Anda kembali kepada Allah, satu hari sekaligus.',
+    'hero-cta1':'Mulai Audit Jiwa Saya — Gratis','hero-cta2':'Kenapa saya perlu ini?',
+    'st1':'Langkah 1 — kenali masalah','sh1':'Apakah Anda mengalami salah satu dari ini?',
+    'ss1':'Semua masalah ini terlihat berbeda di permukaan — tetapi penelitian ilmiah menunjukkan semuanya memiliki satu akar yang sama.',
+    'harvard-quote':'Stres kronis meningkatkan risiko penyakit kardiovaskular 40%, mengganggu imun, dan mempercepat penuaan sel — semuanya berawal dari <em style="color:#9FE1CB">kondisi jiwa yang tidak tenang.</em>',
+    'st2':'Langkah 2 — diagnosis sebenarnya','sh2':'Di balik semua masalah ini ada satu akar',
+    'punca-ayat-ref':'"Dan kembalilah kepada Tuhanmu..." — Az-Zumar: 54',
+    'p1t':'Nafsu ammārah — jiwa yang memerintah ke arah kejahatan','p1s':'Menyebabkan keputusan buruk, marah, tamak, dan rasa tidak pernah cukup.',
+    'p2t':'Ghaflah — jiwa yang lupa kepada Allah','p2s':'Ketika jiwa lalai, ia kehilangan kompas. Hidup terasa berat dan kosong.',
+    'p3t':'Was-was setan — jiwa yang diserang dari dalam','p3s':'Gelisah tak bernama, pikiran negatif berulang — ada musuh yang nyata.',
+    'punca-cta':'Audit Jiwa Saya Sekarang',
+    'st3':'Solusi','sh3':'Apa yang dilakukan App Audit Jiwa untuk Anda',
+    'ss3':'Sistem pemantauan jiwa yang lengkap — dibangun atas ilmu Tasawwuf dan didukung oleh sains modern.',
+    'f1t':'Pelacak amalan jiwa harian','f1s':'Sholat 5 waktu, wirid, Al-Quran, dzikir, sedekah — semua dalam satu layar.',
+    'f2t':'Lacak mood & kondisi jiwa','f2s':'5 tingkat perasaan dicatat setiap hari — tampilkan pola emosi mingguan dan bulanan.',
+    'f3t':'Muhasabah harian, Jumat & bulanan','f3s':'5 pertanyaan audit jiwa yang mendalam — dijawab sendiri, disimpan secara pribadi.',
+    'f4t':'Refleksi setelah sholat — AI','f4s':'Aplikasi bertanya tentang kehadiran hati Anda dan memberikan bimbingan pribadi.',
+    'f5t':'Program Inabah 40 hari','f5s':'Untuk mereka yang telah ditalkin — amalan harian atas warisan Abah Anom.',
+    'f-free':'Gratis','f-talkin':'Setelah Talkin',
+    'st4':'Siapa di balik Audit Jiwa','sh4':'Dibangun atas amanah yang sahih',
+    'ss4':'Gabungan yang jarang ditemui — sistem kualitas, ilmu Islam, dan pengalaman ruhani yang dalam.',
+    'cred1s':'Kualifikasi internasional dalam sistem manajemen mutu — standar tinggi dan dapat dipercaya.',
+    'cred2s':'Dasar akademik yang kokoh — setiap fitur aplikasi bersandar pada sumber yang sahih.',
+    'cred3t':'Suluk Tasawwuf — hampir 4 dekade','cred3s':'Berguru dengan Mursyid Abah Anom, Pesantren Suryalaya.',
+    'brd-tag':'Audit jiwa Anda','brd-title':'Mulai audit dalam 3 menit',
+    'brd-sub':'Jawab pertanyaan dengan jujur. Hasil audit akan menunjukkan kondisi jiwa Anda.',
+    'b0-tag':'Selamat datang','b0-title':'Sudah berapa lama Anda tidak memeriksa jiwa Anda?',
+    'b0-sub':'Audit Jiwa membantu Anda menilai kondisi batin dan mendeteksi tanda-tanda ghaflah.',
+    'b0-ayat':'"Hendaklah setiap jiwa memperhatikan apa yang telah dipersiapkan untuk hari esok."',
+    'bc1':'Perancang berdasarkan sistem manajemen mutu internasional','bc2':'Dasar akademik yang kokoh dalam ilmu Islam',
+    'bc3t':'Suluk Tasawwuf — hampir 4 dekade','bc3':'Berguru dengan Mursyid Abah Anom, Suryalaya',
+    'b0-btn':'Mulai Audit Saya',
+    'b1-tag':'Langkah 1 — kenali masalah Anda','b1-title':'Apa yang paling menekan Anda sekarang?',
+    'b1-sub':'Pilih semua yang berkaitan. Jujur dengan diri sendiri — tidak ada jawaban yang salah.',
+    'b1-btn':'Nilai tingkat setiap masalah',
+    'b2-tag':'Langkah 2 — nilai tingkat masalah Anda','b2-title':'Seberapa parah setiap masalah ini?',
+    'b2-sub':'Gerakkan slider dengan jujur. Ini membantu menghitung dampak pada jiwa Anda dengan tepat.',
+    'b2-btn':'Lihat apa kata sains',
+    'b3-tag':'Langkah 3 — apa kata penelitian ilmiah','b3-title':'Sains telah membuktikan hubungan ini',
+    'b3-sub':'Masalah yang Anda pilih bukan kebetulan — semuanya saling berkaitan dengan kondisi jiwa.',
+    'b3-ayat':'"Sesungguhnya nafsu itu selalu menyuruh kepada kejahatan, kecuali nafsu yang dirahmati Tuhanku."',
+    'b3-btn':'Lihat hasil audit saya',
+    'diag-tag':'Diagnosis sebenarnya','diag-title':'Jiwa yang dikuasai nafsu dan setan',
+    'diag-body':'Bukan tuduhan — ini hakikat Al-Quran yang dikonfirmasi oleh jutaan pengalaman manusia sejak ribuan tahun.',
+    'pb1t':'Nafsu ammārah','pb1s':'Memerintah kepada kejahatan tanpa Anda sadari — keputusan buruk, marah, tamak',
+    'pb2t':'Ghaflah — lalai dari Allah','pb2s':'Jiwa kehilangan kompas — hidup terasa berat dan kosong tanpa alasan yang jelas',
+    'pb3t':'Was-was setan','pb3s':'Gelisah tak bernama, pikiran negatif berulang — ada musuh yang nyata',
+    'b4-tag':'Hasil audit jiwa Anda','b4-title':'Laporan pribadi Anda','b4-detail':'Laporan rinci setiap dimensi',
+    'rh-tag':'Skor Audit Jiwa',
+    'stl-1':'masalah teridentifikasi','stl-2':'keterkaitan dengan jiwa','stl-3':'masalah kritis','stl-4':'tindakan diperlukan',
+    'app-box-title':'App Audit Jiwa akan membantu Anda',
+    'ap1t':'Lacak amalan jiwa harian','ap1s':'Sholat, wirid, dzikir, Al-Quran — semua dipantau',
+    'ap2t':'Lacak mood & kondisi jiwa','ap2s':'Grafik emosi harian, mingguan dan bulanan',
+    'ap3t':'Muhasabah harian terstruktur','ap3s':'5 pertanyaan audit jiwa — harian, Jumat, bulanan',
+    'ap4t':'Panduan Madrasah I AM','ap4s':'Bimbingan pribadi berdasarkan jawaban Anda',
+    'ap5t':'Program Inabah 40 hari','ap5s':'Jalan pulang yang terstruktur — ketika Anda siap',
+    'final-cta':'Dapatkan App Audit Jiwa — Gratis','retry-btn':'Ulangi audit',
+    'footer-copy':'© 2026 auditjiwa.com · Semua hak dilindungi',
+    'm-kewangan':'Tekanan keuangan','m-kewangan-s':'Hutang, tidak cukup',
+    'm-marah':'Mudah marah','m-marah-s':'Emosi tidak stabil',
+    'm-tidur':'Tidur tidak nyenyak','m-tidur-s':'Gelisah, lelah',
+    'm-malas':'Malas, tidak bersemangat','m-malas-s':'Tidak termotivasi',
+    'm-darah':'Darah tinggi','m-darah-s':'Tekanan tidak terkontrol',
+    'm-gula':'Diabetes','m-gula-s':'Gula darah tidak stabil',
+    'm-kolesterol':'Kolesterol tinggi','m-kolesterol-s':'Risiko jantung',
+    'm-jantung':'Masalah jantung','m-jantung-s':'Dada berdebar',
+    'm-mental':'Kesehatan mental','m-mental-s':'Anxiety, tertekan',
+    'm-kosong':'Rasa kosong & hampa','m-kosong-s':'Hidup tidak bermakna',
+    'm-ibadah':'Ibadah tidak bermakna','m-ibadah-s':'Sholat ada, hati jauh',
+    'm-hubungan':'Hubungan retak','m-hubungan-s':'Keluarga, pasangan',
+    'slider-ringan':'Ringan','slider-kritikal':'Kritis',
+    'lbl-sangat-ringan':'Sangat ringan','lbl-ringan':'Ringan','lbl-sederhana':'Sedang','lbl-teruk':'Parah','lbl-kritikal':'Kritis',
+    'result-kritikal-lbl':'Kritis — jiwa sangat membutuhkan perhatian segera',
+    'result-kritikal-sub':'Masalah yang Anda rasakan di luar adalah sinyal kuat dari jiwa yang lama tidak diaudit.',
+    'result-sederhana-lbl':'Sedang — ada ruang besar untuk diperbaiki',
+    'result-sederhana-sub':'Anda sadar ada masalah — ini awal yang baik. Dengan audit harian, jiwa bisa dipulihkan.',
+    'result-baik-lbl':'Baik — jiwa bisa diperkuat lagi',
+    'result-baik-sub':'Jangan tunggu sampai parah. Mulai audit harian sekarang.',
+    'stat-segera':'Segera','stat-7hari':'7 hari','stat-mulakan':'Mulai',
+  },
+  en: {
+    'nav-cta':'Open App','badge-txt':'Madrasah I AM · auditjiwa.com',
+    'hero-title':'Audit Your <em>Soul</em><br>before it\'s too late',
+    'hero-ayat':'"Let every soul look at what it has sent forth for tomorrow."',
+    'hero-sub':'Not your ordinary religious app. Audit Jiwa helps you identify the real root of your life\'s problems — and guides you back to Allah, one day at a time.',
+    'hero-cta1':'Start My Soul Audit — Free','hero-cta2':'Why do I need this?',
+    'st1':'Step 1 — know the root','sh1':'Are you experiencing any of these?',
+    'ss1':'All these problems look different on the surface — but scientific research shows they all share one common root cause.',
+    'harvard-quote':'Chronic stress increases cardiovascular disease risk by 40%, disrupts immunity, and accelerates cellular aging — all starting from <em style="color:#9FE1CB">a restless soul.</em>',
+    'st2':'Step 2 — the real diagnosis','sh2':'Behind all these problems lies one root cause',
+    'punca-ayat-ref':'"And return to your Lord..." — Az-Zumar: 54',
+    'p1t':'Nafsu ammārah — a soul commanding toward evil','p1s':'Leading to poor decisions, anger, greed, and never feeling enough.',
+    'p2t':'Ghaflah — a soul that forgets Allah','p2s':'When the soul is heedless, it loses its compass. Life feels heavy and hollow.',
+    'p3t':'Waswas — a soul attacked from within','p3s':'Nameless anxiety, recurring negative thoughts — there is a real enemy.',
+    'punca-cta':'Audit My Soul Now',
+    'st3':'Solution','sh3':'What the Audit Jiwa App does for you',
+    'ss3':'A comprehensive soul monitoring system — built on the science of Tasawwuf and supported by modern research.',
+    'f1t':'Daily spiritual practice tracker','f1s':'5 daily prayers, daily wirds, Quran, dhikr, charity — all in one screen.',
+    'f2t':'Track mood & soul state','f2s':'5 feeling levels recorded daily — showing emotional patterns week and month.',
+    'f3t':'Daily, Friday & monthly muhasabah','f3s':'5 deep soul audit questions — answered privately, saved securely.',
+    'f4t':'Post-prayer reflection — AI','f4s':'App asks about your heart\'s presence and gives personalized guidance.',
+    'f5t':'40-day Inabah Programme','f5s':'For those who have received talkin — structured daily practices from Abah Anom\'s legacy.',
+    'f-free':'Free','f-talkin':'After Talkin',
+    'st4':'Who is behind Audit Jiwa','sh4':'Built on authentic trust',
+    'ss4':'A rare combination — quality systems, Islamic scholarship, and deep spiritual experience.',
+    'cred1s':'International Quality Management System qualification — high standards, reliable.',
+    'cred2s':'Strong academic foundation in Islamic studies — every feature grounded in authentic sources.',
+    'cred3t':'Sufi path — nearly 4 decades','cred3s':'Studied under Mursyid Abah Anom, Pesantren Suryalaya.',
+    'brd-tag':'Audit your soul','brd-title':'Start your audit in 3 minutes',
+    'brd-sub':'Answer honestly. Your audit results will show your soul\'s condition and suggest next steps.',
+    'b0-tag':'Welcome','b0-title':'How long has it been since you last checked on your soul?',
+    'b0-sub':'Audit Jiwa helps you assess your inner state and detect signs of ghaflah before they affect your body.',
+    'b0-ayat':'"Let every soul look at what it has sent forth for tomorrow."',
+    'bc1':'Designer based on international quality management systems','bc2':'Strong academic foundation in Islamic studies',
+    'bc3t':'Sufi path — nearly 4 decades','bc3':'Studied under Mursyid Abah Anom, Suryalaya',
+    'b0-btn':'Start My Audit',
+    'b1-tag':'Step 1 — know your problems','b1-title':'What is weighing on you the most right now?',
+    'b1-sub':'Select all that apply. Be honest with yourself — there are no wrong answers.',
+    'b1-btn':'Rate each problem\'s severity',
+    'b2-tag':'Step 2 — rate problem severity','b2-title':'How bad is each of these problems?',
+    'b2-sub':'Move the slider honestly. This helps us calculate the impact on your soul accurately.',
+    'b2-btn':'See what science says',
+    'b3-tag':'Step 3 — what does science say','b3-title':'Science has proven this connection',
+    'b3-sub':'The problems you selected did not happen by chance — they are all connected to your soul\'s condition.',
+    'b3-ayat':'"Indeed, the soul persistently commands toward evil, except those upon which my Lord has mercy."',
+    'b3-btn':'See my audit results',
+    'diag-tag':'Real diagnosis','diag-title':'A soul controlled by nafs and shaitan',
+    'diag-body':'Not an accusation — this is Quranic truth confirmed by millions of human experiences across millennia.',
+    'pb1t':'Nafsu ammārah','pb1s':'Commands toward evil without you realizing — poor decisions, anger, greed',
+    'pb2t':'Ghaflah — heedless of Allah','pb2s':'Soul loses its compass — life feels heavy and hollow without clear reason',
+    'pb3t':'Waswas — whispers of shaitan','pb3s':'Nameless anxiety, recurring negative thoughts — a real enemy exists',
+    'b4-tag':'Your soul audit results','b4-title':'Your personal report','b4-detail':'Detailed breakdown by dimension',
+    'rh-tag':'Soul Audit Score',
+    'stl-1':'problems identified','stl-2':'connected to soul','stl-3':'critical issues','stl-4':'action needed',
+    'app-box-title':'The Audit Jiwa App will help you',
+    'ap1t':'Track daily spiritual practices','ap1s':'Prayers, wird, dhikr, Quran — all monitored',
+    'ap2t':'Track mood & soul state','ap2s':'Daily, weekly and monthly emotional graphs',
+    'ap3t':'Structured daily muhasabah','ap3s':'5 soul audit questions — daily, Friday, monthly',
+    'ap4t':'Madrasah I AM Guidance','ap4s':'Personalized guidance based on your answers',
+    'ap5t':'40-day Inabah Programme','ap5s':'Structured path home — when you are ready',
+    'final-cta':'Get the Audit Jiwa App — Free','retry-btn':'Redo audit',
+    'footer-copy':'© 2026 auditjiwa.com · All rights reserved',
+    'm-kewangan':'Financial stress','m-kewangan-s':'Debt, not enough',
+    'm-marah':'Quick to anger','m-marah-s':'Unstable emotions',
+    'm-tidur':'Poor sleep','m-tidur-s':'Restless, exhausted',
+    'm-malas':'Lazy, no motivation','m-malas-s':'Can\'t get started',
+    'm-darah':'High blood pressure','m-darah-s':'Uncontrolled pressure',
+    'm-gula':'Diabetes','m-gula-s':'Unstable blood sugar',
+    'm-kolesterol':'High cholesterol','m-kolesterol-s':'Heart risk',
+    'm-jantung':'Heart problems','m-jantung-s':'Palpitations',
+    'm-mental':'Mental health','m-mental-s':'Anxiety, depression',
+    'm-kosong':'Feeling empty','m-kosong-s':'Life feels meaningless',
+    'm-ibadah':'Hollow worship','m-ibadah-s':'Prayers without heart',
+    'm-hubungan':'Broken relationships','m-hubungan-s':'Family, partner',
+    'slider-ringan':'Mild','slider-kritikal':'Critical',
+    'lbl-sangat-ringan':'Very mild','lbl-ringan':'Mild','lbl-sederhana':'Moderate','lbl-teruk':'Severe','lbl-kritikal':'Critical',
+    'result-kritikal-lbl':'Critical — your soul urgently needs attention',
+    'result-kritikal-sub':'The problems you feel outside are strong signals from a soul long unaudited.',
+    'result-sederhana-lbl':'Moderate — there is significant room to improve',
+    'result-sederhana-sub':'You are aware something is wrong — that is a good start. Daily audits can restore your soul.',
+    'result-baik-lbl':'Good — your soul can be strengthened further',
+    'result-baik-sub':'Don\'t wait until it gets worse. Start daily audits now.',
+    'stat-segera':'Immediately','stat-7hari':'7 days','stat-mulakan':'Start now',
+  }
+};
+
+var lang = 'ms';
+
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelector('.lang-btn[onclick="setLang(\''+l+'\')"]').classList.add('active');
+  var t = T[l];
+  // Update all ID-based elements
+  Object.keys(t).forEach(function(k) {
+    var el = document.getElementById(k);
+    if (el) el.innerHTML = t[k];
+  });
+  // Update data-key elements
+  document.querySelectorAll('[data-key]').forEach(function(el) {
+    var key = el.getAttribute('data-key');
+    if (t[key]) el.innerHTML = t[key];
+  });
+  // Update nav CTA
+  document.getElementById('nav-cta-txt').innerHTML = t['nav-cta'] + ' <i class="ti ti-arrow-right" style="font-size:13px;vertical-align:-1px"></i>';
+  // Rebuild sliders and sains if visible
+  if (cur === 2) buildSliders();
+  if (cur === 3) buildSains();
+  if (cur === 4) buildResult();
+}
+
+// ═══════════════════════════
+// MASALAH DATA
+// ═══════════════════════════
 var M={
-  kewangan:{label:"Kewangan tertekan",ikon:"ti-cash",warnaIkon:"#F0997B",bgKad:"rgba(217,90,48,0.15)",bdrKad:"rgba(240,153,123,0.4)",textJudul:"#F5C4B3",textBody:"#F5C4B3",basePct:85,sains:"APA (2022): 72% individu dengan tekanan kewangan alami gangguan tidur kronik dan kemurungan. Kortisol meningkat 38%."},
-  marah:{label:"Cepat marah",ikon:"ti-mood-angry",warnaIkon:"#F0997B",bgKad:"rgba(217,90,48,0.15)",bdrKad:"rgba(240,153,123,0.4)",textJudul:"#F5C4B3",textBody:"#F5C4B3",basePct:90,sains:"J. Psychosomatic Research: kemarahan kronik meningkatkan risiko serangan jantung 2.3 kali ganda dan memendekkan usia hayat 5-7 tahun."},
-  tidur:{label:"Tidur tidak lena",ikon:"ti-zzz",warnaIkon:"#AFA9EC",bgKad:"rgba(83,74,183,0.15)",bdrKad:"rgba(175,169,236,0.4)",textJudul:"#CECBF6",textBody:"#CECBF6",basePct:80,sains:"NIH (2021): tidur kurang 6 jam sehari meningkatkan risiko diabetes 36% dan kemurungan 55%."},
-  malas:{label:"Malas, tiada semangat",ikon:"ti-battery-low",warnaIkon:"#AFA9EC",bgKad:"rgba(83,74,183,0.15)",bdrKad:"rgba(175,169,236,0.4)",textJudul:"#CECBF6",textBody:"#CECBF6",basePct:75,sains:"WHO: 'motivational anhedonia' dikaitkan dengan paras dopamin rendah akibat tekanan berterusan."},
-  darah:{label:"Darah tinggi",ikon:"ti-heartbeat",warnaIkon:"#F5C4B3",bgKad:"rgba(153,60,29,0.2)",bdrKad:"rgba(245,196,179,0.4)",textJudul:"#F5C4B3",textBody:"#F5C4B3",basePct:82,sains:"Lancet (2020): 65% kes hipertensi primer dikaitkan dengan tekanan psikologikal berterusan. Ketenangan jiwa menurunkan tekanan darah setara ubat ringan."},
-  gula:{label:"Kencing manis",ikon:"ti-droplet",warnaIkon:"#FAC775",bgKad:"rgba(186,117,23,0.15)",bdrKad:"rgba(250,199,117,0.4)",textJudul:"#FAC775",textBody:"#FAC775",basePct:70,sains:"Diabetes Care: stres kronik meningkatkan glukosa darah melalui kortisol. Pesakit diabetes yang tenang jiwa kawal gula 40% lebih baik."},
-  kolesterol:{label:"Kolesterol tinggi",ikon:"ti-activity",warnaIkon:"#FAC775",bgKad:"rgba(186,117,23,0.15)",bdrKad:"rgba(250,199,117,0.4)",textJudul:"#FAC775",textBody:"#FAC775",basePct:68,sains:"Framingham Heart Study: tahap stres emosi tinggi berkorelasi langsung dengan LDL tinggi walaupun diet baik."},
-  jantung:{label:"Masalah jantung",ikon:"ti-heart",warnaIkon:"#F5C4B3",bgKad:"rgba(153,60,29,0.2)",bdrKad:"rgba(245,196,179,0.4)",textJudul:"#F5C4B3",textBody:"#F5C4B3",basePct:88,sains:"NEJM (2021): emosi negatif kronik meningkatkan risiko serangan jantung 48%. Jiwa yang damai adalah ubat jantung terbaik."},
-  mental:{label:"Kesihatan mental",ikon:"ti-brain",warnaIkon:"#AFA9EC",bgKad:"rgba(83,74,183,0.15)",bdrKad:"rgba(175,169,236,0.4)",textJudul:"#CECBF6",textBody:"#CECBF6",basePct:92,sains:"WHO (2023): kekurangan makna hidup dan hubungan spiritual adalah faktor risiko terbesar gangguan mental moden."},
-  kosong:{label:"Rasa kosong & hampa",ikon:"ti-ghost",warnaIkon:"#AFA9EC",bgKad:"rgba(83,74,183,0.15)",bdrKad:"rgba(175,169,236,0.4)",textJudul:"#CECBF6",textBody:"#CECBF6",basePct:95,sains:"Viktor Frankl: kehilangan makna hidup — 'existential vacuum' — adalah punca utama kemurungan moden."},
-  ibadah:{label:"Ibadah tidak bermakna",ikon:"ti-moon-stars",warnaIkon:"#9FE1CB",bgKad:"rgba(29,158,117,0.15)",bdrKad:"rgba(159,225,203,0.4)",textJudul:"#9FE1CB",textBody:"#9FE1CB",basePct:88,sains:"Oxford (2020): ibadah tanpa hadir hati tidak mengaktifkan prefrontal cortex — bahagian otak yang menghasilkan ketenangan."},
-  hubungan:{label:"Hubungan retak",ikon:"ti-users",warnaIkon:"#ED93B1",bgKad:"rgba(212,83,126,0.15)",bdrKad:"rgba(237,147,177,0.4)",textJudul:"#ED93B1",textBody:"#ED93B1",basePct:78,sains:"Gottman Institute: 69% konflik rumah tangga berpunca dari ketidakupayaan mengawal emosi dalaman."},
+  kewangan:{basePct:85,warnaIkon:"#F0997B",bgKad:"rgba(217,90,48,0.15)",bdrKad:"rgba(240,153,123,0.4)",textCol:"#F5C4B3",sains:{ms:"APA (2022): 72% individu dengan tekanan kewangan alami gangguan tidur kronik dan kemurungan. Kortisol meningkat 38%.",id:"APA (2022): 72% individu dengan tekanan keuangan mengalami gangguan tidur kronis dan depresi. Kortisol meningkat 38%.",en:"APA (2022): 72% of individuals under financial stress experience chronic sleep disorders and depression. Cortisol rises 38%."}},
+  marah:{basePct:90,warnaIkon:"#F0997B",bgKad:"rgba(217,90,48,0.15)",bdrKad:"rgba(240,153,123,0.4)",textCol:"#F5C4B3",sains:{ms:"J. Psychosomatic Research: kemarahan kronik meningkatkan risiko serangan jantung 2.3 kali ganda dan memendekkan usia hayat 5-7 tahun.",id:"J. Psychosomatic Research: kemarahan kronis meningkatkan risiko serangan jantung 2,3 kali lipat dan mempersingkat usia 5-7 tahun.",en:"J. Psychosomatic Research: chronic anger increases heart attack risk 2.3x and shortens life expectancy by 5-7 years."}},
+  tidur:{basePct:80,warnaIkon:"#AFA9EC",bgKad:"rgba(83,74,183,0.15)",bdrKad:"rgba(175,169,236,0.4)",textCol:"#CECBF6",sains:{ms:"NIH (2021): tidur kurang 6 jam sehari meningkatkan risiko diabetes 36% dan kemurungan 55%.",id:"NIH (2021): tidur kurang dari 6 jam per hari meningkatkan risiko diabetes 36% dan depresi 55%.",en:"NIH (2021): sleeping less than 6 hours daily increases diabetes risk by 36% and depression by 55%."}},
+  malas:{basePct:75,warnaIkon:"#AFA9EC",bgKad:"rgba(83,74,183,0.15)",bdrKad:"rgba(175,169,236,0.4)",textCol:"#CECBF6",sains:{ms:"WHO: 'motivational anhedonia' dikaitkan dengan paras dopamin rendah akibat tekanan berterusan.",id:"WHO: 'anhedonia motivasional' dikaitkan dengan kadar dopamin rendah akibat tekanan berkelanjutan.",en:"WHO: 'motivational anhedonia' is linked to low dopamine levels caused by prolonged stress."}},
+  darah:{basePct:82,warnaIkon:"#F5C4B3",bgKad:"rgba(153,60,29,0.2)",bdrKad:"rgba(245,196,179,0.4)",textCol:"#F5C4B3",sains:{ms:"Lancet (2020): 65% kes hipertensi primer dikaitkan dengan tekanan psikologikal. Ketenangan jiwa menurunkan tekanan darah setara ubat ringan.",id:"Lancet (2020): 65% kasus hipertensi primer dikaitkan dengan tekanan psikologis. Ketenangan jiwa menurunkan tekanan darah setara obat ringan.",en:"Lancet (2020): 65% of primary hypertension cases linked to psychological pressure. Soul calmness lowers BP equivalent to mild medication."}},
+  gula:{basePct:70,warnaIkon:"#FAC775",bgKad:"rgba(186,117,23,0.15)",bdrKad:"rgba(250,199,117,0.4)",textCol:"#FAC775",sains:{ms:"Diabetes Care: stres kronik meningkatkan glukosa darah melalui kortisol. Pesakit yang tenang jiwa kawal gula 40% lebih baik.",id:"Diabetes Care: stres kronis meningkatkan glukosa darah melalui kortisol. Pasien yang tenang jiwanya mengontrol gula 40% lebih baik.",en:"Diabetes Care: chronic stress raises blood glucose via cortisol. Patients with calm souls control blood sugar 40% better."}},
+  kolesterol:{basePct:68,warnaIkon:"#FAC775",bgKad:"rgba(186,117,23,0.15)",bdrKad:"rgba(250,199,117,0.4)",textCol:"#FAC775",sains:{ms:"Framingham Study: tahap stres emosi tinggi berkorelasi langsung dengan LDL tinggi walaupun diet baik.",id:"Framingham Study: tingkat stres emosi tinggi berkorelasi langsung dengan LDL tinggi meski pola makan baik.",en:"Framingham Study: high emotional stress directly correlates with elevated LDL even with good diet."}},
+  jantung:{basePct:88,warnaIkon:"#F5C4B3",bgKad:"rgba(153,60,29,0.2)",bdrKad:"rgba(245,196,179,0.4)",textCol:"#F5C4B3",sains:{ms:"NEJM (2021): emosi negatif kronik meningkatkan risiko serangan jantung 48%. Jiwa yang damai adalah ubat jantung terbaik.",id:"NEJM (2021): emosi negatif kronis meningkatkan risiko serangan jantung 48%. Jiwa yang damai adalah obat jantung terbaik.",en:"NEJM (2021): chronic negative emotions increase heart attack risk by 48%. A peaceful soul is the best heart medicine."}},
+  mental:{basePct:92,warnaIkon:"#AFA9EC",bgKad:"rgba(83,74,183,0.15)",bdrKad:"rgba(175,169,236,0.4)",textCol:"#CECBF6",sains:{ms:"WHO (2023): kekurangan makna hidup dan hubungan spiritual adalah faktor risiko terbesar gangguan mental moden.",id:"WHO (2023): kurangnya makna hidup dan hubungan spiritual adalah faktor risiko terbesar gangguan mental modern.",en:"WHO (2023): lack of life meaning and spiritual connection is the biggest risk factor for modern mental disorders."}},
+  kosong:{basePct:95,warnaIkon:"#AFA9EC",bgKad:"rgba(83,74,183,0.15)",bdrKad:"rgba(175,169,236,0.4)",textCol:"#CECBF6",sains:{ms:"Viktor Frankl: kehilangan makna hidup — 'existential vacuum' — adalah punca utama kemurungan moden.",id:"Viktor Frankl: kehilangan makna hidup — 'vakum eksistensial' — adalah penyebab utama depresi modern.",en:"Viktor Frankl: loss of life meaning — 'existential vacuum' — is the primary cause of modern depression."}},
+  ibadah:{basePct:88,warnaIkon:"#9FE1CB",bgKad:"rgba(29,158,117,0.15)",bdrKad:"rgba(159,225,203,0.4)",textCol:"#9FE1CB",sains:{ms:"Oxford (2020): ibadah tanpa hadir hati tidak mengaktifkan prefrontal cortex — bahagian otak yang menghasilkan ketenangan.",id:"Oxford (2020): ibadah tanpa kehadiran hati tidak mengaktifkan prefrontal cortex — bagian otak yang menghasilkan ketenangan.",en:"Oxford (2020): worship without heart presence does not activate the prefrontal cortex — the brain's calm center."}},
+  hubungan:{basePct:78,warnaIkon:"#ED93B1",bgKad:"rgba(212,83,126,0.15)",bdrKad:"rgba(237,147,177,0.4)",textCol:"#ED93B1",sains:{ms:"Gottman Institute: 69% konflik rumah tangga berpunca dari ketidakupayaan mengawal emosi dalaman.",id:"Gottman Institute: 69% konflik rumah tangga berasal dari ketidakmampuan mengelola emosi internal.",en:"Gottman Institute: 69% of household conflicts stem from the inability to manage internal emotions."}},
 };
 var warnaBar={kewangan:"#D85A30",marah:"#D85A30",tidur:"#534AB7",malas:"#534AB7",darah:"#993C1D",gula:"#BA7517",kolesterol:"#BA7517",jantung:"#993C1D",mental:"#534AB7",kosong:"#534AB7",ibadah:"#1D9E75",hubungan:"#D4537E"};
 
@@ -498,31 +747,36 @@ function goS(n){
 }
 
 function sliderLbl(v){
+  var t=T[lang];
   v=parseInt(v);
-  if(v<=2)return'Sangat ringan';
-  if(v<=4)return'Ringan';
-  if(v<=6)return'Sederhana';
-  if(v<=8)return'Teruk';
-  return'Kritikal';
+  if(v<=2)return t['lbl-sangat-ringan'];
+  if(v<=4)return t['lbl-ringan'];
+  if(v<=6)return t['lbl-sederhana'];
+  if(v<=8)return t['lbl-teruk'];
+  return t['lbl-kritikal'];
 }
 
 function buildSliders(){
+  var t=T[lang];
   var keys=Object.keys(sel);var h='';
   keys.forEach(function(k){
     var d=M[k];if(!d)return;
     var val=sv[k]||5;
     var w=warnaBar[k]||'#1D9E75';
+    var lbl=t['m-'+k]||k;
     h+='<div class="b-slider-card">';
-    h+='<div class="b-slider-head"><div class="b-slider-ic" style="background:'+d.bgKad+';border:0.5px solid '+d.bdrKad+'"><i class="ti '+d.ikon+'" style="font-size:15px;color:'+d.warnaIkon+'"></i></div>';
-    h+='<div><div class="b-slider-title">'+d.label+'</div><div class="b-slider-sub">1 = sangat ringan &nbsp;·&nbsp; 10 = kritikal</div></div></div>';
+    h+='<div class="b-slider-head"><div class="b-slider-ic" style="background:'+d.bgKad+';border:0.5px solid '+d.bdrKad+'"><i class="ti ti-'+getIkon(k)+'" style="font-size:15px;color:'+d.warnaIkon+'"></i></div>';
+    h+='<div><div class="b-slider-title">'+lbl+'</div><div class="b-slider-sub">1 → 10</div></div></div>';
     h+='<div class="b-slider-val-row"><span class="b-slider-num" id="sn-'+k+'" style="color:'+w+'">'+val+'<span style="font-size:16px;font-weight:400;color:rgba(255,255,255,.4)">/10</span></span><span class="b-slider-lbl" id="sl-'+k+'">'+sliderLbl(val)+'</span></div>';
     h+='<input type="range" min="1" max="10" value="'+val+'" step="1" oninput="updS(\''+k+'\',this.value,\''+w+'\')">';
-    h+='<div class="b-slider-ends"><span>Ringan</span><span>Kritikal</span></div>';
+    h+='<div class="b-slider-ends"><span>'+t['slider-ringan']+'</span><span>'+t['slider-kritikal']+'</span></div>';
     h+='</div>';
   });
   document.getElementById('slider-list').innerHTML=h;
   keys.forEach(function(k){if(!sv[k])sv[k]=5;});
 }
+
+function getIkon(k){var m={kewangan:'cash',marah:'mood-angry',tidur:'zzz',malas:'battery-low',darah:'heartbeat',gula:'droplet',kolesterol:'activity',jantung:'heart',mental:'brain',kosong:'ghost',ibadah:'moon-stars',hubungan:'users'};return m[k]||'circle';}
 
 function updS(k,v,w){
   sv[k]=parseInt(v);
@@ -535,16 +789,20 @@ function buildSains(){
   var keys=Object.keys(sel);var h='';
   keys.forEach(function(k){
     var d=M[k];if(!d)return;
+    var t=T[lang];
+    var lbl=t['m-'+k]||k;
+    var sains=d.sains[lang]||d.sains['ms'];
     h+='<div class="b-sains-card" style="background:'+d.bgKad+';border-color:'+d.bdrKad+'">';
-    h+='<div class="b-sains-head"><i class="ti '+d.ikon+'" style="font-size:15px;color:'+d.warnaIkon+'"></i>';
-    h+='<span class="b-sains-title" style="color:'+d.textJudul+'">'+d.label+'</span></div>';
-    h+='<div class="b-sains-body" style="color:'+d.textBody+'">'+d.sains+'</div>';
+    h+='<div class="b-sains-head"><i class="ti ti-'+getIkon(k)+'" style="font-size:15px;color:'+d.warnaIkon+'"></i>';
+    h+='<span class="b-sains-title" style="color:'+d.textCol+'">'+lbl+'</span></div>';
+    h+='<div class="b-sains-body" style="color:'+d.textCol+'">'+sains+'</div>';
     h+='</div>';
   });
-  document.getElementById('sains-list').innerHTML=h||'<p style="font-size:13px;color:rgba(255,255,255,.4)">Tiada masalah dipilih.</p>';
+  document.getElementById('sains-list').innerHTML=h||'';
 }
 
 function buildResult(){
+  var t=T[lang];
   var keys=Object.keys(sel);
   var totalPct=0;var kritikal=0;var bars='';
   keys.forEach(function(k){
@@ -554,19 +812,20 @@ function buildResult(){
     totalPct+=pct;
     if(slVal>=8)kritikal++;
     var w=warnaBar[k]||'#1D9E75';
+    var lbl=t['m-'+k]||k;
     bars+='<div class="b-r-item">';
-    bars+='<div class="b-r-row"><span class="b-r-name">'+d.label+'</span>';
+    bars+='<div class="b-r-row"><span class="b-r-name">'+lbl+'</span>';
     bars+='<div class="b-r-trk"><div class="b-r-fill" style="width:'+pct+'%;background:'+w+'"></div></div>';
     bars+='<span class="b-r-pct" style="color:'+w+'">'+pct+'%</span></div>';
-    bars+='<div class="b-r-sublbl">Tahap anda: '+slVal+'/10 · Kaitan jiwa: '+pct+'%</div>';
+    bars+='<div class="b-r-sublbl">'+slVal+'/10 · '+pct+'%</div>';
     bars+='</div>';
   });
   var avg=keys.length?Math.round(totalPct/keys.length):0;
   document.getElementById('radar-bars').innerHTML=bars;
-  document.getElementById('st1').textContent=keys.length;
-  document.getElementById('st2').textContent=avg+'%';
-  document.getElementById('st3').textContent=kritikal;
-  document.getElementById('st4').textContent=avg>=80?'Segera':avg>=60?'7 hari':'Mulakan';
+  document.getElementById('st-1').textContent=keys.length;
+  document.getElementById('st-2').textContent=avg+'%';
+  document.getElementById('st-3').textContent=kritikal;
+  document.getElementById('st-4').textContent=avg>=80?t['stat-segera']:avg>=60?t['stat-7hari']:t['stat-mulakan'];
 
   var hero=document.getElementById('result-hero');
   var sc=document.getElementById('rh-score');
@@ -574,29 +833,25 @@ function buildResult(){
   var sb=document.getElementById('rh-sub');
   var tg=document.getElementById('rh-tag');
   sc.textContent=avg+'%';
+  tg.textContent=t['rh-tag'];
   if(avg>=80){
     hero.style.cssText='background:rgba(217,90,48,0.15);border:0.5px solid rgba(240,153,123,0.5);border-radius:14px;padding:18px;margin-bottom:1.25rem;text-align:center';
     tg.style.color='#F5C4B3';sc.style.color='#F0997B';lb.style.color='#F5C4B3';sb.style.color='#F5C4B3';
-    lb.textContent='Kritikal — jiwa sangat memerlukan perhatian segera';
-    sb.textContent='Masalah yang anda rasa di luar adalah isyarat kuat dari jiwa yang lama tidak diaudit. App Audit Jiwa akan menemani anda setiap hari.';
+    lb.textContent=t['result-kritikal-lbl'];sb.textContent=t['result-kritikal-sub'];
   }else if(avg>=55){
     hero.style.cssText='background:rgba(186,117,23,0.15);border:0.5px solid rgba(250,199,117,0.5);border-radius:14px;padding:18px;margin-bottom:1.25rem;text-align:center';
     tg.style.color='#FAC775';sc.style.color='#EF9F27';lb.style.color='#FAC775';sb.style.color='#FAC775';
-    lb.textContent='Sederhana — ada ruang besar untuk diperbaiki';
-    sb.textContent='Anda sedar ada masalah — ini permulaan yang baik. Dengan audit harian berstruktur, jiwa boleh dipulihkan sedikit demi sedikit.';
+    lb.textContent=t['result-sederhana-lbl'];sb.textContent=t['result-sederhana-sub'];
   }else{
     hero.style.cssText='background:rgba(29,158,117,0.15);border:0.5px solid rgba(159,225,203,0.5);border-radius:14px;padding:18px;margin-bottom:1.25rem;text-align:center';
     tg.style.color='#9FE1CB';sc.style.color='#1D9E75';lb.style.color='#9FE1CB';sb.style.color='#9FE1CB';
-    lb.textContent='Baik — jiwa boleh diperkukuh lagi';
-    sb.textContent='Jangan tunggu sehingga teruk. Mulakan audit harian sekarang untuk kekalkan momentum jiwa anda.';
+    lb.textContent=t['result-baik-lbl'];sb.textContent=t['result-baik-sub'];
   }
 }
 
 const reveals=document.querySelectorAll('.reveal');
-const io=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
-},{threshold:0.1});
-reveals.forEach(r=>io.observe(r));
+const io=new IntersectionObserver((e)=>{e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target);}});},{threshold:0.1});
+reveals.forEach(function(r){io.observe(r);});
 </script>
 </body>
 </html>

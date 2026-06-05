@@ -6,288 +6,212 @@
 <meta name="description" content="Audit Jiwa — Kenali punca sebenar masalah hidup anda. App muhasabah harian oleh Madrasah I AM.">
 <meta property="og:title" content="Audit Jiwa · Madrasah I AM">
 <meta property="og:description" content="Bukan app agama biasa. Audit jiwa anda dalam 3 minit dan temui punca sebenar masalah hidup anda.">
-<meta property="og:url" content="https://auditjiwa.com">
+<meta property="og:url" content="https://madrasahiam.com">
 <title>Audit Jiwa · Madrasah I AM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <style>
-:root {
-  --teal: #1D9E75;
-  --teal-dark: #085041;
-  --teal-deeper: #04342C;
-  --teal-light: #E1F5EE;
-  --teal-mid: #9FE1CB;
-  --amber: #C8A04A;
-  --amber-light: #F5E9C8;
-  --ink: #111612;
-  --ink-soft: #2C3A30;
-  --mist: #F4F8F6;
-  --white: #FFFFFF;
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'DM Sans', sans-serif;
+:root{
+  --teal:#1D9E75;--teal-dark:#085041;--teal-deeper:#04342C;
+  --teal-light:#E1F5EE;--teal-mid:#9FE1CB;
+  --amber:#C8A04A;--ink:#111612;--white:#FFFFFF;
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'DM Sans',sans-serif;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--ink);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-body {
-  font-family: var(--font-body);
-  background: var(--ink);
-  color: var(--white);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:rgba(17,22,18,0.9);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(29,158,117,0.2)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-ic{width:34px;height:34px;border-radius:50%;background:var(--teal-light);display:flex;align-items:center;justify-content:center}
+.nav-logo-ic i{font-size:17px;color:var(--teal-dark)}
+.nav-logo-txt{font-family:var(--font-display);font-size:18px;color:var(--white)}
+.nav-logo-sub{font-size:10px;color:var(--teal-mid);letter-spacing:1px;margin-top:-2px}
+.nav-cta{background:var(--teal);color:white;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:500;text-decoration:none;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
 
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1rem 1.5rem;
-  background: rgba(17,22,18,0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 0.5px solid rgba(29,158,117,0.2);
-}
-.nav-logo { display: flex; align-items: center; gap: 10px; }
-.nav-logo-ic {
-  width: 34px; height: 34px; border-radius: 50%;
-  background: var(--teal-light); display: flex; align-items: center; justify-content: center;
-}
-.nav-logo-ic i { font-size: 17px; color: var(--teal-dark); }
-.nav-logo-txt { font-family: var(--font-display); font-size: 18px; color: var(--white); }
-.nav-logo-sub { font-size: 10px; color: var(--teal-mid); letter-spacing: 1px; margin-top: -2px; }
-.nav-cta {
-  background: var(--teal); color: white;
-  padding: 8px 18px; border-radius: 20px;
-  font-size: 13px; font-weight: 500; text-decoration: none;
-  transition: opacity .2s;
-}
-.nav-cta:hover { opacity: .85; }
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8rem 1.5rem 4rem;text-align:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(29,158,117,0.18) 0%,transparent 70%)}
+.hero-pattern{position:absolute;inset:0;z-index:0;opacity:.04;background-image:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,.5) 40px,rgba(255,255,255,.5) 41px),repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(255,255,255,.5) 40px,rgba(255,255,255,.5) 41px)}
+.hero-content{position:relative;z-index:1;max-width:640px}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(29,158,117,0.15);border:0.5px solid rgba(29,158,117,0.4);border-radius:20px;padding:5px 14px;font-size:11px;color:var(--teal-mid);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:1.5rem;animation:fadeUp .8s ease both}
+.hero-badge i{font-size:13px;color:var(--teal)}
+.hero-title{font-family:var(--font-display);font-size:clamp(2.8rem,8vw,5rem);font-weight:500;line-height:1.1;color:var(--white);margin-bottom:1rem;animation:fadeUp .8s .15s ease both}
+.hero-title em{color:var(--teal);font-style:italic}
+.hero-ayat{font-family:var(--font-display);font-size:1rem;font-style:italic;color:rgba(255,255,255,.5);margin-bottom:.35rem;animation:fadeUp .8s .25s ease both}
+.hero-ayat-ref{font-size:11px;color:var(--teal);letter-spacing:1px;margin-bottom:2rem;animation:fadeUp .8s .3s ease both}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto;animation:fadeUp .8s .35s ease both}
+.hero-cta-row{display:flex;flex-direction:column;align-items:center;gap:12px;animation:fadeUp .8s .45s ease both}
+.btn-hero{display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:white;padding:16px 32px;border-radius:14px;font-size:16px;font-weight:500;text-decoration:none;transition:all .2s;width:100%;max-width:320px;justify-content:center;border:none;cursor:pointer}
+.btn-hero:hover{background:#0F6E56;transform:translateY(-1px)}
+.btn-hero i{font-size:20px}
+.btn-hero-sub{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.5);border:0.5px solid rgba(255,255,255,.15);padding:12px 24px;border-radius:14px;font-size:13px;text-decoration:none;transition:all .2s;width:100%;max-width:320px;justify-content:center;cursor:pointer}
+.btn-hero-sub:hover{border-color:rgba(255,255,255,.3);color:white}
+.hero-domain{margin-top:.75rem;font-size:11px;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:5px;justify-content:center}
+.hero-domain span{color:var(--teal)}
 
-/* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  padding: 8rem 1.5rem 4rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(29,158,117,0.18) 0%, transparent 70%);
-}
-.hero-pattern {
-  position: absolute; inset: 0; z-index: 0; opacity: 0.04;
-  background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,0.5) 40px, rgba(255,255,255,0.5) 41px),
-    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.5) 40px, rgba(255,255,255,0.5) 41px);
-}
-.hero-content { position: relative; z-index: 1; max-width: 640px; }
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(29,158,117,0.15); border: 0.5px solid rgba(29,158,117,0.4);
-  border-radius: 20px; padding: 5px 14px;
-  font-size: 11px; color: var(--teal-mid); letter-spacing: 1.2px; text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  animation: fadeUp .8s ease both;
-}
-.hero-badge i { font-size: 13px; color: var(--teal); }
-.hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 8vw, 5rem);
-  font-weight: 500; line-height: 1.1;
-  color: var(--white);
-  margin-bottom: 1rem;
-  animation: fadeUp .8s .15s ease both;
-}
-.hero-title em { color: var(--teal); font-style: italic; }
-.hero-ayat {
-  font-family: var(--font-display);
-  font-size: 1rem; font-style: italic;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 0.35rem;
-  animation: fadeUp .8s .25s ease both;
-}
-.hero-ayat-ref {
-  font-size: 11px; color: var(--teal); letter-spacing: 1px;
-  margin-bottom: 2rem;
-  animation: fadeUp .8s .3s ease both;
-}
-.hero-sub {
-  font-size: 15px; color: rgba(255,255,255,0.65);
-  line-height: 1.7; margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto;
-  animation: fadeUp .8s .35s ease both;
-}
-.hero-cta-row {
-  display: flex; flex-direction: column; align-items: center; gap: 12px;
-  animation: fadeUp .8s .45s ease both;
-}
-.btn-hero {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--teal); color: white;
-  padding: 16px 32px; border-radius: 14px;
-  font-size: 16px; font-weight: 500; text-decoration: none;
-  transition: all .2s; width: 100%; max-width: 320px; justify-content: center;
-}
-.btn-hero:hover { background: #0F6E56; transform: translateY(-1px); }
-.btn-hero i { font-size: 20px; }
-.btn-hero-sub {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: transparent; color: rgba(255,255,255,0.5);
-  border: 0.5px solid rgba(255,255,255,0.15);
-  padding: 12px 24px; border-radius: 14px;
-  font-size: 13px; text-decoration: none;
-  transition: all .2s; width: 100%; max-width: 320px; justify-content: center;
-}
-.btn-hero-sub:hover { border-color: rgba(255,255,255,0.3); color: white; }
-.hero-domain {
-  margin-top: .75rem; font-size: 11px; color: rgba(255,255,255,0.3);
-  display: flex; align-items: center; gap: 5px;
-}
-.hero-domain span { color: var(--teal); }
+/* SECTIONS */
+.section{padding:5rem 1.5rem;max-width:720px;margin:0 auto}
+.section-tag{font-size:11px;color:var(--teal);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.75rem;font-weight:500}
+.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:500;line-height:1.2;color:var(--white);margin-bottom:1rem}
+.section-sub{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:2.5rem}
 
-/* ── MASALAH SECTION ── */
-.section { padding: 5rem 1.5rem; max-width: 720px; margin: 0 auto; }
-.section-tag {
-  font-size: 11px; color: var(--teal); letter-spacing: 1.5px; text-transform: uppercase;
-  margin-bottom: .75rem; font-weight: 500;
-}
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
-  font-weight: 500; line-height: 1.2; color: var(--white);
-  margin-bottom: 1rem;
-}
-.section-sub { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 2.5rem; }
-.masalah-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
-  margin-bottom: 2.5rem;
-}
-@media(min-width:480px){ .masalah-grid { grid-template-columns: repeat(3, 1fr); } }
-.masalah-item {
-  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.1);
-  border-radius: 12px; padding: 14px 12px; text-align: center;
-  transition: all .2s;
-}
-.masalah-item:hover { background: rgba(29,158,117,0.1); border-color: rgba(29,158,117,0.3); }
-.masalah-item i { font-size: 22px; color: var(--teal); display: block; margin-bottom: 6px; }
-.masalah-item-t { font-size: 12px; font-weight: 500; color: var(--white); line-height: 1.3; }
-.masalah-item-s { font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 3px; }
+/* MASALAH GRID */
+.masalah-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:2.5rem}
+@media(min-width:480px){.masalah-grid{grid-template-columns:repeat(3,1fr)}}
+.masalah-item{background:rgba(255,255,255,.04);border:0.5px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 12px;text-align:center;transition:all .2s}
+.masalah-item:hover{background:rgba(29,158,117,.1);border-color:rgba(29,158,117,.3)}
+.masalah-item i{font-size:22px;color:var(--teal);display:block;margin-bottom:6px}
+.masalah-item-t{font-size:12px;font-weight:500;color:var(--white);line-height:1.3}
+.masalah-item-s{font-size:10px;color:rgba(255,255,255,.45);margin-top:3px}
 
-/* ── PUNCA SECTION ── */
-.punca-section {
-  padding: 4rem 1.5rem;
-  background: rgba(29,158,117,0.07);
-  border-top: 0.5px solid rgba(29,158,117,0.15);
-  border-bottom: 0.5px solid rgba(29,158,117,0.15);
-}
-.punca-inner { max-width: 720px; margin: 0 auto; }
-.punca-center { text-align: center; margin-bottom: 2.5rem; }
-.punca-arabic {
-  font-family: var(--font-display);
-  font-size: 1.6rem; color: var(--amber);
-  margin-bottom: .5rem; direction: rtl;
-}
-.punca-cards { display: flex; flex-direction: column; gap: 12px; }
-.punca-card {
-  display: flex; gap: 14px; align-items: flex-start;
-  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.08);
-  border-radius: 12px; padding: 16px;
-}
-.punca-card-num {
-  width: 32px; height: 32px; border-radius: 50%;
-  background: rgba(29,158,117,0.2); border: 0.5px solid rgba(29,158,117,0.4);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 500; color: var(--teal); flex-shrink: 0;
-}
-.punca-card-t { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 4px; }
-.punca-card-s { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+/* PUNCA */
+.punca-section{padding:4rem 1.5rem;background:rgba(29,158,117,.07);border-top:0.5px solid rgba(29,158,117,.15);border-bottom:0.5px solid rgba(29,158,117,.15)}
+.punca-inner{max-width:720px;margin:0 auto}
+.punca-center{text-align:center;margin-bottom:2.5rem}
+.punca-arabic{font-family:var(--font-display);font-size:1.6rem;color:var(--amber);margin-bottom:.5rem;direction:rtl}
+.punca-cards{display:flex;flex-direction:column;gap:12px}
+.punca-card{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.04);border:0.5px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+.punca-card-num{width:32px;height:32px;border-radius:50%;background:rgba(29,158,117,.2);border:0.5px solid rgba(29,158,117,.4);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:var(--teal);flex-shrink:0}
+.punca-card-t{font-size:14px;font-weight:500;color:var(--white);margin-bottom:4px}
+.punca-card-s{font-size:12px;color:rgba(255,255,255,.5);line-height:1.6}
 
-/* ── CIRI APP ── */
-.fitur-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2.5rem; }
-.fitur-item {
-  display: flex; gap: 14px; align-items: flex-start;
-  background: rgba(255,255,255,0.03); border: 0.5px solid rgba(255,255,255,0.08);
-  border-radius: 12px; padding: 16px; transition: all .2s;
-}
-.fitur-item:hover { background: rgba(29,158,117,0.08); border-color: rgba(29,158,117,0.2); }
-.fitur-ic {
-  width: 38px; height: 38px; border-radius: 10px;
-  background: rgba(29,158,117,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.fitur-ic i { font-size: 18px; color: var(--teal); }
-.fitur-t { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 3px; }
-.fitur-s { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
-.fitur-badge {
-  display: inline-block; font-size: 10px; padding: 2px 8px;
-  border-radius: 4px; margin-top: 4px; font-weight: 500;
-}
-.badge-free { background: rgba(29,158,117,0.2); color: var(--teal-mid); }
-.badge-pro { background: rgba(200,160,74,0.2); color: var(--amber); }
-.badge-talkin { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+/* FITUR */
+.fitur-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:2.5rem}
+.fitur-item{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.03);border:0.5px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;transition:all .2s}
+.fitur-item:hover{background:rgba(29,158,117,.08);border-color:rgba(29,158,117,.2)}
+.fitur-ic{width:38px;height:38px;border-radius:10px;background:rgba(29,158,117,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fitur-ic i{font-size:18px;color:var(--teal)}
+.fitur-t{font-size:14px;font-weight:500;color:var(--white);margin-bottom:3px}
+.fitur-s{font-size:12px;color:rgba(255,255,255,.5);line-height:1.5}
+.fitur-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:4px;margin-top:4px;font-weight:500}
+.badge-free{background:rgba(29,158,117,.2);color:var(--teal-mid)}
+.badge-pro{background:rgba(200,160,74,.2);color:var(--amber)}
+.badge-talkin{background:rgba(255,255,255,.1);color:rgba(255,255,255,.6)}
 
-/* ── KREDIBILITI ── */
-.cred-section {
-  padding: 4rem 1.5rem;
-  background: rgba(255,255,255,0.02);
-  border-top: 0.5px solid rgba(255,255,255,0.06);
-}
-.cred-inner { max-width: 720px; margin: 0 auto; }
-.cred-grid { display: flex; flex-direction: column; gap: 10px; margin-top: 1.5rem; }
-.cred-item {
-  display: flex; gap: 12px; align-items: center;
-  background: rgba(255,255,255,0.03); border: 0.5px solid rgba(255,255,255,0.08);
-  border-radius: 12px; padding: 14px 16px;
-}
-.cred-item i { font-size: 20px; color: var(--amber); flex-shrink: 0; }
-.cred-t { font-size: 13px; font-weight: 500; color: var(--white); }
-.cred-s { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+/* CRED */
+.cred-section{padding:4rem 1.5rem;background:rgba(255,255,255,.02);border-top:0.5px solid rgba(255,255,255,.06)}
+.cred-inner{max-width:720px;margin:0 auto}
+.cred-grid{display:flex;flex-direction:column;gap:10px;margin-top:1.5rem}
+.cred-item{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.03);border:0.5px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px}
+.cred-item i{font-size:20px;color:var(--amber);flex-shrink:0}
+.cred-t{font-size:13px;font-weight:500;color:var(--white)}
+.cred-s{font-size:11px;color:rgba(255,255,255,.45);margin-top:2px}
 
-/* ── BOTTOM CTA ── */
-.bottom-cta {
-  padding: 5rem 1.5rem;
-  text-align: center;
-  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(29,158,117,0.15) 0%, transparent 70%);
-}
-.bottom-cta-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  font-weight: 500; color: var(--white);
-  line-height: 1.2; margin-bottom: 1rem;
-}
-.bottom-cta-sub {
-  font-size: 14px; color: rgba(255,255,255,0.5);
-  line-height: 1.7; margin-bottom: 2rem; max-width: 400px; margin-left: auto; margin-right: auto;
-}
+/* ═══════════════════════════════
+   BOARDING SECTION
+   ═══════════════════════════════ */
+#boarding{padding:5rem 0;background:rgba(255,255,255,.02);border-top:0.5px solid rgba(29,158,117,.2)}
+.boarding-inner{max-width:520px;margin:0 auto;padding:0 1.25rem}
+.boarding-header{text-align:center;margin-bottom:2rem}
+.pip-row{display:flex;gap:4px;margin-bottom:1.75rem}
+.pip{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.1);transition:background .3s}
+.pip.done{background:#5DCAA5}.pip.active{background:var(--teal)}
+.scr{display:none}.scr.on{display:block}
+.b-tagline{font-size:11px;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-weight:500}
+.b-title{font-family:var(--font-display);font-size:1.6rem;font-weight:500;color:var(--white);line-height:1.3;margin-bottom:8px}
+.b-sub{font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:1.5rem}
+.b-ayat{background:rgba(83,74,183,.2);border:0.5px solid rgba(175,169,236,.4);border-radius:10px;padding:12px 14px;margin-bottom:1.25rem}
+.b-ayat p{font-size:13px;color:#CECBF6;line-height:1.7;font-style:italic}
+.b-ayat span{font-size:10px;color:#AFA9EC;display:block;margin-top:3px;font-weight:500}
+.b-cred-pill{display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(255,255,255,.05);border-radius:10px;border:0.5px solid rgba(255,255,255,.1);margin-bottom:7px}
+.b-cred-pill i{font-size:17px;color:var(--teal);flex-shrink:0}
+.b-cred-t{font-size:13px;font-weight:500;color:var(--white)}
+.b-cred-s{font-size:11px;color:rgba(255,255,255,.45);margin-top:1px}
 
-/* ── FOOTER ── */
-footer {
-  padding: 2rem 1.5rem;
-  border-top: 0.5px solid rgba(255,255,255,0.06);
-  text-align: center;
-  font-size: 11px; color: rgba(255,255,255,0.25);
-}
-footer a { color: var(--teal); text-decoration: none; }
-footer strong { color: rgba(255,255,255,0.4); }
+/* Masalah grid dalam boarding */
+.b-masalah-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:1.25rem}
+.bmk{border:0.5px solid rgba(255,255,255,.12);border-radius:10px;padding:12px;cursor:pointer;transition:all .15s;background:rgba(255,255,255,.04);text-align:left}
+.bmk.sel{background:rgba(29,158,117,.15);border-color:rgba(29,158,117,.5)}
+.bmk.sel .bmki{color:var(--teal)}
+.bmk.sel .bmkt{color:#9FE1CB}
+.bmki{font-size:20px;color:rgba(255,255,255,.3);margin-bottom:5px;display:block;transition:color .15s}
+.bmkt{font-size:13px;font-weight:500;color:var(--white);line-height:1.3;transition:color .15s}
+.bmks{font-size:11px;color:rgba(255,255,255,.35);margin-top:2px}
 
-/* ── ANIMATIONS ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.reveal {
-  opacity: 0; transform: translateY(24px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
+/* Slider cards */
+.b-slider-card{background:rgba(255,255,255,.04);border:0.5px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;margin-bottom:8px}
+.b-slider-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.b-slider-ic{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.b-slider-title{font-size:14px;font-weight:500;color:var(--white)}
+.b-slider-sub{font-size:11px;color:rgba(255,255,255,.4);margin-top:1px}
+.b-slider-val-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.b-slider-num{font-size:26px;font-weight:500}
+.b-slider-lbl{font-size:12px;color:rgba(255,255,255,.45)}
+.b-slider-ends{display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,.3);margin-top:4px}
+input[type=range]{width:100%;accent-color:var(--teal)}
 
-/* ── MOBILE ── */
-@media(max-width:480px){
-  .nav-cta { padding: 7px 14px; font-size: 12px; }
-  .hero { padding: 7rem 1.25rem 3rem; }
-  .section { padding: 3.5rem 1.25rem; }
-}
+/* Sains cards */
+.b-sains-card{border-radius:10px;padding:12px 14px;margin-bottom:8px;border:0.5px solid}
+.b-sains-head{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.b-sains-title{font-size:13px;font-weight:500}
+.b-sains-body{font-size:12px;line-height:1.6}
+
+/* Punca dalam boarding */
+.b-punca-box{background:rgba(83,74,183,.15);border:0.5px solid rgba(175,169,236,.3);border-radius:12px;padding:14px 16px;margin-bottom:1rem;text-align:center}
+.b-punca-tag{font-size:10px;color:#AFA9EC;letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;font-weight:500}
+.b-punca-title{font-size:17px;font-weight:500;color:#CECBF6;margin-bottom:5px}
+.b-punca-body{font-size:12px;color:#AFA9EC;line-height:1.6}
+.b-pr-row{display:flex;gap:10px;margin-bottom:9px;align-items:flex-start}
+.b-pr-num{width:26px;height:26px;border-radius:50%;background:rgba(83,74,183,.4);border:0.5px solid #7F77DD;color:#CECBF6;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.b-pr-t{font-size:13px;font-weight:500;color:var(--white);margin-bottom:2px}
+.b-pr-s{font-size:12px;color:rgba(255,255,255,.45);line-height:1.5}
+
+/* Result */
+.b-result-hero{border-radius:14px;padding:18px;margin-bottom:1.25rem;text-align:center;border:0.5px solid}
+.b-rh-tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-weight:600}
+.b-rh-score{font-size:48px;font-weight:500;line-height:1;margin-bottom:4px}
+.b-rh-label{font-size:14px;font-weight:500;margin-bottom:6px}
+.b-rh-sub{font-size:12px;line-height:1.6}
+.b-r-title{font-size:11px;font-weight:500;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+.b-r-item{margin-bottom:12px}
+.b-r-row{display:flex;align-items:center;gap:8px;margin-bottom:3px}
+.b-r-name{font-size:12px;color:var(--white);min-width:110px}
+.b-r-trk{flex:1;height:9px;background:rgba(255,255,255,.1);border-radius:5px;overflow:hidden}
+.b-r-fill{height:100%;border-radius:5px;transition:width 1s ease}
+.b-r-pct{font-size:13px;font-weight:500;min-width:35px;text-align:right}
+.b-r-sublbl{font-size:10px;color:rgba(255,255,255,.35);padding-left:118px;line-height:1.4}
+.b-stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:1.25rem}
+.b-stat-box{background:rgba(255,255,255,.06);border-radius:10px;padding:12px;text-align:center;border:0.5px solid rgba(255,255,255,.08)}
+.b-stat-num{font-size:24px;font-weight:500;color:var(--teal)}
+.b-stat-lbl{font-size:10px;color:rgba(255,255,255,.4);margin-top:2px}
+.b-app-box{background:rgba(29,158,117,.12);border:0.5px solid rgba(29,158,117,.3);border-radius:12px;padding:14px 16px;margin-bottom:1.25rem}
+.b-app-box-title{font-size:11px;font-weight:600;color:#9FE1CB;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+.b-ap-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:0.5px solid rgba(29,158,117,.2)}
+.b-ap-row:last-child{border-bottom:none}
+.b-ap-row i{font-size:17px;color:var(--teal);flex-shrink:0;margin-top:1px}
+.b-ap-t{font-size:13px;font-weight:500;color:#E1F5EE}
+.b-ap-s{font-size:11px;color:rgba(255,255,255,.45);margin-top:1px}
+
+/* Buttons */
+.btn-main{width:100%;padding:15px;border-radius:12px;background:var(--teal);color:white;font-size:15px;font-weight:500;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;text-decoration:none;transition:all .2s}
+.btn-main:hover{background:#0F6E56}
+.btn-main i{font-size:18px}
+.btn-ghost{width:100%;padding:11px;border-radius:12px;background:transparent;color:var(--teal);font-size:13px;border:0.5px solid var(--teal);cursor:pointer;margin-top:8px;transition:all .2s}
+.btn-ghost:hover{background:rgba(29,158,117,.1)}
+.btn-next{width:100%;padding:13px;border-radius:12px;background:var(--teal);color:white;font-size:14px;font-weight:500;border:none;cursor:pointer;transition:all .2s}
+.btn-next:hover{background:#0F6E56}
+.domain-row{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:8px;font-size:11px;color:rgba(255,255,255,.35)}
+.domain-row strong{color:var(--teal);font-weight:500}
+
+/* BOTTOM CTA */
+.bottom-cta{padding:5rem 1.5rem;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(29,158,117,.15) 0%,transparent 70%)}
+.bottom-cta-title{font-family:var(--font-display);font-size:clamp(2rem,6vw,3.5rem);font-weight:500;color:var(--white);line-height:1.2;margin-bottom:1rem}
+.bottom-cta-sub{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:2rem;max-width:400px;margin-left:auto;margin-right:auto}
+
+footer{padding:2rem 1.5rem;border-top:0.5px solid rgba(255,255,255,.06);text-align:center;font-size:11px;color:rgba(255,255,255,.25)}
+footer a{color:var(--teal);text-decoration:none}
+footer strong{color:rgba(255,255,255,.4)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:480px){.nav-cta{padding:7px 14px;font-size:12px}.hero{padding:7rem 1.25rem 3rem}.section{padding:3.5rem 1.25rem}}
 </style>
 </head>
 <body>
@@ -296,10 +220,7 @@ footer strong { color: rgba(255,255,255,0.4); }
 <nav>
   <div class="nav-logo">
     <div class="nav-logo-ic"><i class="ti ti-heart-search"></i></div>
-    <div>
-      <div class="nav-logo-txt">Audit Jiwa</div>
-      <div class="nav-logo-sub">Madrasah I AM</div>
-    </div>
+    <div><div class="nav-logo-txt">Audit Jiwa</div><div class="nav-logo-sub">Madrasah I AM</div></div>
   </div>
   <a href="https://app.auditjiwa.com" class="nav-cta">Buka App <i class="ti ti-arrow-right" style="font-size:13px;vertical-align:-1px"></i></a>
 </nav>
@@ -315,9 +236,9 @@ footer strong { color: rgba(255,255,255,0.4); }
     <p class="hero-ayat-ref">— Al-Hasyr: 18</p>
     <p class="hero-sub">Bukan app agama biasa. Audit Jiwa membantu anda mengenal pasti punca sebenar masalah hidup — dan membimbing anda kembali kepada Allah, satu hari sekaligus.</p>
     <div class="hero-cta-row">
-      <a href="https://app.auditjiwa.com" class="btn-hero">
-        <i class="ti ti-device-mobile-heart"></i>
-        Buka App Audit Jiwa — Percuma
+      <a href="#boarding" class="btn-hero">
+        <i class="ti ti-clipboard-heart"></i>
+        Mula Audit Jiwa Saya — Percuma
       </a>
       <a href="#kenapa" class="btn-hero-sub">
         <i class="ti ti-info-circle"></i>
@@ -328,7 +249,7 @@ footer strong { color: rgba(255,255,255,0.4); }
   </div>
 </section>
 
-<!-- MASALAH -->
+<!-- KENAPA -->
 <div id="kenapa">
 <div class="section reveal">
   <div class="section-tag">Langkah 1 — kenali punca</div>
@@ -345,7 +266,7 @@ footer strong { color: rgba(255,255,255,0.4); }
     <div class="masalah-item"><i class="ti ti-ghost"></i><div class="masalah-item-t">Rasa kosong</div><div class="masalah-item-s">Hidup tidak bermakna</div></div>
     <div class="masalah-item"><i class="ti ti-moon-stars"></i><div class="masalah-item-t">Ibadah tidak bermakna</div><div class="masalah-item-s">Solat ada, hati jauh</div></div>
   </div>
-  <div style="background:rgba(29,158,117,0.1);border:.5px solid rgba(29,158,117,0.3);border-radius:12px;padding:16px;text-align:center">
+  <div style="background:rgba(29,158,117,.1);border:0.5px solid rgba(29,158,117,.3);border-radius:12px;padding:16px;text-align:center">
     <div style="font-size:11px;color:#9FE1CB;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Harvard Medical School (2021)</div>
     <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:white;line-height:1.6">Stres kronik meningkatkan risiko penyakit kardiovaskular 40%, mengganggu imun, dan mempercepat penuaan sel — semuanya bermula dari <em style="color:#9FE1CB">keadaan jiwa yang tidak tenang.</em></div>
   </div>
@@ -359,55 +280,33 @@ footer strong { color: rgba(255,255,255,0.4); }
       <div class="section-tag">Langkah 2 — diagnosis sebenar</div>
       <h2 class="section-title">Di sebalik semua masalah ini<br>ada satu punca</h2>
       <div class="punca-arabic">وَأَنِيبُوا إِلَىٰ رَبِّكُمْ</div>
-      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:2rem">"Dan kembalilah kepada Tuhanmu..." — Az-Zumar: 54</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.45);margin-bottom:2rem">"Dan kembalilah kepada Tuhanmu..." — Az-Zumar: 54</p>
     </div>
     <div class="punca-cards">
-      <div class="punca-card">
-        <div class="punca-card-num">1</div>
-        <div><div class="punca-card-t">Nafsu ammārah — jiwa yang memerintah ke arah jahat</div><div class="punca-card-s">Menyebabkan keputusan buruk, marah, tamak, dan rasa tidak pernah cukup — walaupun secara zahir hidup nampak baik.</div></div>
-      </div>
-      <div class="punca-card">
-        <div class="punca-card-num">2</div>
-        <div><div class="punca-card-t">Ghaflah — jiwa yang terlupa kepada Allah</div><div class="punca-card-s">Apabila jiwa lalai, ia kehilangan kompas. Setiap keputusan dibuat tanpa arah — maka hidup terasa berat dan kosong.</div></div>
-      </div>
-      <div class="punca-card">
-        <div class="punca-card-num">3</div>
-        <div><div class="punca-card-t">Was-was syaitan — jiwa yang diserang dari dalam</div><div class="punca-card-s">Resah yang tidak bernama, fikiran negatif berulang — ada musuh yang nyata yang tidak boleh dirawat dengan ubat.</div></div>
-      </div>
+      <div class="punca-card"><div class="punca-card-num">1</div><div><div class="punca-card-t">Nafsu ammārah — jiwa yang memerintah ke arah jahat</div><div class="punca-card-s">Menyebabkan keputusan buruk, marah, tamak, dan rasa tidak pernah cukup — walaupun secara zahir hidup nampak baik.</div></div></div>
+      <div class="punca-card"><div class="punca-card-num">2</div><div><div class="punca-card-t">Ghaflah — jiwa yang terlupa kepada Allah</div><div class="punca-card-s">Apabila jiwa lalai, ia kehilangan kompas. Setiap keputusan dibuat tanpa arah — maka hidup terasa berat dan kosong.</div></div></div>
+      <div class="punca-card"><div class="punca-card-num">3</div><div><div class="punca-card-t">Was-was syaitan — jiwa yang diserang dari dalam</div><div class="punca-card-s">Resah yang tidak bernama, fikiran negatif berulang — ada musuh yang nyata yang tidak boleh dirawat dengan ubat.</div></div></div>
+    </div>
+    <div style="margin-top:2rem;text-align:center">
+      <a href="#boarding" class="btn-hero" style="max-width:340px;margin:0 auto">
+        <i class="ti ti-clipboard-heart"></i>
+        Audit Jiwa Saya Sekarang
+      </a>
     </div>
   </div>
 </section>
 
 <!-- CIRI APP -->
 <div class="section reveal">
-  <div class="section-tag">Langkah 3 — penyelesaian</div>
+  <div class="section-tag">Penyelesaian</div>
   <h2 class="section-title">Apa yang App Audit Jiwa lakukan untuk anda</h2>
   <p class="section-sub">Sistem pemantauan jiwa yang lengkap — dibina atas ilmu Tasawwuf dan disokong oleh sains moden.</p>
   <div class="fitur-grid">
-    <div class="fitur-item">
-      <div class="fitur-ic"><i class="ti ti-checklist"></i></div>
-      <div><div class="fitur-t">Tracker amalan jiwa harian</div><div class="fitur-s">Solat 5 waktu, wirid pagi petang, Al-Quran, zikir, sedekah — semua dalam satu skrin dengan progress ring harian.</div><span class="fitur-badge badge-free">Percuma</span></div>
-    </div>
-    <div class="fitur-item">
-      <div class="fitur-ic"><i class="ti ti-mood-heart"></i></div>
-      <div><div class="fitur-t">Jejak mood & keadaan jiwa</div><div class="fitur-s">5 tahap perasaan direkod setiap hari — papar corak emosi sepanjang minggu dan bulan.</div><span class="fitur-badge badge-free">Percuma</span></div>
-    </div>
-    <div class="fitur-item">
-      <div class="fitur-ic"><i class="ti ti-heart-search"></i></div>
-      <div><div class="fitur-t">Muhasabah harian, Jumaat & bulanan</div><div class="fitur-s">5 soalan audit jiwa yang mendalam — dijawab sendiri, disimpan secara peribadi. Refleksi Jumaat dan laporan bulanan.</div><span class="fitur-badge badge-free">Percuma</span></div>
-    </div>
-    <div class="fitur-item">
-      <div class="fitur-ic"><i class="ti ti-sparkles"></i></div>
-      <div><div class="fitur-t">Refleksi selepas solat — AI</div><div class="fitur-s">Selepas setiap solat, app bertanya tentang kehadiran hati anda dan memberi bimbingan peribadi dalam Bahasa Melayu.</div><span class="fitur-badge badge-pro">Pro</span></div>
-    </div>
-    <div class="fitur-item">
-      <div class="fitur-ic"><i class="ti ti-chart-bar"></i></div>
-      <div><div class="fitur-t">Laporan graf jiwa bulanan</div><div class="fitur-s">Graf visual perkembangan jiwa — lihat dimensi mana yang meningkat dan mana yang perlu perhatian.</div><span class="fitur-badge badge-pro">Pro</span></div>
-    </div>
-    <div class="fitur-item">
-      <div class="fitur-ic"><i class="ti ti-moon-stars"></i></div>
-      <div><div class="fitur-t">Program Inabah 40 hari</div><div class="fitur-s">Untuk mereka yang telah ditalkin — amalan harian berstruktur dari bangun tidur hingga sebelum tidur, atas warisan Abah Anom.</div><span class="fitur-badge badge-talkin">Selepas Talkin</span></div>
-    </div>
+    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-checklist"></i></div><div><div class="fitur-t">Tracker amalan jiwa harian</div><div class="fitur-s">Solat 5 waktu, wirid, Al-Quran, zikir, sedekah — semua dalam satu skrin dengan progress ring harian.</div><span class="fitur-badge badge-free">Percuma</span></div></div>
+    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-mood-heart"></i></div><div><div class="fitur-t">Jejak mood & keadaan jiwa</div><div class="fitur-s">5 tahap perasaan direkod setiap hari — papar corak emosi sepanjang minggu dan bulan.</div><span class="fitur-badge badge-free">Percuma</span></div></div>
+    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-heart-search"></i></div><div><div class="fitur-t">Muhasabah harian, Jumaat & bulanan</div><div class="fitur-s">5 soalan audit jiwa yang mendalam — dijawab sendiri, disimpan secara peribadi.</div><span class="fitur-badge badge-free">Percuma</span></div></div>
+    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-sparkles"></i></div><div><div class="fitur-t">Refleksi selepas solat — AI</div><div class="fitur-s">Selepas setiap solat, app bertanya tentang kehadiran hati anda dan memberi bimbingan peribadi.</div><span class="fitur-badge badge-pro">Pro</span></div></div>
+    <div class="fitur-item"><div class="fitur-ic"><i class="ti ti-moon-stars"></i></div><div><div class="fitur-t">Program Inabah 40 hari</div><div class="fitur-s">Untuk mereka yang telah ditalkin — amalan harian berstruktur atas warisan Abah Anom.</div><span class="fitur-badge badge-talkin">Selepas Talkin</span></div></div>
   </div>
 </div>
 
@@ -416,49 +315,288 @@ footer strong { color: rgba(255,255,255,0.4); }
   <div class="cred-inner">
     <div class="section-tag">Siapa di sebalik Audit Jiwa</div>
     <h2 class="section-title">Dibina atas amanah yang sahih</h2>
-    <p class="section-sub">Bukan app yang dibina oleh pemaju biasa. Ia lahir dari gabungan yang jarang ditemui:</p>
+    <p class="section-sub">Gabungan yang jarang ditemui — sistem kualiti, ilmu Islam, dan pengalaman ruhani yang dalam.</p>
     <div class="cred-grid">
-      <div class="cred-item"><i class="ti ti-certificate"></i><div><div class="cred-t">Quality Management System (QMS)</div><div class="cred-s">Kelayakan antarabangsa dalam sistem kualiti — memastikan app ini dibina dengan standard yang tinggi dan boleh dipercayai.</div></div></div>
-      <div class="cred-item"><i class="ti ti-school"></i><div><div class="cred-t">Pengajian Islam (Hons) — Islamic Management</div><div class="cred-s">Asas akademik yang kukuh dalam ilmu Islam — setiap ciri app disandarkan kepada sumber yang sahih dan bertanggungjawab.</div></div></div>
-      <div class="cred-item"><i class="ti ti-moon-stars"></i><div><div class="cred-t">Suluk Tasawwuf — hampir 4 dekad</div><div class="cred-s">Berguru dengan Mursyid Abah Anom, Pesantren Suryalaya — pengalaman ruhani yang hidup, bukan sekadar teori.</div></div></div>
+      <div class="cred-item"><i class="ti ti-certificate"></i><div><div class="cred-t">Quality Management System (QMS)</div><div class="cred-s">Kelayakan antarabangsa dalam sistem kualiti — standard yang tinggi dan boleh dipercayai.</div></div></div>
+      <div class="cred-item"><i class="ti ti-school"></i><div><div class="cred-t">Pengajian Islam (Hons) — Islamic Management</div><div class="cred-s">Asas akademik yang kukuh — setiap ciri app disandarkan kepada sumber yang sahih.</div></div></div>
+      <div class="cred-item"><i class="ti ti-moon-stars"></i><div><div class="cred-t">Suluk Tasawwuf — hampir 4 dekad</div><div class="cred-s">Berguru dengan Mursyid Abah Anom, Pesantren Suryalaya — pengalaman ruhani yang hidup.</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- BOTTOM CTA -->
-<section class="bottom-cta reveal">
-  <h2 class="bottom-cta-title">Jiwa anda menunggu<br>untuk diaudit</h2>
-  <p class="bottom-cta-sub">Mulakan dalam 3 minit. Percuma. Tiada akaun diperlukan untuk bermula.</p>
-  <a href="https://app.auditjiwa.com" class="btn-hero" style="max-width:300px;margin:0 auto 1rem">
-    <i class="ti ti-device-mobile-heart"></i>
-    Buka App Audit Jiwa
-  </a>
-  <div class="hero-domain" style="justify-content:center;margin-top:.5rem">
-    <i class="ti ti-world" style="font-size:12px"></i>
-    <span>app.auditjiwa.com</span>
-    <span style="color:rgba(255,255,255,0.3)">· Madrasah I AM</span>
+<!-- ═══════════════════════════════
+     BOARDING INTERAKTIF
+     ═══════════════════════════════ -->
+<section id="boarding">
+<div class="boarding-inner">
+
+  <div class="boarding-header reveal">
+    <div class="section-tag" style="text-align:center">Audit jiwa anda</div>
+    <h2 class="section-title" style="text-align:center">Mulakan audit dalam 3 minit</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,.5);text-align:center;line-height:1.6">Jawab soalan dengan jujur. Hasil audit akan tunjukkan keadaan jiwa anda dan cadangkan langkah seterusnya.</p>
   </div>
+
+  <div style="background:rgba(255,255,255,.03);border:0.5px solid rgba(255,255,255,.08);border-radius:16px;padding:1.5rem 1.25rem;margin-top:1.5rem">
+
+    <div class="pip-row">
+      <div class="pip active" id="p0"></div>
+      <div class="pip" id="p1"></div>
+      <div class="pip" id="p2"></div>
+      <div class="pip" id="p3"></div>
+      <div class="pip" id="p4"></div>
+    </div>
+
+    <!-- S0: Welcome boarding -->
+    <div class="scr on" id="s0">
+      <div class="b-tagline">Selamat datang</div>
+      <div class="b-title">Sudah berapa lama anda tidak memeriksa jiwa anda?</div>
+      <div class="b-sub">Audit Jiwa membantu anda menilai keadaan batin dan mengesan tanda-tanda ghaflah sebelum ia meresap ke raga.</div>
+      <div class="b-ayat"><p>"Hendaklah setiap jiwa memperhatikan apa yang telah ia persembahkan untuk hari esok."</p><span>— Al-Hasyr: 18</span></div>
+      <div style="margin-bottom:1.25rem">
+        <div class="b-cred-pill"><i class="ti ti-certificate"></i><div><div class="b-cred-t">Quality Management System (QMS)</div><div class="b-cred-s">Pereka berasaskan sistem kualiti antarabangsa</div></div></div>
+        <div class="b-cred-pill"><i class="ti ti-school"></i><div><div class="b-cred-t">Pengajian Islam (Hons) — Islamic Management</div><div class="b-cred-s">Asas akademik yang kukuh dalam ilmu Islam</div></div></div>
+        <div class="b-cred-pill"><i class="ti ti-moon-stars"></i><div><div class="b-cred-t">Suluk Tasawwuf — hampir 4 dekad</div><div class="b-cred-s">Berguru dengan Mursyid Abah Anom, Suryalaya</div></div></div>
+      </div>
+      <button class="btn-next" onclick="goS(1)">Mula Audit Saya <i class="ti ti-arrow-right"></i></button>
+    </div>
+
+    <!-- S1: Pilih masalah -->
+    <div class="scr" id="s1">
+      <div class="b-tagline">Langkah 1 — kenali masalah anda</div>
+      <div class="b-title">Apa yang paling menekan anda sekarang?</div>
+      <div class="b-sub">Pilih semua yang berkaitan. Jujur dengan diri sendiri — tiada jawapan yang salah.</div>
+      <div class="b-masalah-grid">
+        <div class="bmk" onclick="tog(this,'kewangan')"><i class="ti ti-cash bmki"></i><div class="bmkt">Kewangan tertekan</div><div class="bmks">Hutang, tidak cukup</div></div>
+        <div class="bmk" onclick="tog(this,'marah')"><i class="ti ti-mood-angry bmki"></i><div class="bmkt">Cepat marah</div><div class="bmks">Emosi tidak stabil</div></div>
+        <div class="bmk" onclick="tog(this,'tidur')"><i class="ti ti-zzz bmki"></i><div class="bmkt">Tidur tidak lena</div><div class="bmks">Resah, penat</div></div>
+        <div class="bmk" onclick="tog(this,'malas')"><i class="ti ti-battery-low bmki"></i><div class="bmkt">Malas, tiada semangat</div><div class="bmks">Tidak bermotivasi</div></div>
+        <div class="bmk" onclick="tog(this,'darah')"><i class="ti ti-heartbeat bmki"></i><div class="bmkt">Darah tinggi</div><div class="bmks">Tekanan tidak terkawal</div></div>
+        <div class="bmk" onclick="tog(this,'gula')"><i class="ti ti-droplet bmki"></i><div class="bmkt">Kencing manis</div><div class="bmks">Gula tidak stabil</div></div>
+        <div class="bmk" onclick="tog(this,'kolesterol')"><i class="ti ti-activity bmki"></i><div class="bmkt">Kolesterol tinggi</div><div class="bmks">Risiko jantung</div></div>
+        <div class="bmk" onclick="tog(this,'jantung')"><i class="ti ti-heart bmki"></i><div class="bmkt">Masalah jantung</div><div class="bmks">Dada berdebar</div></div>
+        <div class="bmk" onclick="tog(this,'mental')"><i class="ti ti-brain bmki"></i><div class="bmkt">Kesihatan mental</div><div class="bmks">Anxiety, tertekan</div></div>
+        <div class="bmk" onclick="tog(this,'kosong')"><i class="ti ti-ghost bmki"></i><div class="bmkt">Rasa kosong & hampa</div><div class="bmks">Hidup tidak bermakna</div></div>
+        <div class="bmk" onclick="tog(this,'ibadah')"><i class="ti ti-moon-stars bmki"></i><div class="bmkt">Ibadah tidak bermakna</div><div class="bmks">Solat ada, hati jauh</div></div>
+        <div class="bmk" onclick="tog(this,'hubungan')"><i class="ti ti-users bmki"></i><div class="bmkt">Hubungan retak</div><div class="bmks">Keluarga, pasangan</div></div>
+      </div>
+      <button class="btn-next" id="btn1" onclick="goS(2)" style="opacity:.4;pointer-events:none">Nilai tahap setiap masalah <i class="ti ti-arrow-right"></i></button>
+    </div>
+
+    <!-- S2: Slider -->
+    <div class="scr" id="s2">
+      <div class="b-tagline">Langkah 2 — nilai tahap masalah anda</div>
+      <div class="b-title">Seberapa teruk setiap masalah ini?</div>
+      <div class="b-sub">Gerakkan slider dengan jujur. Ini membantu mengira kesan kepada jiwa anda dengan tepat.</div>
+      <div id="slider-list"></div>
+      <button class="btn-next" onclick="goS(3)">Lihat apa kata sains <i class="ti ti-arrow-right"></i></button>
+    </div>
+
+    <!-- S3: Sains + punca -->
+    <div class="scr" id="s3">
+      <div class="b-tagline">Langkah 3 — apa kata kajian saintifik</div>
+      <div class="b-title">Sains sudah buktikan hubungan ini</div>
+      <div class="b-sub">Masalah yang anda pilih bukan berlaku secara kebetulan — semuanya berhubung kait dengan keadaan jiwa.</div>
+      <div id="sains-list" style="margin-bottom:1rem"></div>
+      <div class="b-punca-box">
+        <div class="b-punca-tag">Diagnosis sebenar</div>
+        <div class="b-punca-title">Jiwa yang dikuasai nafsu dan syaitan</div>
+        <div class="b-punca-body">Bukan tuduhan — ini hakikat Al-Quran yang disahkan oleh jutaan pengalaman manusia sejak ribuan tahun.</div>
+      </div>
+      <div class="b-pr-row"><div class="b-pr-num">1</div><div><div class="b-pr-t">Nafsu ammārah</div><div class="b-pr-s">Memerintah kepada kejahatan tanpa anda sedar — keputusan buruk, marah, tamak</div></div></div>
+      <div class="b-pr-row"><div class="b-pr-num">2</div><div><div class="b-pr-t">Ghaflah — lalai dari Allah</div><div class="b-pr-s">Jiwa hilang kompas — hidup terasa berat dan kosong tanpa sebab yang jelas</div></div></div>
+      <div class="b-pr-row"><div class="b-pr-num">3</div><div><div class="b-pr-t">Was-was syaitan</div><div class="b-pr-s">Resah tidak bernama, fikiran negatif berulang — ada musuh yang nyata</div></div></div>
+      <div class="b-ayat" style="margin-top:1rem;margin-bottom:1.25rem"><p>"Sesungguhnya nafsu itu sangat menyuruh kepada kejahatan, kecuali nafsu yang dirahmati Tuhanku."</p><span>— Yusuf: 53</span></div>
+      <button class="btn-next" onclick="goS(4)">Lihat hasil audit saya <i class="ti ti-chart-bar"></i></button>
+    </div>
+
+    <!-- S4: Result + CTA -->
+    <div class="scr" id="s4">
+      <div class="b-tagline">Hasil audit jiwa anda</div>
+      <div class="b-title">Laporan peribadi anda</div>
+      <div class="b-result-hero" id="result-hero">
+        <div class="b-rh-tag" id="rh-tag">Skor Audit Jiwa</div>
+        <div class="b-rh-score" id="rh-score">—</div>
+        <div class="b-rh-label" id="rh-label">Mengira...</div>
+        <div class="b-rh-sub" id="rh-sub"></div>
+      </div>
+      <div style="margin-bottom:1.25rem">
+        <div class="b-r-title">Laporan terperinci setiap dimensi</div>
+        <div id="radar-bars"></div>
+      </div>
+      <div class="b-stat-grid">
+        <div class="b-stat-box"><div class="b-stat-num" id="st1">0</div><div class="b-stat-lbl">masalah dikenal pasti</div></div>
+        <div class="b-stat-box"><div class="b-stat-num" id="st2">0%</div><div class="b-stat-lbl">kaitan dengan jiwa</div></div>
+        <div class="b-stat-box"><div class="b-stat-num" id="st3">0</div><div class="b-stat-lbl">masalah kritikal</div></div>
+        <div class="b-stat-box"><div class="b-stat-num" id="st4">—</div><div class="b-stat-lbl">tindakan diperlukan</div></div>
+      </div>
+      <div class="b-app-box">
+        <div class="b-app-box-title">App Audit Jiwa akan membantu anda</div>
+        <div class="b-ap-row"><i class="ti ti-checklist"></i><div><div class="b-ap-t">Kesan amalan jiwa harian</div><div class="b-ap-s">Solat, wirid, zikir, Al-Quran — semua dipantau</div></div></div>
+        <div class="b-ap-row"><i class="ti ti-mood-heart"></i><div><div class="b-ap-t">Jejak mood & keadaan jiwa</div><div class="b-ap-s">Graf emosi harian, mingguan dan bulanan</div></div></div>
+        <div class="b-ap-row"><i class="ti ti-heart-search"></i><div><div class="b-ap-t">Muhasabah harian berstruktur</div><div class="b-ap-s">5 soalan audit jiwa — harian, Jumaat, bulanan</div></div></div>
+        <div class="b-ap-row"><i class="ti ti-book"></i><div><div class="b-ap-t">Panduan Madrasah I AM</div><div class="b-ap-s">Bimbingan peribadi berasaskan jawapan anda</div></div></div>
+        <div class="b-ap-row"><i class="ti ti-moon-stars"></i><div><div class="b-ap-t">Program Inabah 40 hari</div><div class="b-ap-s">Jalan pulang yang berstruktur — apabila anda bersedia</div></div></div>
+      </div>
+      <a class="btn-main" href="https://app.auditjiwa.com">
+        <i class="ti ti-device-mobile-heart"></i>
+        Dapatkan App Audit Jiwa — Percuma
+      </a>
+      <div class="domain-row"><i class="ti ti-world" style="font-size:12px"></i><strong>app.auditjiwa.com</strong><span>· Madrasah I AM</span></div>
+      <button class="btn-ghost" onclick="goS(0)">Ulangi audit</button>
+    </div>
+
+  </div>
+</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div style="margin-bottom:.5rem">
-    <strong>Audit Jiwa</strong> · oleh <a href="#">Madrasah I AM</a>
-  </div>
-  <div>© 2026 auditjiwa.com · Semua hak terpelihara</div>
-  <div style="margin-top:.5rem">
-    <a href="https://app.auditjiwa.com">app.auditjiwa.com</a>
-  </div>
+  <div style="margin-bottom:.5rem"><strong>Audit Jiwa</strong> · oleh <a href="#">Madrasah I AM</a></div>
+  <div>© 2026 madrasahiam.com · Semua hak terpelihara</div>
+  <div style="margin-top:.5rem"><a href="https://app.auditjiwa.com">app.auditjiwa.com</a></div>
 </footer>
 
 <script>
-const reveals = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+var M={
+  kewangan:{label:"Kewangan tertekan",ikon:"ti-cash",warnaIkon:"#F0997B",bgKad:"rgba(217,90,48,0.15)",bdrKad:"rgba(240,153,123,0.4)",textJudul:"#F5C4B3",textBody:"#F5C4B3",basePct:85,sains:"APA (2022): 72% individu dengan tekanan kewangan alami gangguan tidur kronik dan kemurungan. Kortisol meningkat 38%."},
+  marah:{label:"Cepat marah",ikon:"ti-mood-angry",warnaIkon:"#F0997B",bgKad:"rgba(217,90,48,0.15)",bdrKad:"rgba(240,153,123,0.4)",textJudul:"#F5C4B3",textBody:"#F5C4B3",basePct:90,sains:"J. Psychosomatic Research: kemarahan kronik meningkatkan risiko serangan jantung 2.3 kali ganda dan memendekkan usia hayat 5-7 tahun."},
+  tidur:{label:"Tidur tidak lena",ikon:"ti-zzz",warnaIkon:"#AFA9EC",bgKad:"rgba(83,74,183,0.15)",bdrKad:"rgba(175,169,236,0.4)",textJudul:"#CECBF6",textBody:"#CECBF6",basePct:80,sains:"NIH (2021): tidur kurang 6 jam sehari meningkatkan risiko diabetes 36% dan kemurungan 55%."},
+  malas:{label:"Malas, tiada semangat",ikon:"ti-battery-low",warnaIkon:"#AFA9EC",bgKad:"rgba(83,74,183,0.15)",bdrKad:"rgba(175,169,236,0.4)",textJudul:"#CECBF6",textBody:"#CECBF6",basePct:75,sains:"WHO: 'motivational anhedonia' dikaitkan dengan paras dopamin rendah akibat tekanan berterusan."},
+  darah:{label:"Darah tinggi",ikon:"ti-heartbeat",warnaIkon:"#F5C4B3",bgKad:"rgba(153,60,29,0.2)",bdrKad:"rgba(245,196,179,0.4)",textJudul:"#F5C4B3",textBody:"#F5C4B3",basePct:82,sains:"Lancet (2020): 65% kes hipertensi primer dikaitkan dengan tekanan psikologikal berterusan. Ketenangan jiwa menurunkan tekanan darah setara ubat ringan."},
+  gula:{label:"Kencing manis",ikon:"ti-droplet",warnaIkon:"#FAC775",bgKad:"rgba(186,117,23,0.15)",bdrKad:"rgba(250,199,117,0.4)",textJudul:"#FAC775",textBody:"#FAC775",basePct:70,sains:"Diabetes Care: stres kronik meningkatkan glukosa darah melalui kortisol. Pesakit diabetes yang tenang jiwa kawal gula 40% lebih baik."},
+  kolesterol:{label:"Kolesterol tinggi",ikon:"ti-activity",warnaIkon:"#FAC775",bgKad:"rgba(186,117,23,0.15)",bdrKad:"rgba(250,199,117,0.4)",textJudul:"#FAC775",textBody:"#FAC775",basePct:68,sains:"Framingham Heart Study: tahap stres emosi tinggi berkorelasi langsung dengan LDL tinggi walaupun diet baik."},
+  jantung:{label:"Masalah jantung",ikon:"ti-heart",warnaIkon:"#F5C4B3",bgKad:"rgba(153,60,29,0.2)",bdrKad:"rgba(245,196,179,0.4)",textJudul:"#F5C4B3",textBody:"#F5C4B3",basePct:88,sains:"NEJM (2021): emosi negatif kronik meningkatkan risiko serangan jantung 48%. Jiwa yang damai adalah ubat jantung terbaik."},
+  mental:{label:"Kesihatan mental",ikon:"ti-brain",warnaIkon:"#AFA9EC",bgKad:"rgba(83,74,183,0.15)",bdrKad:"rgba(175,169,236,0.4)",textJudul:"#CECBF6",textBody:"#CECBF6",basePct:92,sains:"WHO (2023): kekurangan makna hidup dan hubungan spiritual adalah faktor risiko terbesar gangguan mental moden."},
+  kosong:{label:"Rasa kosong & hampa",ikon:"ti-ghost",warnaIkon:"#AFA9EC",bgKad:"rgba(83,74,183,0.15)",bdrKad:"rgba(175,169,236,0.4)",textJudul:"#CECBF6",textBody:"#CECBF6",basePct:95,sains:"Viktor Frankl: kehilangan makna hidup — 'existential vacuum' — adalah punca utama kemurungan moden."},
+  ibadah:{label:"Ibadah tidak bermakna",ikon:"ti-moon-stars",warnaIkon:"#9FE1CB",bgKad:"rgba(29,158,117,0.15)",bdrKad:"rgba(159,225,203,0.4)",textJudul:"#9FE1CB",textBody:"#9FE1CB",basePct:88,sains:"Oxford (2020): ibadah tanpa hadir hati tidak mengaktifkan prefrontal cortex — bahagian otak yang menghasilkan ketenangan."},
+  hubungan:{label:"Hubungan retak",ikon:"ti-users",warnaIkon:"#ED93B1",bgKad:"rgba(212,83,126,0.15)",bdrKad:"rgba(237,147,177,0.4)",textJudul:"#ED93B1",textBody:"#ED93B1",basePct:78,sains:"Gottman Institute: 69% konflik rumah tangga berpunca dari ketidakupayaan mengawal emosi dalaman."},
+};
+var warnaBar={kewangan:"#D85A30",marah:"#D85A30",tidur:"#534AB7",malas:"#534AB7",darah:"#993C1D",gula:"#BA7517",kolesterol:"#BA7517",jantung:"#993C1D",mental:"#534AB7",kosong:"#534AB7",ibadah:"#1D9E75",hubungan:"#D4537E"};
+
+var sel={};var sv={};
+function tog(el,id){
+  if(sel[id]){delete sel[id];el.classList.remove('sel');}
+  else{sel[id]=true;el.classList.add('sel');}
+  var n=Object.keys(sel).length;
+  var b=document.getElementById('btn1');
+  b.style.opacity=n>0?'1':'0.4';
+  b.style.pointerEvents=n>0?'auto':'none';
+}
+
+var cur=0;
+function goS(n){
+  document.getElementById('s'+cur).classList.remove('on');
+  document.getElementById('p'+cur).classList.remove('active');
+  document.getElementById('p'+cur).classList.add('done');
+  cur=n;
+  document.getElementById('s'+n).classList.add('on');
+  document.getElementById('p'+n).classList.add('active');
+  document.getElementById('boarding').scrollIntoView({behavior:'smooth'});
+  if(n===2)buildSliders();
+  if(n===3)buildSains();
+  if(n===4)buildResult();
+}
+
+function sliderLbl(v){
+  v=parseInt(v);
+  if(v<=2)return'Sangat ringan';
+  if(v<=4)return'Ringan';
+  if(v<=6)return'Sederhana';
+  if(v<=8)return'Teruk';
+  return'Kritikal';
+}
+
+function buildSliders(){
+  var keys=Object.keys(sel);var h='';
+  keys.forEach(function(k){
+    var d=M[k];if(!d)return;
+    var val=sv[k]||5;
+    var w=warnaBar[k]||'#1D9E75';
+    h+='<div class="b-slider-card">';
+    h+='<div class="b-slider-head"><div class="b-slider-ic" style="background:'+d.bgKad+';border:0.5px solid '+d.bdrKad+'"><i class="ti '+d.ikon+'" style="font-size:15px;color:'+d.warnaIkon+'"></i></div>';
+    h+='<div><div class="b-slider-title">'+d.label+'</div><div class="b-slider-sub">1 = sangat ringan &nbsp;·&nbsp; 10 = kritikal</div></div></div>';
+    h+='<div class="b-slider-val-row"><span class="b-slider-num" id="sn-'+k+'" style="color:'+w+'">'+val+'<span style="font-size:16px;font-weight:400;color:rgba(255,255,255,.4)">/10</span></span><span class="b-slider-lbl" id="sl-'+k+'">'+sliderLbl(val)+'</span></div>';
+    h+='<input type="range" min="1" max="10" value="'+val+'" step="1" oninput="updS(\''+k+'\',this.value,\''+w+'\')">';
+    h+='<div class="b-slider-ends"><span>Ringan</span><span>Kritikal</span></div>';
+    h+='</div>';
   });
-}, { threshold: 0.1 });
-reveals.forEach(r => io.observe(r));
+  document.getElementById('slider-list').innerHTML=h;
+  keys.forEach(function(k){if(!sv[k])sv[k]=5;});
+}
+
+function updS(k,v,w){
+  sv[k]=parseInt(v);
+  document.getElementById('sn-'+k).innerHTML=v+'<span style="font-size:16px;font-weight:400;color:rgba(255,255,255,.4)">/10</span>';
+  document.getElementById('sn-'+k).style.color=w;
+  document.getElementById('sl-'+k).textContent=sliderLbl(v);
+}
+
+function buildSains(){
+  var keys=Object.keys(sel);var h='';
+  keys.forEach(function(k){
+    var d=M[k];if(!d)return;
+    h+='<div class="b-sains-card" style="background:'+d.bgKad+';border-color:'+d.bdrKad+'">';
+    h+='<div class="b-sains-head"><i class="ti '+d.ikon+'" style="font-size:15px;color:'+d.warnaIkon+'"></i>';
+    h+='<span class="b-sains-title" style="color:'+d.textJudul+'">'+d.label+'</span></div>';
+    h+='<div class="b-sains-body" style="color:'+d.textBody+'">'+d.sains+'</div>';
+    h+='</div>';
+  });
+  document.getElementById('sains-list').innerHTML=h||'<p style="font-size:13px;color:rgba(255,255,255,.4)">Tiada masalah dipilih.</p>';
+}
+
+function buildResult(){
+  var keys=Object.keys(sel);
+  var totalPct=0;var kritikal=0;var bars='';
+  keys.forEach(function(k){
+    var d=M[k];if(!d)return;
+    var slVal=sv[k]||5;
+    var pct=Math.min(Math.round(d.basePct*0.6+d.basePct*(slVal/10)*0.4),99);
+    totalPct+=pct;
+    if(slVal>=8)kritikal++;
+    var w=warnaBar[k]||'#1D9E75';
+    bars+='<div class="b-r-item">';
+    bars+='<div class="b-r-row"><span class="b-r-name">'+d.label+'</span>';
+    bars+='<div class="b-r-trk"><div class="b-r-fill" style="width:'+pct+'%;background:'+w+'"></div></div>';
+    bars+='<span class="b-r-pct" style="color:'+w+'">'+pct+'%</span></div>';
+    bars+='<div class="b-r-sublbl">Tahap anda: '+slVal+'/10 · Kaitan jiwa: '+pct+'%</div>';
+    bars+='</div>';
+  });
+  var avg=keys.length?Math.round(totalPct/keys.length):0;
+  document.getElementById('radar-bars').innerHTML=bars;
+  document.getElementById('st1').textContent=keys.length;
+  document.getElementById('st2').textContent=avg+'%';
+  document.getElementById('st3').textContent=kritikal;
+  document.getElementById('st4').textContent=avg>=80?'Segera':avg>=60?'7 hari':'Mulakan';
+
+  var hero=document.getElementById('result-hero');
+  var sc=document.getElementById('rh-score');
+  var lb=document.getElementById('rh-label');
+  var sb=document.getElementById('rh-sub');
+  var tg=document.getElementById('rh-tag');
+  sc.textContent=avg+'%';
+  if(avg>=80){
+    hero.style.cssText='background:rgba(217,90,48,0.15);border:0.5px solid rgba(240,153,123,0.5);border-radius:14px;padding:18px;margin-bottom:1.25rem;text-align:center';
+    tg.style.color='#F5C4B3';sc.style.color='#F0997B';lb.style.color='#F5C4B3';sb.style.color='#F5C4B3';
+    lb.textContent='Kritikal — jiwa sangat memerlukan perhatian segera';
+    sb.textContent='Masalah yang anda rasa di luar adalah isyarat kuat dari jiwa yang lama tidak diaudit. App Audit Jiwa akan menemani anda setiap hari.';
+  }else if(avg>=55){
+    hero.style.cssText='background:rgba(186,117,23,0.15);border:0.5px solid rgba(250,199,117,0.5);border-radius:14px;padding:18px;margin-bottom:1.25rem;text-align:center';
+    tg.style.color='#FAC775';sc.style.color='#EF9F27';lb.style.color='#FAC775';sb.style.color='#FAC775';
+    lb.textContent='Sederhana — ada ruang besar untuk diperbaiki';
+    sb.textContent='Anda sedar ada masalah — ini permulaan yang baik. Dengan audit harian berstruktur, jiwa boleh dipulihkan sedikit demi sedikit.';
+  }else{
+    hero.style.cssText='background:rgba(29,158,117,0.15);border:0.5px solid rgba(159,225,203,0.5);border-radius:14px;padding:18px;margin-bottom:1.25rem;text-align:center';
+    tg.style.color='#9FE1CB';sc.style.color='#1D9E75';lb.style.color='#9FE1CB';sb.style.color='#9FE1CB';
+    lb.textContent='Baik — jiwa boleh diperkukuh lagi';
+    sb.textContent='Jangan tunggu sehingga teruk. Mulakan audit harian sekarang untuk kekalkan momentum jiwa anda.';
+  }
+}
+
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+},{threshold:0.1});
+reveals.forEach(r=>io.observe(r));
 </script>
 </body>
 </html>

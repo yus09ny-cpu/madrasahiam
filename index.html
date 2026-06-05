@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Audit Jiwa — Kenali punca sebenar masalah hidup anda. App muhasabah harian oleh Madrasah I AM.">
+<meta property="og:title" content="Audit Jiwa · Madrasah I AM">
+<meta property="og:description" content="Bukan app agama biasa. Audit jiwa anda dalam 3 minit dan temui punca sebenar masalah hidup anda.">
+<meta property="og:url" content="https://auditjiwa.com">
+<title>Audit Jiwa · Madrasah I AM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+:root {
+  --teal: #1D9E75;
+  --teal-dark: #085041;
+  --teal-deeper: #04342C;
+  --teal-light: #E1F5EE;
+  --teal-mid: #9FE1CB;
+  --amber: #C8A04A;
+  --amber-light: #F5E9C8;
+  --ink: #111612;
+  --ink-soft: #2C3A30;
+  --mist: #F4F8F6;
+  --white: #FFFFFF;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--ink);
+  color: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: rgba(17,22,18,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(29,158,117,0.2);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-logo-ic {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--teal-light); display: flex; align-items: center; justify-content: center;
+}
+.nav-logo-ic i { font-size: 17px; color: var(--teal-dark); }
+.nav-logo-txt { font-family: var(--font-display); font-size: 18px; color: var(--white); }
+.nav-logo-sub { font-size: 10px; color: var(--teal-mid); letter-spacing: 1px; margin-top: -2px; }
+.nav-cta {
+  background: var(--teal); color: white;
+  padding: 8px 18px; border-radius: 20px;
+  font-size: 13px; font-weight: 500; text-decoration: none;
+  transition: opacity .2s;
+}
+.nav-cta:hover { opacity: .85; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 8rem 1.5rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(29,158,117,0.18) 0%, transparent 70%);
+}
+.hero-pattern {
+  position: absolute; inset: 0; z-index: 0; opacity: 0.04;
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,0.5) 40px, rgba(255,255,255,0.5) 41px),
+    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.5) 40px, rgba(255,255,255,0.5) 41px);
+}
+.hero-content { position: relative; z-index: 1; max-width: 640px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(29,158,117,0.15); border: 0.5px solid rgba(29,158,117,0.4);
+  border-radius: 20px; padding: 5px 14px;
+  font-size: 11px; color: var(--teal-mid); letter-spacing: 1.2px; text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  animation: fadeUp .8s ease both;
+}
+.hero-badge i { font-size: 13px; color: var(--teal); }
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  font-weight: 500; line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 1rem;
+  animation: fadeUp .8s .15s ease both;
+}
+.hero-title em { color: var(--teal); font-style: italic; }
+.hero-ayat {
+  font-family: var(--font-display);
+  font-size: 1rem; font-style: italic;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0.35rem;
+  animation: fadeUp .8s .25s ease both;
+}
+.hero-ayat-ref {
+  font-size: 11px; color: var(--teal); letter-spacing: 1px;
+  margin-bottom: 2rem;
+  animation: fadeUp .8s .3s ease both;
+}
+.hero-sub {
+  font-size: 15px; color: rgba(255,255,255,0.65);
+  line-height: 1.7; margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto;
+  animation: fadeUp .8s .35s ease both;
+}
+.hero-cta-row {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  animation: fadeUp .8s .45s ease both;
+}
+.btn-hero {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--teal); color: white;
+  padding: 16px 32px; border-radius: 14px;
+  font-size: 16px; font-weight: 500; text-decoration: none;
+  transition: all .2s; width: 100%; max-width: 320px; justify-content: center;
+}
+.btn-hero:hover { background: #0F6E56; transform: translateY(-1px); }
+.btn-hero i { font-size: 20px; }
+.btn-hero-sub {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: rgba(255,255,255,0.5);
+  border: 0.5px solid rgba(255,255,255,0.15);
+  padding: 12px 24px; border-radius: 14px;
+  font-size: 13px; text-decoration: none;
+  transition: all .2s; width: 100%; max-width: 320px; justify-content: center;
+}
+.btn-hero-sub:hover { border-color: rgba(255,255,255,0.3); color: white; }
+.hero-domain {
+  margin-top: .75rem; font-size: 11px; color: rgba(255,255,255,0.3);
+  display: flex; align-items: center; gap: 5px;
+}
+.hero-domain span { color: var(--teal); }
+
+/* ── MASALAH SECTION ── */
+.section { padding: 5rem 1.5rem; max-width: 720px; margin: 0 auto; }
+.section-tag {
+  font-size: 11px; color: var(--teal); letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: .75rem; font-weight: 500;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 500; line-height: 1.2; color: var(--white);
+  margin-bottom: 1rem;
+}
+.section-sub { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 2.5rem; }
+.masalah-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+  margin-bottom: 2.5rem;
+}
+@media(min-width:480px){ .masalah-grid { grid-template-columns: repeat(3, 1fr); } }
+.masalah-item {
+  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.1);
+  border-radius: 12px; padding: 14px 12px; text-align: center;
+  transition: all .2s;
+}
+.masalah-item:hover { background: rgba(29,158,117,0.1); border-color: rgba(29,158,117,0.3); }
+.masalah-item i { font-size: 22px; color: var(--teal); display: block; margin-bottom: 6px; }
+.masalah-item-t { font-size: 12px; font-weight: 500; color: var(--white); line-height: 1.3; }
+.masalah-item-s { font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 3px; }
+
+/* ── PUNCA SECTION ── */
+.punca-section {
+  padding: 4rem 1.5rem;
+  background: rgba(29,158,117,0.07);
+  border-top: 0.5px solid rgba(29,158,117,0.15);
+  border-bottom: 0.5px solid rgba(29,158,117,0.15);
+}
+.punca-inner { max-width: 720px; margin: 0 auto; }
+.punca-center { text-align: center; margin-bottom: 2.5rem; }
+.punca-arabic {
+  font-family: var(--font-display);
+  font-size: 1.6rem; color: var(--amber);
+  margin-bottom: .5rem; direction: rtl;
+}
+.punca-cards { display: flex; flex-direction: column; gap: 12px; }
+.punca-card {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 16px;
+}
+.punca-card-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(29,158,117,0.2); border: 0.5px solid rgba(29,158,117,0.4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 500; color: var(--teal); flex-shrink: 0;
+}
+.punca-card-t { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 4px; }
+.punca-card-s { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+/* ── CIRI APP ── */
+.fitur-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2.5rem; }
+.fitur-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: rgba(255,255,255,0.03); border: 0.5px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 16px; transition: all .2s;
+}
+.fitur-item:hover { background: rgba(29,158,117,0.08); border-color: rgba(29,158,117,0.2); }
+.fitur-ic {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: rgba(29,158,117,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.fitur-ic i { font-size: 18px; color: var(--teal); }
+.fitur-t { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 3px; }
+.fitur-s { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+.fitur-badge {
+  display: inline-block; font-size: 10px; padding: 2px 8px;
+  border-radius: 4px; margin-top: 4px; font-weight: 500;
+}
+.badge-free { background: rgba(29,158,117,0.2); color: var(--teal-mid); }
+.badge-pro { background: rgba(200,160,74,0.2); color: var(--amber); }
+.badge-talkin { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+
+/* ── KREDIBILITI ── */
+.cred-section {
+  padding: 4rem 1.5rem;
+  background: rgba(255,255,255,0.02);
+  border-top: 0.5px solid rgba(255,255,255,0.06);
+}
+.cred-inner { max-width: 720px; margin: 0 auto; }
+.cred-grid { display: flex; flex-direction: column; gap: 10px; margin-top: 1.5rem; }
+.cred-item {
+  display: flex; gap: 12px; align-items: center;
+  background: rgba(255,255,255,0.03); border: 0.5px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 14px 16px;
+}
+.cred-item i { font-size: 20px; color: var(--amber); flex-shrink: 0; }
+.cred-t { font-size: 13px; font-weight: 500; color: var(--white); }
+.cred-s { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+
+/* ── BOTTOM CTA ── */
+.bottom-cta {
+  padding: 5rem 1.5rem;
+  text-align: center;
+  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(29,158,117,0.15) 0%, transparent 70%);
+}
+.bottom-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 500; color: var(--white);
+  line-height: 1.2; margin-bottom: 1rem;
+}
+.bottom-cta-sub {
+  font-size: 14px; color: rgba(255,255,255,0.5);
+  line-height: 1.7; margin-bottom: 2rem; max-width: 400px; margin-left: auto; margin-right: auto;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 2rem 1.5rem;
+  border-top: 0.5px solid rgba(255,255,255,0.06);
+  text-align: center;
+  font-size: 11px; color: rgba(255,255,255,0.25);
+}
+footer a { color: var(--teal); text-decoration: none; }
+footer strong { color: rgba(255,255,255,0.4); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── MOBILE ── */
+@media(max-width:480px){
+  .nav-cta { padding: 7px 14px; font-size: 12px; }
+  .hero { padding: 7rem 1.25rem 3rem; }
+  .section { padding: 3.5rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-ic"><i class="ti ti-heart-search"></i></div>
+    <div>
+      <div class="nav-logo-txt">Audit Jiwa</div>
+      <div class="nav-logo-sub">Madrasah I AM</div>
+    </div>
+  </div>
+  <a href="https://app.auditjiwa.com" class="nav-cta">Buka App <i class="ti ti-arrow-right" style="font-size:13px;vertical-align:-1px"></i></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="ti ti-heart-spark"></i> Madrasah I AM · auditjiwa.com</div>
+    <h1 class="hero-title">Audit <em>Jiwa</em> anda<br>sebelum ia terlambat</h1>
+    <p class="hero-ayat">"Hendaklah setiap jiwa memperhatikan apa yang telah ia persembahkan untuk hari esok."</p>
+    <p class="hero-ayat-ref">— Al-Hasyr: 18</p>
+    <p class="hero-sub">Bukan app agama biasa. Audit Jiwa membantu anda mengenal pasti punca sebenar masalah hidup — dan membimbing anda kembali kepada Allah, satu hari sekaligus.</p>
+    <div class="hero-cta-row">
+      <a href="https://app.auditjiwa.com" class="btn-hero">
+        <i class="ti ti-device-mobile-heart"></i>
+        Buka App Audit Jiwa — Percuma
+      </a>
+      <a href="#kenapa" class="btn-hero-sub">
+        <i class="ti ti-info-circle"></i>
+        Kenapa saya perlu ini?
+      </a>
+      <div class="hero-domain"><i class="ti ti-world" style="font-size:12px"></i> <span>app.auditjiwa.com</span> · Madrasah I AM</div>
+    </div>
+  </div>
+</section>
+
+<!-- MASALAH -->
+<div id="kenapa">
+<div class="section reveal">
+  <div class="section-tag">Langkah 1 — kenali punca</div>
+  <h2 class="section-title">Adakah anda mengalami salah satu daripada ini?</h2>
+  <p class="section-sub">Semua masalah ini kelihatan berbeza di permukaan — tetapi kajian saintifik menunjukkan semuanya berkongsi satu punca yang sama.</p>
+  <div class="masalah-grid">
+    <div class="masalah-item"><i class="ti ti-cash"></i><div class="masalah-item-t">Kewangan tertekan</div><div class="masalah-item-s">Hutang, tidak cukup</div></div>
+    <div class="masalah-item"><i class="ti ti-mood-angry"></i><div class="masalah-item-t">Cepat marah</div><div class="masalah-item-s">Emosi tidak stabil</div></div>
+    <div class="masalah-item"><i class="ti ti-zzz"></i><div class="masalah-item-t">Tidur tidak lena</div><div class="masalah-item-s">Resah, penat</div></div>
+    <div class="masalah-item"><i class="ti ti-heartbeat"></i><div class="masalah-item-t">Darah tinggi</div><div class="masalah-item-s">Tekanan tidak terkawal</div></div>
+    <div class="masalah-item"><i class="ti ti-droplet"></i><div class="masalah-item-t">Kencing manis</div><div class="masalah-item-s">Gula tidak stabil</div></div>
+    <div class="masalah-item"><i class="ti ti-heart"></i><div class="masalah-item-t">Masalah jantung</div><div class="masalah-item-s">Risiko meningkat</div></div>
+    <div class="masalah-item"><i class="ti ti-brain"></i><div class="masalah-item-t">Kesihatan mental</div><div class="masalah-item-s">Anxiety, tertekan</div></div>
+    <div class="masalah-item"><i class="ti ti-ghost"></i><div class="masalah-item-t">Rasa kosong</div><div class="masalah-item-s">Hidup tidak bermakna</div></div>
+    <div class="masalah-item"><i class="ti ti-moon-stars"></i><div class="masalah-item-t">Ibadah tidak bermakna</div><div class="masalah-item-s">Solat ada, hati jauh</div></div>
+  </div>
+  <div style="background:rgba(29,158,117,0.1);border:.5px solid rgba(29,158,117,0.3);border-radius:12px;padding:16px;text-align:center">
+    <div style="font-size:11px;color:#9FE1CB;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Harvard Medical School (2021)</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:white;line-height:1.6">Stres kronik meningkatkan risiko penyakit kardiovaskular 40%, mengganggu imun, dan mempercepat penuaan sel — semuanya bermula dari <em style="color:#9FE1CB">keadaan jiwa yang tidak tenang.</em></div>
+  </div>
+</div>
+</div>
+
+<!-- PUNCA SEBENAR -->
+<section class="punca-section reveal">
+  <div class="punca-inner">
+    <div class="punca-center">
+      <div class="section-tag">Langkah 2 — diagnosis sebenar</div>
+      <h2 class="section-title">Di sebalik semua masalah ini<br>ada satu punca</h2>
+      <div class="punca-arabic">وَأَنِيبُوا إِلَىٰ رَبِّكُمْ</div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:2rem">"Dan kembalilah kepada Tuhanmu..." — Az-Zumar: 54</p>
+    </div>
+    <div class="punca-cards">
+      <div class="punca-card">
+        <div class="punca-card-num">1</div>
+        <div><div class="punca-card-t">Nafsu ammārah — jiwa yang memerintah ke arah jahat</div><div class="punca-card-s">Menyebabkan keputusan buruk, marah, tamak, dan rasa tidak pernah cukup — walaupun secara zahir hidup nampak baik.</div></div>
+      </div>
+      <div class="punca-card">
+        <div class="punca-card-num">2</div>
+        <div><div class="punca-card-t">Ghaflah — jiwa yang terlupa kepada Allah</div><div class="punca-card-s">Apabila jiwa lalai, ia kehilangan kompas. Setiap keputusan dibuat tanpa arah — maka hidup terasa berat dan kosong.</div></div>
+      </div>
+      <div class="punca-card">
+        <div class="punca-card-num">3</div>
+        <div><div class="punca-card-t">Was-was syaitan — jiwa yang diserang dari dalam</div><div class="punca-card-s">Resah yang tidak bernama, fikiran negatif berulang — ada musuh yang nyata yang tidak boleh dirawat dengan ubat.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIRI APP -->
+<div class="section reveal">
+  <div class="section-tag">Langkah 3 — penyelesaian</div>
+  <h2 class="section-title">Apa yang App Audit Jiwa lakukan untuk anda</h2>
+  <p class="section-sub">Sistem pemantauan jiwa yang lengkap — dibina atas ilmu Tasawwuf dan disokong oleh sains moden.</p>
+  <div class="fitur-grid">
+    <div class="fitur-item">
+      <div class="fitur-ic"><i class="ti ti-checklist"></i></div>
+      <div><div class="fitur-t">Tracker amalan jiwa harian</div><div class="fitur-s">Solat 5 waktu, wirid pagi petang, Al-Quran, zikir, sedekah — semua dalam satu skrin dengan progress ring harian.</div><span class="fitur-badge badge-free">Percuma</span></div>
+    </div>
+    <div class="fitur-item">
+      <div class="fitur-ic"><i class="ti ti-mood-heart"></i></div>
+      <div><div class="fitur-t">Jejak mood & keadaan jiwa</div><div class="fitur-s">5 tahap perasaan direkod setiap hari — papar corak emosi sepanjang minggu dan bulan.</div><span class="fitur-badge badge-free">Percuma</span></div>
+    </div>
+    <div class="fitur-item">
+      <div class="fitur-ic"><i class="ti ti-heart-search"></i></div>
+      <div><div class="fitur-t">Muhasabah harian, Jumaat & bulanan</div><div class="fitur-s">5 soalan audit jiwa yang mendalam — dijawab sendiri, disimpan secara peribadi. Refleksi Jumaat dan laporan bulanan.</div><span class="fitur-badge badge-free">Percuma</span></div>
+    </div>
+    <div class="fitur-item">
+      <div class="fitur-ic"><i class="ti ti-sparkles"></i></div>
+      <div><div class="fitur-t">Refleksi selepas solat — AI</div><div class="fitur-s">Selepas setiap solat, app bertanya tentang kehadiran hati anda dan memberi bimbingan peribadi dalam Bahasa Melayu.</div><span class="fitur-badge badge-pro">Pro</span></div>
+    </div>
+    <div class="fitur-item">
+      <div class="fitur-ic"><i class="ti ti-chart-bar"></i></div>
+      <div><div class="fitur-t">Laporan graf jiwa bulanan</div><div class="fitur-s">Graf visual perkembangan jiwa — lihat dimensi mana yang meningkat dan mana yang perlu perhatian.</div><span class="fitur-badge badge-pro">Pro</span></div>
+    </div>
+    <div class="fitur-item">
+      <div class="fitur-ic"><i class="ti ti-moon-stars"></i></div>
+      <div><div class="fitur-t">Program Inabah 40 hari</div><div class="fitur-s">Untuk mereka yang telah ditalkin — amalan harian berstruktur dari bangun tidur hingga sebelum tidur, atas warisan Abah Anom.</div><span class="fitur-badge badge-talkin">Selepas Talkin</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- KREDIBILITI -->
+<section class="cred-section reveal">
+  <div class="cred-inner">
+    <div class="section-tag">Siapa di sebalik Audit Jiwa</div>
+    <h2 class="section-title">Dibina atas amanah yang sahih</h2>
+    <p class="section-sub">Bukan app yang dibina oleh pemaju biasa. Ia lahir dari gabungan yang jarang ditemui:</p>
+    <div class="cred-grid">
+      <div class="cred-item"><i class="ti ti-certificate"></i><div><div class="cred-t">Quality Management System (QMS)</div><div class="cred-s">Kelayakan antarabangsa dalam sistem kualiti — memastikan app ini dibina dengan standard yang tinggi dan boleh dipercayai.</div></div></div>
+      <div class="cred-item"><i class="ti ti-school"></i><div><div class="cred-t">Pengajian Islam (Hons) — Islamic Management</div><div class="cred-s">Asas akademik yang kukuh dalam ilmu Islam — setiap ciri app disandarkan kepada sumber yang sahih dan bertanggungjawab.</div></div></div>
+      <div class="cred-item"><i class="ti ti-moon-stars"></i><div><div class="cred-t">Suluk Tasawwuf — hampir 4 dekad</div><div class="cred-s">Berguru dengan Mursyid Abah Anom, Pesantren Suryalaya — pengalaman ruhani yang hidup, bukan sekadar teori.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta reveal">
+  <h2 class="bottom-cta-title">Jiwa anda menunggu<br>untuk diaudit</h2>
+  <p class="bottom-cta-sub">Mulakan dalam 3 minit. Percuma. Tiada akaun diperlukan untuk bermula.</p>
+  <a href="https://app.auditjiwa.com" class="btn-hero" style="max-width:300px;margin:0 auto 1rem">
+    <i class="ti ti-device-mobile-heart"></i>
+    Buka App Audit Jiwa
+  </a>
+  <div class="hero-domain" style="justify-content:center;margin-top:.5rem">
+    <i class="ti ti-world" style="font-size:12px"></i>
+    <span>app.auditjiwa.com</span>
+    <span style="color:rgba(255,255,255,0.3)">· Madrasah I AM</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="margin-bottom:.5rem">
+    <strong>Audit Jiwa</strong> · oleh <a href="#">Madrasah I AM</a>
+  </div>
+  <div>© 2026 auditjiwa.com · Semua hak terpelihara</div>
+  <div style="margin-top:.5rem">
+    <a href="https://app.auditjiwa.com">app.auditjiwa.com</a>
+  </div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => io.observe(r));
+</script>
+</body>
+</html>

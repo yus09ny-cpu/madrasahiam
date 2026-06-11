@@ -285,6 +285,36 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
 }
 @media(max-width:640px){.pg,.pgrid,.kgrid{grid-template-columns:1fr}}
 @media(max-width:480px){.hero{padding:88px 16px 64px}.bp,.bs{min-width:0;width:100%}.obc{padding:24px 16px}}
+
+/* ── SHARE SYSTEM ── */
+.share-section{margin-top:24px;border-top:1px solid rgba(255,255,255,.08);padding-top:24px}
+.share-title{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:16px;text-align:center}
+.share-btns{display:flex;flex-direction:column;gap:10px}
+.share-btn{width:100%;padding:13px 16px;border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px;border:none;text-decoration:none}
+.share-wa{background:#25D366;color:#fff}
+.share-wa:hover{background:#1ebe5d;transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,.35)}
+.share-tg{background:#229ED9;color:#fff}
+.share-tg:hover{background:#1a8fbf;transform:translateY(-1px);box-shadow:0 6px 20px rgba(34,158,217,.35)}
+.share-img{background:rgba(255,255,255,.08);color:var(--txt);border:1px solid rgba(255,255,255,.15)}
+.share-img:hover{background:rgba(255,255,255,.13);border-color:var(--teal2)}
+.share-copy{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid rgba(255,255,255,.1)}
+.share-copy:hover{background:rgba(255,255,255,.09);color:var(--txt)}
+.share-copied{background:rgba(29,184,138,.15);color:var(--teal);border:1px solid var(--tborder)}
+
+/* Canvas (hidden, used for image generation) */
+#share-canvas{display:none}
+
+/* Share preview modal */
+.share-modal{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.8);align-items:center;justify-content:center;padding:24px}
+.share-modal.open{display:flex}
+.share-modal-inner{background:var(--card2);border:1px solid var(--tborder);border-radius:20px;padding:24px;max-width:420px;width:100%;text-align:center}
+.share-modal-title{font-size:14px;font-weight:600;color:var(--wh);margin-bottom:16px}
+.share-modal-img{width:100%;border-radius:12px;margin-bottom:16px;display:block}
+.share-modal-close{width:100%;padding:12px;border-radius:var(--r);background:rgba(255,255,255,.08);color:var(--muted);border:1px solid rgba(255,255,255,.1);font-size:14px;cursor:pointer;margin-top:8px}
+.share-modal-close:hover{background:rgba(255,255,255,.13)}
+.share-modal-dl{width:100%;padding:13px;border-radius:var(--r);background:var(--teal);color:#fff;border:none;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:8px;transition:all .2s}
+.share-modal-dl:hover{background:var(--teal2)}
+
 </style>
 </head>
 <body>
@@ -584,7 +614,44 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
         </div>
         <a href="https://auditjiwa.madrasahiam.com" class="obtn" target="_blank">&#128241; Dapatkan App Audit Jiwa &mdash; Percuma</a>
         <div style="text-align:center;margin-top:8px;font-size:12px;color:var(--dim)">auditjiwa.madrasahiam.com</div>
-        <button class="obtns" onclick="toStep(0)">Ulangi audit</button>
+        
+      <!-- SHARE SECTION -->
+      <div class="share-section" id="share-section">
+        <div class="share-title" data-t="share_title">Kongsi Hasil Audit Anda</div>
+        <div class="share-btns">
+          <button class="share-btn share-wa" onclick="shareWA()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.864L0 24l6.336-1.498A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-5.001-1.371l-.359-.213-3.722.879.925-3.613-.234-.371A9.818 9.818 0 0112 2.182c5.426 0 9.818 4.392 9.818 9.818 0 5.427-4.392 9.818-9.818 9.818z"/></svg>
+            <span data-t="share_wa">Kongsi ke WhatsApp</span>
+          </button>
+          <button class="share-btn share-tg" onclick="shareTG()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span data-t="share_tg">Kongsi ke Telegram</span>
+          </button>
+          <button class="share-btn share-img" onclick="generateShareImage()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span data-t="share_img">Jana Kad Gambar</span>
+          </button>
+          <button class="share-btn share-copy" id="copy-btn" onclick="copyShareText()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            <span data-t="share_copy" id="copy-btn-txt">Salin Teks</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hidden canvas for image generation -->
+      <canvas id="share-canvas" width="1080" height="1080"></canvas>
+
+      <!-- Share image modal -->
+      <div class="share-modal" id="share-modal">
+        <div class="share-modal-inner">
+          <div class="share-modal-title" data-t="modal_title">Kad Audit Jiwa Anda</div>
+          <img id="share-modal-img" class="share-modal-img" src="" alt="Audit Jiwa Result Card">
+          <button class="share-modal-dl" onclick="downloadCard()" data-t="modal_dl">&#8595; Simpan Gambar</button>
+          <button class="share-modal-close" onclick="closeModal()" data-t="modal_close">Tutup</button>
+        </div>
+      </div>
+
+      <button class="obtns" onclick="toStep(0)">Ulangi audit</button>
       </div>
     </div>
   </div>
@@ -908,6 +975,384 @@ function setLang(l){
   buildGrid();
   if(cur===2) buildSL();
   if(cur===3) buildSC();
+}
+
+
+// ═══════════════════════════
+// SHARE SYSTEM
+// ═══════════════════════════
+
+// Share translations
+var shareT = {
+  bm:{
+    share_title:'Kongsi Hasil Audit Anda',
+    share_wa:'Kongsi ke WhatsApp',share_tg:'Kongsi ke Telegram',
+    share_img:'Jana Kad Gambar',share_copy:'Salin Teks',
+    modal_title:'Kad Audit Jiwa Anda',modal_dl:'&#8595; Simpan Gambar',modal_close:'Tutup',
+    copied:'Disalin!',
+    wa_text: function(name,score,level,problems,url){
+      var p = problems.length>0 ? problems.slice(0,3).join(', ') : '';
+      return '🌿 *Audit Jiwa saya*\n\n'
+        +'Nama: *'+name+'*\n'
+        +'Skor: *'+score+'%* — '+level+'\n'
+        +(p?'Bidang: '+p+'\n\n':'')
+        +'"Hendaklah setiap jiwa memperhatikan apa yang telah ia persembahkan untuk hari esok."\n— Al-Hasyr: 18\n\n'
+        +'Audit jiwa kamu juga &#8594; '+url;
+    },
+    card_sub:'Muhasabah Jiwa Bersepadu',
+    card_ayat:'Hendaklah setiap jiwa memperhatikan',
+    card_ayat2:'apa yang telah ia persembahkan',
+    card_ref:'Al-Hasyr: 18',
+    card_footer:'Audit jiwa kamu juga di',
+    card_problems_label:'Bidang yang perlu diperbaiki',
+  },
+  bi:{
+    share_title:'Bagikan Hasil Audit Anda',
+    share_wa:'Bagikan ke WhatsApp',share_tg:'Bagikan ke Telegram',
+    share_img:'Buat Kartu Gambar',share_copy:'Salin Teks',
+    modal_title:'Kartu Audit Jiwa Anda',modal_dl:'&#8595; Simpan Gambar',modal_close:'Tutup',
+    copied:'Disalin!',
+    wa_text: function(name,score,level,problems,url){
+      var p = problems.length>0 ? problems.slice(0,3).join(', ') : '';
+      return '🌿 *Audit Jiwa saya*\n\n'
+        +'Nama: *'+name+'*\n'
+        +'Skor: *'+score+'%* — '+level+'\n'
+        +(p?'Bidang: '+p+'\n\n':'')
+        +'"Hendaklah setiap jiwa memperhatikan apa yang telah dipersembahkannya untuk hari esok."\n— Al-Hasyr: 18\n\n'
+        +'Audit jiwa kamu juga &#8594; '+url;
+    },
+    card_sub:'Muhasabah Jiwa Terpadu',
+    card_ayat:'Hendaklah setiap jiwa memperhatikan',
+    card_ayat2:'apa yang telah dipersembahkannya',
+    card_ref:'Al-Hasyr: 18',
+    card_footer:'Audit jiwamu juga di',
+    card_problems_label:'Bidang yang perlu diperbaiki',
+  },
+  en:{
+    share_title:'Share Your Audit Results',
+    share_wa:'Share to WhatsApp',share_tg:'Share to Telegram',
+    share_img:'Generate Image Card',share_copy:'Copy Text',
+    modal_title:'Your Soul Audit Card',modal_dl:'&#8595; Save Image',modal_close:'Close',
+    copied:'Copied!',
+    wa_text: function(name,score,level,problems,url){
+      var p = problems.length>0 ? problems.slice(0,3).join(', ') : '';
+      return '🌿 *My Soul Audit*\n\n'
+        +'Name: *'+name+'*\n'
+        +'Score: *'+score+'%* — '+level+'\n'
+        +(p?'Areas: '+p+'\n\n':'')
+        +'"Let every soul consider what it has sent forth for tomorrow."\n— Al-Hasyr: 18\n\n'
+        +'Take your own Soul Audit &#8594; '+url;
+    },
+    card_sub:'Integrated Soul Assessment',
+    card_ayat:'Let every soul consider',
+    card_ayat2:'what it has sent forth for tomorrow',
+    card_ref:'Al-Hasyr: 18',
+    card_footer:'Take your own Soul Audit at',
+    card_problems_label:'Areas for improvement',
+  }
+};
+
+// Add share translations to main setLang
+var _origSetLang = setLang;
+setLang = function(l){
+  _origSetLang(l);
+  var st = shareT[l];
+  if(!st) return;
+  document.querySelectorAll('[data-t]').forEach(function(el){
+    var k=el.getAttribute('data-t');
+    if(st[k]!==undefined) el.innerHTML=st[k];
+  });
+};
+
+function getShareData(){
+  var M = getMasalah();
+  var list = sel.length>0?sel:[];
+  var score = parseInt(document.getElementById('osv').textContent)||0;
+  var level = document.getElementById('osvl').textContent||'';
+  var problems = [];
+  list.forEach(function(id){
+    M.forEach(function(m){ if(m.id===id) problems.push(m.nm); });
+  });
+  var url = 'auditjiwa.madrasahiam.com';
+  return {score:score, level:level, problems:problems, url:url};
+}
+
+function getUserName(){
+  // Try to get from onboarding profile or default
+  return 'Saudara/i';
+}
+
+function getShareText(){
+  var d = getShareData();
+  var st = shareT[lang]||shareT.bm;
+  // Decode HTML entities for plain text
+  var txt = st.wa_text(getUserName(), d.score, d.level, d.problems, d.url);
+  // Remove HTML entities for WhatsApp
+  var div = document.createElement('div');
+  div.innerHTML = txt;
+  return div.textContent||div.innerText||txt;
+}
+
+function shareWA(){
+  var text = encodeURIComponent(getShareText());
+  window.open('https://wa.me/?text='+text, '_blank');
+}
+
+function shareTG(){
+  var d = getShareData();
+  var text = encodeURIComponent(getShareText());
+  var url = encodeURIComponent('https://'+d.url);
+  window.open('https://t.me/share/url?url='+url+'&text='+text, '_blank');
+}
+
+function copyShareText(){
+  var text = getShareText();
+  var btn = document.getElementById('copy-btn');
+  var btntxt = document.getElementById('copy-btn-txt');
+  var st = shareT[lang]||shareT.bm;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(text).then(function(){
+      if(btn) btn.classList.add('share-copied');
+      if(btntxt) btntxt.textContent = st.copied||'Copied!';
+      setTimeout(function(){ 
+        if(btn) btn.classList.remove('share-copied');
+        if(btntxt) btntxt.innerHTML = st.share_copy||'Salin Teks';
+      }, 2500);
+    });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    if(btntxt) btntxt.textContent = st.copied||'Copied!';
+    setTimeout(function(){ if(btntxt) btntxt.innerHTML = st.share_copy||'Salin Teks'; }, 2500);
+  }
+}
+
+// ── IMAGE CARD GENERATOR ──────────────────────────
+function generateShareImage(){
+  var d = getShareData();
+  var st = shareT[lang]||shareT.bm;
+  var canvas = document.getElementById('share-canvas');
+  var ctx = canvas.getContext('2d');
+  var W=1080, H=1080;
+  canvas.width=W; canvas.height=H;
+
+  // Background gradient
+  var bgGrad = ctx.createRadialGradient(W/2,H*0.35,0,W/2,H*0.35,W*0.7);
+  bgGrad.addColorStop(0,'#0f2920');
+  bgGrad.addColorStop(0.5,'#0a1f1a');
+  bgGrad.addColorStop(1,'#061410');
+  ctx.fillStyle=bgGrad;
+  ctx.fillRect(0,0,W,H);
+
+  // Teal glow top
+  var glow = ctx.createRadialGradient(W/2,200,0,W/2,200,500);
+  glow.addColorStop(0,'rgba(29,184,138,0.18)');
+  glow.addColorStop(1,'rgba(29,184,138,0)');
+  ctx.fillStyle=glow;
+  ctx.fillRect(0,0,W,H);
+
+  // Top border line
+  var topLine = ctx.createLinearGradient(0,0,W,0);
+  topLine.addColorStop(0,'rgba(29,184,138,0)');
+  topLine.addColorStop(0.3,'rgba(29,184,138,0.8)');
+  topLine.addColorStop(0.7,'rgba(29,184,138,0.8)');
+  topLine.addColorStop(1,'rgba(29,184,138,0)');
+  ctx.fillStyle=topLine;
+  ctx.fillRect(0,0,W,3);
+
+  // ── LOGO area ──
+  // Green circle badge
+  ctx.beginPath();
+  ctx.arc(W/2,90,32,0,Math.PI*2);
+  ctx.fillStyle='rgba(29,184,138,0.15)';
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(W/2,90,32,0,Math.PI*2);
+  ctx.strokeStyle='rgba(29,184,138,0.4)';
+  ctx.lineWidth=1.5;
+  ctx.stroke();
+  ctx.font='28px serif';
+  ctx.textAlign='center';
+  ctx.fillStyle='#1db88a';
+  ctx.fillText('\uD83C\uDF3F',W/2,101);
+
+  // App name
+  ctx.font='bold 28px Georgia, serif';
+  ctx.fillStyle='#ffffff';
+  ctx.textAlign='center';
+  ctx.fillText('Audit Jiwa',W/2,155);
+  ctx.font='13px Arial, sans-serif';
+  ctx.fillStyle='#7a9e90';
+  ctx.fillText('Madrasah I AM  \u00B7  auditjiwa.madrasahiam.com',W/2,178);
+
+  // ── DIVIDER ──
+  ctx.fillStyle='rgba(255,255,255,0.07)';
+  ctx.fillRect(80,200,W-160,1);
+
+  // ── SCORE CARD ──
+  var cardX=80, cardY=220, cardW=W-160, cardH=260;
+  // Card background
+  roundRect(ctx,cardX,cardY,cardW,cardH,20);
+  var cardGrad=ctx.createLinearGradient(cardX,cardY,cardX,cardY+cardH);
+  cardGrad.addColorStop(0,'rgba(201,168,76,0.12)');
+  cardGrad.addColorStop(1,'rgba(201,168,76,0.05)');
+  ctx.fillStyle=cardGrad;
+  ctx.fill();
+  ctx.strokeStyle='rgba(201,168,76,0.3)';
+  ctx.lineWidth=1;
+  ctx.stroke();
+
+  // Score label
+  ctx.font='bold 13px Arial, sans-serif';
+  ctx.fillStyle='#7a9e90';
+  ctx.textAlign='center';
+  ctx.letterSpacing='2px';
+  ctx.fillText('SKOR AUDIT JIWA',W/2,265);
+
+  // Big score number
+  ctx.font='bold 110px Georgia, serif';
+  ctx.fillStyle='#c9a84c';
+  ctx.textAlign='center';
+  ctx.fillText(d.score+'%',W/2,380);
+
+  // Level text
+  var levelColor = d.score<=30?'#1db88a':d.score<=50?'#f59e0b':d.score<=75?'#f97316':'#ef4444';
+  ctx.font='bold 22px Arial, sans-serif';
+  ctx.fillStyle=levelColor;
+  ctx.fillText(d.level,W/2,418);
+
+  // ── PROBLEMS ──
+  if(d.problems.length>0){
+    ctx.font='bold 12px Arial, sans-serif';
+    ctx.fillStyle='#7a9e90';
+    ctx.textAlign='center';
+    ctx.fillText((st.card_problems_label||'Bidang').toUpperCase(),W/2,478);
+
+    var showProbs = d.problems.slice(0,4);
+    var pillColors=['rgba(245,158,11,.15)','rgba(139,92,246,.15)','rgba(249,115,22,.15)','rgba(239,68,68,.15)'];
+    var pillBorders=['rgba(245,158,11,.4)','rgba(139,92,246,.4)','rgba(249,115,22,.4)','rgba(239,68,68,.4)'];
+    var pillTexts=['#f59e0b','#8b5cf6','#f97316','#ef4444'];
+    var totalPillW=0;
+    var pillPad=24;
+    ctx.font='bold 14px Arial, sans-serif';
+    var pillWidths=[];
+    showProbs.forEach(function(p){
+      var w=ctx.measureText(p).width+pillPad*2;
+      pillWidths.push(w);
+      totalPillW+=w+12;
+    });
+    var startX=(W-totalPillW+12)/2;
+    var pillY=500;
+    showProbs.forEach(function(p,i){
+      var pw=pillWidths[i];
+      roundRect(ctx,startX,pillY,pw,36,18);
+      ctx.fillStyle=pillColors[i%pillColors.length];
+      ctx.fill();
+      ctx.strokeStyle=pillBorders[i%pillBorders.length];
+      ctx.lineWidth=1;
+      ctx.stroke();
+      ctx.font='bold 13px Arial, sans-serif';
+      ctx.fillStyle=pillTexts[i%pillTexts.length];
+      ctx.textAlign='center';
+      ctx.fillText(p,startX+pw/2,pillY+23);
+      startX+=pw+12;
+    });
+  }
+
+  // ── ARABIC WATERMARK ──
+  ctx.font='120px serif';
+  ctx.fillStyle='rgba(29,184,138,0.04)';
+  ctx.textAlign='center';
+  ctx.fillText('\u0645\u064F\u062D\u064E\u0627\u0633\u064E\u0628\u064E\u0629',W/2,700);
+
+  // ── AYAT BOX ──
+  var ayatBoxY = d.problems.length>0 ? 580 : 490;
+  roundRect(ctx,80,ayatBoxY,W-160,130,14);
+  ctx.fillStyle='rgba(201,168,76,0.08)';
+  ctx.fill();
+  ctx.strokeStyle='rgba(201,168,76,0.2)';
+  ctx.lineWidth=1;
+  ctx.stroke();
+
+  ctx.font='italic 17px Georgia, serif';
+  ctx.fillStyle='#c9a84c';
+  ctx.textAlign='center';
+  var ay1=st.card_ayat||'"Hendaklah setiap jiwa memperhatikan';
+  var ay2=st.card_ayat2||'apa yang telah ia persembahkan untuk hari esok."';
+  ctx.fillText('\u201C'+ay1,W/2,ayatBoxY+38);
+  ctx.fillText(ay2+'\u201D',W/2,ayatBoxY+62);
+  ctx.font='bold 13px Arial, sans-serif';
+  ctx.fillStyle='#7a9e90';
+  ctx.fillText('\u2014 '+(st.card_ref||'Al-Hasyr: 18'),W/2,ayatBoxY+90);
+
+  // ── VIRAL FOOTER ──
+  var footerY = 780;
+  // Divider
+  ctx.fillStyle='rgba(255,255,255,0.06)';
+  ctx.fillRect(80,footerY,W-160,1);
+
+  ctx.font='15px Arial, sans-serif';
+  ctx.fillStyle='#7a9e90';
+  ctx.textAlign='center';
+  ctx.fillText(st.card_footer||'Audit jiwa kamu juga di',W/2,footerY+36);
+
+  ctx.font='bold 22px Georgia, serif';
+  ctx.fillStyle='#1db88a';
+  ctx.fillText('auditjiwa.madrasahiam.com',W/2,footerY+68);
+
+  // QR-like decoration (simple dots grid)
+  var qrX=W/2-60, qrY=footerY+90;
+  ctx.fillStyle='rgba(29,184,138,0.3)';
+  for(var r=0;r<4;r++){
+    for(var c=0;c<4;c++){
+      if(Math.random()>0.4){
+        ctx.fillRect(qrX+c*14,qrY+r*14,10,10);
+      }
+    }
+  }
+  // Arrow pointing to URL
+  ctx.font='bold 20px Arial, sans-serif';
+  ctx.fillStyle='rgba(29,184,138,0.6)';
+  ctx.fillText('\u2197',W/2+90,footerY+115);
+
+  // Bottom brand line
+  ctx.font='11px Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.2)';
+  ctx.textAlign='center';
+  ctx.fillText('Madrasah I AM  \u00B7  Sistem Pemantauan Jiwa  \u00B7  2026',W/2,1060);
+
+  // Show modal
+  var imgData = canvas.toDataURL('image/png');
+  document.getElementById('share-modal-img').src = imgData;
+  document.getElementById('share-modal').classList.add('open');
+}
+
+function roundRect(ctx,x,y,w,h,r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y);
+  ctx.lineTo(x+w-r,y);
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r);
+  ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h);
+  ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r);
+  ctx.quadraticCurveTo(x,y,x+r,y);
+  ctx.closePath();
+}
+
+var _shareCardDataUrl = null;
+function downloadCard(){
+  var canvas=document.getElementById('share-canvas');
+  var a=document.createElement('a');
+  a.download='AuditJiwa-Result.png';
+  a.href=canvas.toDataURL('image/png');
+  a.click();
+}
+
+function closeModal(){
+  document.getElementById('share-modal').classList.remove('open');
 }
 
 </script>

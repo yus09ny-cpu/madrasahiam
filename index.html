@@ -17,7 +17,7 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px;background:rgba(6,20,16,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(29,184,138,.1)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:64px;background:rgba(6,20,16,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(29,184,138,.1)}
 .nl{display:flex;align-items:center;gap:10px;text-decoration:none}
 .ni{width:36px;height:36px;border-radius:50%;background:var(--tdim);border:1px solid var(--tborder);display:flex;align-items:center;justify-content:center;font-size:16px}
 .nt{font-family:'Playfair Display',serif;font-size:15px;color:var(--wh);font-weight:600;display:block}
@@ -278,7 +278,6 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
 /* RESPONSIVE */
 @media(max-width:768px){
   nav{padding:0 16px}
-  .nlang{display:none}
   section{padding:64px 16px}
   .fi,.fi.rv{grid-template-columns:1fr;direction:ltr}
   .fv{min-height:220px}
@@ -315,6 +314,37 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
 .share-modal-dl{width:100%;padding:13px;border-radius:var(--r);background:var(--teal);color:#fff;border:none;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:8px;transition:all .2s}
 .share-modal-dl:hover{background:var(--teal2)}
 
+
+/* Lang switcher mobile */
+@media(max-width:480px){
+  .nlang{padding:3px}
+  .nlang button{padding:4px 8px;font-size:11px}
+  .nt{font-size:13px}
+  .ns{display:none}
+  .ncta{padding:7px 14px;font-size:12px}
+  .ni{width:30px;height:30px;font-size:14px}
+}
+
+/* Mobile lang bar fallback */
+.lang-bar{
+  display:none;
+  position:sticky;top:64px;z-index:90;
+  background:rgba(6,20,16,.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(29,184,138,.15);
+  padding:8px 16px;
+  justify-content:center;gap:8px;
+}
+.lang-bar button{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  color:var(--muted);font-size:13px;font-weight:600;
+  padding:6px 20px;border-radius:16px;cursor:pointer;transition:all .2s;
+  letter-spacing:.5px;
+}
+.lang-bar button.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.lang-bar button:hover:not(.active){color:var(--teal2);border-color:var(--tborder)}
+@media(max-width:768px){
+  .lang-bar{display:flex}
+}
 </style>
 </head>
 <body>
@@ -331,6 +361,13 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
   </div>
   <a href="https://auditjiwa.madrasahiam.com" class="ncta" target="_blank" data-t="nav_cta">Buka App &#8594;</a>
 </nav>
+<!-- Mobile language bar -->
+<div class="lang-bar" id="lang-bar">
+  <button onclick="setLang('bm')" class="active" id="lbar-bm">BM</button>
+  <button onclick="setLang('bi')" id="lbar-bi">BI</button>
+  <button onclick="setLang('en')" id="lbar-en">EN</button>
+</div>
+
 
 <section class="hero" id="hero">
   <div class="hbg"></div>
@@ -971,6 +1008,8 @@ function setLang(l){
   ['bm','bi','en'].forEach(function(x){
     var b=document.getElementById('btn-'+x);
     if(b) b.classList.toggle('active',x===l);
+    var lb=document.getElementById('lbar-'+x);
+    if(lb) lb.classList.toggle('active',x===l);
   });
   buildGrid();
   if(cur===2) buildSL();

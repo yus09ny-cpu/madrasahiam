@@ -324,27 +324,6 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
   .ncta{padding:7px 14px;font-size:12px}
   .ni{width:30px;height:30px;font-size:14px}
 }
-
-/* Mobile lang bar fallback */
-.lang-bar{
-  display:none;
-  position:sticky;top:64px;z-index:90;
-  background:rgba(6,20,16,.95);backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(29,184,138,.15);
-  padding:8px 16px;
-  justify-content:center;gap:8px;
-}
-.lang-bar button{
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
-  color:var(--muted);font-size:13px;font-weight:600;
-  padding:6px 20px;border-radius:16px;cursor:pointer;transition:all .2s;
-  letter-spacing:.5px;
-}
-.lang-bar button.active{background:var(--teal);color:#fff;border-color:var(--teal)}
-.lang-bar button:hover:not(.active){color:var(--teal2);border-color:var(--tborder)}
-@media(max-width:768px){
-  .lang-bar{display:flex}
-}
 </style>
 </head>
 <body>
@@ -361,13 +340,6 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
   </div>
   <a href="https://auditjiwa.madrasahiam.com" class="ncta" target="_blank" data-t="nav_cta">Buka App &#8594;</a>
 </nav>
-<!-- Mobile language bar -->
-<div class="lang-bar" id="lang-bar">
-  <button onclick="setLang('bm')" class="active" id="lbar-bm">BM</button>
-  <button onclick="setLang('bi')" id="lbar-bi">BI</button>
-  <button onclick="setLang('en')" id="lbar-en">EN</button>
-</div>
-
 
 <section class="hero" id="hero">
   <div class="hbg"></div>
@@ -1008,8 +980,7 @@ function setLang(l){
   ['bm','bi','en'].forEach(function(x){
     var b=document.getElementById('btn-'+x);
     if(b) b.classList.toggle('active',x===l);
-    var lb=document.getElementById('lbar-'+x);
-    if(lb) lb.classList.toggle('active',x===l);
+
   });
   buildGrid();
   if(cur===2) buildSL();

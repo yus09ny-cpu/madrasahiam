@@ -351,6 +351,32 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
 .ar-active .obtns { font-family: 'Amiri', sans-serif; font-size: 17px; }
 .ar-active .pb { font-family: 'Amiri', sans-serif; font-size: 16px; }
 
+
+/* ── SHARE SYSTEM ── */
+.share-section{margin-top:24px;border-top:1px solid rgba(255,255,255,.08);padding-top:24px}
+.share-title{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:16px;text-align:center}
+.share-btns{display:flex;flex-direction:column;gap:10px}
+.share-btn{width:100%;padding:13px 16px;border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px;border:none;text-decoration:none}
+.share-wa{background:#25D366;color:#fff}
+.share-wa:hover{background:#1ebe5d;transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,.35)}
+.share-tg{background:#229ED9;color:#fff}
+.share-tg:hover{background:#1a8fbf;transform:translateY(-1px);box-shadow:0 6px 20px rgba(34,158,217,.35)}
+.share-img{background:rgba(255,255,255,.08);color:var(--txt);border:1px solid rgba(255,255,255,.15)}
+.share-img:hover{background:rgba(255,255,255,.13);border-color:var(--teal2)}
+.share-copy{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid rgba(255,255,255,.1)}
+.share-copy:hover{background:rgba(255,255,255,.09);color:var(--txt)}
+.share-copied{background:rgba(29,184,138,.15);color:var(--teal);border:1px solid var(--tborder)}
+#share-canvas{display:none}
+.share-modal{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.8);align-items:center;justify-content:center;padding:24px}
+.share-modal.open{display:flex}
+.share-modal-inner{background:var(--card2);border:1px solid var(--tborder);border-radius:20px;padding:24px;max-width:420px;width:100%;text-align:center}
+.share-modal-title{font-size:14px;font-weight:600;color:var(--wh);margin-bottom:16px}
+.share-modal-img{width:100%;border-radius:12px;margin-bottom:16px;display:block}
+.share-modal-close{width:100%;padding:12px;border-radius:var(--r);background:rgba(255,255,255,.08);color:var(--muted);border:1px solid rgba(255,255,255,.1);font-size:14px;cursor:pointer;margin-top:8px}
+.share-modal-close:hover{background:rgba(255,255,255,.13)}
+.share-modal-dl{width:100%;padding:13px;border-radius:var(--r);background:var(--teal);color:#fff;border:none;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:8px;transition:all .2s}
+.share-modal-dl:hover{background:var(--teal2)}
+
 </style>
 </head>
 <body>
@@ -764,6 +790,19 @@ bm:{
     {id:'ibadah',nm:'Ibadah tidak bermakna',sub:'Solat ada, hati jauh',ic:'&#128332;',cl:'#10b981',sc:'Pew (2022): 41% Muslim merasakan hubungan spiritual yang lemah walaupun beramal.'},
     {id:'hubungan',nm:'Hubungan retak',sub:'Keluarga, pasangan',ic:'&#128148;',cl:'#f43f5e',sc:'Harvard Study (75 tahun): Kualiti hubungan adalah peramal kesihatan nombor satu.'}
   ]
+  ,copied:'Disalin!'
+  ,wa_text:function(name,score,level,problems,url){
+    var p=problems.length>0?problems.slice(0,3).join(', '):'';
+    return '\uD83C\uDF3F *Audit Jiwa saya*\n\nSkor: *'+score+'%* \u2014 '+level+'\n'+(p?'Bidang: '+p+'\n\n':'')+'\u201cHendaklah setiap jiwa memperhatikan apa yang telah ia persembahkan untuk hari esok.\u201d\n\u2014 Al-Hasyr: 18\n\nAudit jiwa kamu juga \u2192 '+url;
+  }
+  ,card_sub:'Muhasabah Jiwa Bersepadu'
+  ,card_ayat:'Hendaklah setiap jiwa memperhatikan'
+  ,card_ayat2:'apa yang telah ia persembahkan untuk hari esok.'
+  ,card_ref:'Al-Hasyr: 18'
+  ,card_footer:'Audit jiwa kamu juga di'
+  ,card_problems_label:'Bidang yang perlu diperbaiki'
+
+
 },
 bi:{
   nav_cta:'Buka Aplikasi &#8594;',hero_title:'Audit <em>Jiwa</em> Anda<br>sebelum terlambat.',hero_ayat:'"Hendaklah setiap jiwa memperhatikan apa yang telah dipersembahkannya untuk hari esok." &mdash; Al-Hasyr: 18',hero_body:'Bukan aplikasi agama biasa.<br><strong>Audit Jiwa</strong> &mdash; sistem pemantauan jiwa yang lengkap, membimbing Anda dari ghaflah kembali kepada Allah.',hero_cta1:'&#127807; Mulai Audit Jiwa Saya &mdash; Gratis',hero_cta2:'&#8853; Mengapa saya perlu ini?',
@@ -803,6 +842,17 @@ bi:{
     {id:'ibadah',nm:'Ibadah tidak bermakna',sub:'Shalat ada, hati jauh',ic:'&#128332;',cl:'#10b981',sc:'Pew (2022): 41% Muslim merasakan hubungan spiritual yang lemah meski rajin beribadah.'},
     {id:'hubungan',nm:'Hubungan retak',sub:'Keluarga, pasangan',ic:'&#128148;',cl:'#f43f5e',sc:'Harvard Study (75 tahun): Kualitas hubungan adalah prediktor kesehatan nomor satu.'}
   ]
+  ,copied:'Disalin!'
+  ,wa_text:function(name,score,level,problems,url){
+    var p=problems.length>0?problems.slice(0,3).join(', '):'';
+    return '\uD83C\uDF3F *Audit Jiwa saya*\n\nSkor: *'+score+'%* \u2014 '+level+'\n'+(p?'Bidang: '+p+'\n\n':'')+'\u201cHendaklah setiap jiwa memperhatikan apa yang telah dipersembahkannya untuk hari esok.\u201d\n\u2014 Al-Hasyr: 18\n\nAudit jiwamu juga \u2192 '+url;
+  }
+  ,card_sub:'Muhasabah Jiwa Terpadu'
+  ,card_ayat:'Hendaklah setiap jiwa memperhatikan'
+  ,card_ayat2:'apa yang telah dipersembahkannya untuk hari esok.'
+  ,card_ref:'Al-Hasyr: 18'
+  ,card_footer:'Audit jiwamu juga di'
+  ,card_problems_label:'Bidang yang perlu diperbaiki'
 },
 en:{
   nav_cta:'Open App &#8594;',hero_title:'Audit Your <em>Soul</em><br>before it is too late.',hero_ayat:'"Let every soul consider what it has sent forth for tomorrow." &mdash; Al-Hasyr: 18',hero_body:'Not another religious app.<br><strong>Audit Jiwa</strong> &mdash; a complete soul monitoring system, guiding you from heedlessness back to Allah.',hero_cta1:'&#127807; Start My Soul Audit &mdash; Free',hero_cta2:'&#8853; Why do I need this?',
@@ -842,7 +892,19 @@ en:{
     {id:'ibadah',nm:'Worship feels hollow',sub:'Praying, yet heart absent',ic:'&#128332;',cl:'#10b981',sc:'Pew (2022): 41% of Muslims feel a weak spiritual connection despite regular religious observance.'},
     {id:'hubungan',nm:'Broken relationships',sub:'Family, spouse',ic:'&#128148;',cl:'#f43f5e',sc:'Harvard Study (75 years): The quality of relationships is the single greatest predictor of health.'}
   ]
+  ,copied:'Copied!'
+  ,wa_text:function(name,score,level,problems,url){
+    var p=problems.length>0?problems.slice(0,3).join(', '):'';
+    return '\uD83C\uDF3F *My Soul Audit*\n\nScore: *'+score+'%* \u2014 '+level+'\n'+(p?'Areas: '+p+'\n\n':'')+'\u201cLet every soul consider what it has sent forth for tomorrow.\u201d\n\u2014 Al-Hasyr: 18\n\nTake your own Soul Audit \u2192 '+url;
+  }
+  ,card_sub:'Integrated Soul Assessment'
+  ,card_ayat:'Let every soul consider'
+  ,card_ayat2:'what it has sent forth for tomorrow.'
+  ,card_ref:'Al-Hasyr: 18'
+  ,card_footer:'Take your own Soul Audit at'
+  ,card_problems_label:'Areas for improvement'
 }
+
 ,ar:{
   nav_cta:'افتح التطبيق &#8594;',
   hero_title:'دقِّق في <em>روحك</em><br>قبل فوات الأوان.',
@@ -1098,6 +1160,207 @@ function setLang(l){
 
 // Init grid on page load
 buildGrid();
+
+
+// ═══════════════════════════
+// SHARE SYSTEM
+// ═══════════════════════════
+function getShareData(){
+  var M=getMasalah();
+  var list=sel.length>0?sel:[];
+  var score=parseInt(document.getElementById('osv').textContent)||0;
+  var level=document.getElementById('osvl').textContent||'';
+  var problems=[];
+  list.forEach(function(id){ M.forEach(function(m){ if(m.id===id) problems.push(m.nm); }); });
+  return {score:score,level:level,problems:problems,url:'https://auditjiwa.madrasahiam.com'};
+}
+
+function getShareText(){
+  var d=getShareData();
+  var t=T[lang]||T.bm;
+  var wt=t.wa_text;
+  if(typeof wt==='function'){
+    var txt=wt('',d.score,d.level,d.problems,d.url);
+    var div=document.createElement('div');
+    div.innerHTML=txt;
+    return div.textContent||div.innerText||txt;
+  }
+  return 'Audit Jiwa saya: '+d.score+'% - '+d.url;
+}
+
+function shareWA(){
+  var text=encodeURIComponent(getShareText());
+  window.open('https://wa.me/?text='+text,'_blank');
+}
+
+function shareTG(){
+  var d=getShareData();
+  var text=encodeURIComponent(getShareText());
+  var url=encodeURIComponent(d.url);
+  window.open('https://t.me/share/url?url='+url+'&text='+text,'_blank');
+}
+
+function copyShareText(){
+  var text=getShareText();
+  var btn=document.getElementById('copy-btn');
+  var btntxt=document.getElementById('copy-btn-txt');
+  var t=T[lang]||T.bm;
+  var copied=t.copied||'Copied!';
+  var copyLabel=t.share_copy||'Salin Teks';
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(text).then(function(){
+      if(btn) btn.classList.add('share-copied');
+      if(btntxt) btntxt.textContent=copied;
+      setTimeout(function(){
+        if(btn) btn.classList.remove('share-copied');
+        if(btntxt) btntxt.innerHTML=copyLabel;
+      },2500);
+    });
+  } else {
+    var ta=document.createElement('textarea');
+    ta.value=text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    if(btntxt) btntxt.textContent=copied;
+    setTimeout(function(){ if(btntxt) btntxt.innerHTML=copyLabel; },2500);
+  }
+}
+
+function roundRect(ctx,x,y,w,h,r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r);
+  ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h);
+  ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r);
+  ctx.quadraticCurveTo(x,y,x+r,y);
+  ctx.closePath();
+}
+
+function generateShareImage(){
+  var d=getShareData();
+  var t=T[lang]||T.bm;
+  var canvas=document.getElementById('share-canvas');
+  if(!canvas){ alert('Canvas tidak tersedia'); return; }
+  var ctx=canvas.getContext('2d');
+  var W=1080,H=1080;
+  canvas.width=W; canvas.height=H;
+
+  // Background
+  var bg=ctx.createRadialGradient(W/2,H*.35,0,W/2,H*.35,W*.7);
+  bg.addColorStop(0,'#0f2920'); bg.addColorStop(.5,'#0a1f1a'); bg.addColorStop(1,'#061410');
+  ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+
+  // Glow
+  var glow=ctx.createRadialGradient(W/2,200,0,W/2,200,500);
+  glow.addColorStop(0,'rgba(29,184,138,0.18)'); glow.addColorStop(1,'rgba(29,184,138,0)');
+  ctx.fillStyle=glow; ctx.fillRect(0,0,W,H);
+
+  // Top border
+  var topLine=ctx.createLinearGradient(0,0,W,0);
+  topLine.addColorStop(0,'rgba(29,184,138,0)'); topLine.addColorStop(.3,'rgba(29,184,138,.8)');
+  topLine.addColorStop(.7,'rgba(29,184,138,.8)'); topLine.addColorStop(1,'rgba(29,184,138,0)');
+  ctx.fillStyle=topLine; ctx.fillRect(0,0,W,3);
+
+  // Logo badge
+  ctx.beginPath(); ctx.arc(W/2,90,32,0,Math.PI*2);
+  ctx.fillStyle='rgba(29,184,138,0.15)'; ctx.fill();
+  ctx.strokeStyle='rgba(29,184,138,0.4)'; ctx.lineWidth=1.5; ctx.stroke();
+  ctx.font='28px serif'; ctx.textAlign='center'; ctx.fillStyle='#1db88a';
+  ctx.fillText('\uD83C\uDF3F',W/2,101);
+
+  // App name
+  ctx.font='bold 28px Georgia,serif'; ctx.fillStyle='#fff'; ctx.textAlign='center';
+  ctx.fillText('Audit Jiwa',W/2,155);
+  ctx.font='13px Arial,sans-serif'; ctx.fillStyle='#7a9e90';
+  ctx.fillText('Madrasah I AM \u00B7 auditjiwa.madrasahiam.com',W/2,178);
+
+  // Divider
+  ctx.fillStyle='rgba(255,255,255,0.07)'; ctx.fillRect(80,200,W-160,1);
+
+  // Score card
+  roundRect(ctx,80,220,W-160,260,20);
+  var cg=ctx.createLinearGradient(80,220,80,480);
+  cg.addColorStop(0,'rgba(201,168,76,0.12)'); cg.addColorStop(1,'rgba(201,168,76,0.05)');
+  ctx.fillStyle=cg; ctx.fill();
+  ctx.strokeStyle='rgba(201,168,76,0.3)'; ctx.lineWidth=1; ctx.stroke();
+
+  ctx.font='bold 13px Arial,sans-serif'; ctx.fillStyle='#7a9e90'; ctx.textAlign='center';
+  ctx.fillText((t.score_lbl||'SKOR AUDIT JIWA'),W/2,265);
+
+  ctx.font='bold 110px Georgia,serif'; ctx.fillStyle='#c9a84c';
+  ctx.fillText(d.score+'%',W/2,380);
+
+  var lc=d.score<=30?'#1db88a':d.score<=50?'#f59e0b':d.score<=75?'#f97316':'#ef4444';
+  ctx.font='bold 22px Arial,sans-serif'; ctx.fillStyle=lc;
+  ctx.fillText(d.level,W/2,418);
+
+  // Problems
+  if(d.problems.length>0){
+    ctx.font='bold 12px Arial,sans-serif'; ctx.fillStyle='#7a9e90'; ctx.textAlign='center';
+    ctx.fillText((t.card_problems_label||'Masalah').toUpperCase(),W/2,478);
+    var showP=d.problems.slice(0,4);
+    var pcs=['rgba(245,158,11,.15)','rgba(139,92,246,.15)','rgba(249,115,22,.15)','rgba(239,68,68,.15)'];
+    var pbs=['rgba(245,158,11,.4)','rgba(139,92,246,.4)','rgba(249,115,22,.4)','rgba(239,68,68,.4)'];
+    var pts=['#f59e0b','#8b5cf6','#f97316','#ef4444'];
+    var tot=0; var pw=[];
+    ctx.font='bold 14px Arial,sans-serif';
+    showP.forEach(function(p){ var w=ctx.measureText(p).width+48; pw.push(w); tot+=w+12; });
+    var sx=(W-tot+12)/2; var py=500;
+    showP.forEach(function(p,i){
+      roundRect(ctx,sx,py,pw[i],36,18);
+      ctx.fillStyle=pcs[i%pcs.length]; ctx.fill();
+      ctx.strokeStyle=pbs[i%pbs.length]; ctx.lineWidth=1; ctx.stroke();
+      ctx.font='bold 13px Arial,sans-serif'; ctx.fillStyle=pts[i%pts.length]; ctx.textAlign='center';
+      ctx.fillText(p,sx+pw[i]/2,py+23); sx+=pw[i]+12;
+    });
+  }
+
+  // Arabic watermark
+  ctx.font='120px serif'; ctx.fillStyle='rgba(29,184,138,0.04)'; ctx.textAlign='center';
+  ctx.fillText('\u0645\u064F\u062D\u064E\u0627\u0633\u064E\u0628\u064E\u0629',W/2,700);
+
+  // Ayat box
+  var ay=d.problems.length>0?580:490;
+  roundRect(ctx,80,ay,W-160,130,14);
+  ctx.fillStyle='rgba(201,168,76,0.08)'; ctx.fill();
+  ctx.strokeStyle='rgba(201,168,76,0.2)'; ctx.lineWidth=1; ctx.stroke();
+  ctx.font='italic 17px Georgia,serif'; ctx.fillStyle='#c9a84c'; ctx.textAlign='center';
+  var a1=t.card_ayat||'Hendaklah setiap jiwa memperhatikan';
+  var a2=t.card_ayat2||'apa yang telah ia persembahkan untuk hari esok.';
+  ctx.fillText('\u201C'+a1,W/2,ay+38);
+  ctx.fillText(a2+'\u201D',W/2,ay+62);
+  ctx.font='bold 13px Arial,sans-serif'; ctx.fillStyle='#7a9e90';
+  ctx.fillText('\u2014 '+(t.card_ref||'Al-Hasyr: 18'),W/2,ay+90);
+
+  // Footer
+  var fy=780;
+  ctx.fillStyle='rgba(255,255,255,0.06)'; ctx.fillRect(80,fy,W-160,1);
+  ctx.font='15px Arial,sans-serif'; ctx.fillStyle='#7a9e90'; ctx.textAlign='center';
+  ctx.fillText(t.card_footer||'Audit jiwa kamu juga di',W/2,fy+36);
+  ctx.font='bold 22px Georgia,serif'; ctx.fillStyle='#1db88a';
+  ctx.fillText('auditjiwa.madrasahiam.com',W/2,fy+68);
+  ctx.font='11px Arial,sans-serif'; ctx.fillStyle='rgba(255,255,255,0.2)';
+  ctx.fillText('Madrasah I AM \u00B7 Sistem Pemantauan Jiwa \u00B7 2026',W/2,1060);
+
+  // Show modal
+  var imgData=canvas.toDataURL('image/png');
+  document.getElementById('share-modal-img').src=imgData;
+  document.getElementById('share-modal').classList.add('open');
+}
+
+function downloadCard(){
+  var canvas=document.getElementById('share-canvas');
+  var a=document.createElement('a');
+  a.download='AuditJiwa-Result.png';
+  a.href=canvas.toDataURL('image/png');
+  a.click();
+}
+
+function closeModal(){
+  document.getElementById('share-modal').classList.remove('open');
+}
 
 </script>
 </body>

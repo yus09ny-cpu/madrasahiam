@@ -377,6 +377,54 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
 .share-modal-dl{width:100%;padding:13px;border-radius:var(--r);background:var(--teal);color:#fff;border:none;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:8px;transition:all .2s}
 .share-modal-dl:hover{background:var(--teal2)}
 
+
+/* ── BPM ZIKIR SECTION ── */
+.bpm{background:var(--bg2);padding:96px 24px}
+.bpm-inner{max-width:1080px;margin:0 auto}
+.bpm-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(239,68,68,.15),rgba(239,68,68,.05));border:1px solid rgba(239,68,68,.3);border-radius:20px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:2px;color:#f87171;text-transform:uppercase;margin-bottom:24px}
+.bpm-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:#ef4444;animation:bpm-pulse 1.2s ease-in-out infinite}
+@keyframes bpm-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.bpm-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:600;color:var(--wh);line-height:1.2;margin-bottom:16px}
+.bpm-title em{font-style:italic;color:#f87171}
+.bpm-sub{font-size:16px;color:var(--muted);max-width:640px;line-height:1.75;margin-bottom:48px}
+.bpm-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.bpm-left{display:flex;flex-direction:column;gap:20px}
+.bpm-card{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:var(--r);padding:24px;position:relative;overflow:hidden}
+.bpm-card.highlight{border-color:rgba(239,68,68,.3);background:linear-gradient(135deg,rgba(239,68,68,.06),var(--card))}
+.bpm-card.highlight::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#ef4444,rgba(239,68,68,0))}
+.bpm-card-ey{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#f87171;margin-bottom:10px}
+.bpm-card-t{font-size:16px;font-weight:600;color:var(--wh);margin-bottom:8px}
+.bpm-card-d{font-size:13px;color:var(--muted);line-height:1.65}
+.bpm-vis{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:32px;position:relative;overflow:hidden}
+.bpm-vis-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(239,68,68,.08),transparent 70%)}
+.bpm-heart{text-align:center;position:relative;z-index:1;margin-bottom:24px}
+.bpm-heart-num{font-size:72px;font-weight:800;color:#f87171;line-height:1;display:block}
+.bpm-heart-lbl{font-size:13px;color:var(--muted);margin-top:6px;display:block}
+.bpm-wave{width:100%;height:60px;position:relative;overflow:hidden;margin:20px 0}
+.bpm-wave svg{width:100%;height:100%}
+.bpm-tiers{display:flex;flex-direction:column;gap:8px;position:relative;z-index:1}
+.bpm-tier{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:var(--rs);font-size:13px}
+.bpm-tier.active{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.25)}
+.bpm-tier-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.bpm-tier-range{font-weight:600;min-width:80px}
+.bpm-tier-lbl{color:var(--muted)}
+.bpm-tier-cur{margin-left:auto;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#f87171;background:rgba(239,68,68,.15);padding:3px 8px;border-radius:8px}
+.bpm-devices{margin-top:32px}
+.bpm-dev-title{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+.bpm-dev-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bpm-dev{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--rs);padding:14px;display:flex;align-items:center;gap:12px}
+.bpm-dev.best{border-color:var(--tborder);background:rgba(29,184,138,.06)}
+.bpm-dev-ic{font-size:22px;flex-shrink:0}
+.bpm-dev-nm{font-size:13px;font-weight:600;color:var(--txt);margin-bottom:2px}
+.bpm-dev-d{font-size:11px;color:var(--muted)}
+.bpm-dev-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;margin-top:4px;display:inline-block}
+.bpm-dev-tag.rec{background:rgba(29,184,138,.15);color:var(--teal)}
+.bpm-dev-tag.good{background:rgba(201,168,76,.15);color:var(--gold)}
+.bpm-quran{margin-top:32px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:var(--r);padding:24px}
+.bpm-qar{font-family:'Amiri',serif;font-size:22px;color:var(--gold);direction:rtl;text-align:right;margin-bottom:10px}
+.bpm-qt{font-size:13px;color:var(--muted);font-style:italic;line-height:1.6}
+@media(max-width:768px){.bpm-grid{grid-template-columns:1fr}.bpm-dev-grid{grid-template-columns:1fr 1fr}}
+
 </style>
 </head>
 <body>
@@ -509,6 +557,109 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
     <div class="fi rv reveal">
       <div class="fv"><span class="fbg bf" data-t="badge_free5">Percuma</span><div style="font-family:'Amiri',serif;font-size:22px;color:var(--gold);margin-bottom:6px;position:relative;z-index:1">&#1575;&#1604;&#1571;&#1614;&#1605;&#1614;&#1604;</div><div style="font-size:11px;color:var(--muted);margin-bottom:16px;position:relative;z-index:1" data-t="f8vs">Zikir Berstruktur Harian</div><div class="tsg"><div class="tsi"><div class="tsv">0</div><div class="tsl" data-t="tqn_jahar">Jumlah Jahar</div></div><div class="tsi"><div class="tsv">&#128293; 7</div><div class="tsl" data-t="tqn_streak">hari Streak</div></div></div><div class="ttabs"><div class="ttab act">Zikir</div><div class="ttab sn">Khataman</div><div class="ttab sn">Manakiban</div><div class="ttab sn">Inabah</div><div class="ttab sn">Ziarah</div></div></div>
       <div><div class="ey" data-t="f8ey">Zikir Berstruktur</div><h3 class="ftitle" data-t="f8title">Disiplin Zikir Harian, Berasaskan Al-Quran</h3><div class="fayat"><div class="faar">&#1571;&#1614;&#1604;&#1614;&#1575; &#1576;&#1616;&#1584;&#1616;&#1603;&#1618;&#1585;&#1616; &#1575;&#1604;&#1604;&#1614;&#1617;&#1607;&#1616; &#1578;&#1614;&#1591;&#1618;&#1605;&#1614;&#1574;&#1616;&#1606;&#1615;&#1617; &#1575;&#1604;&#1618;&#1602;&#1615;&#1604;&#1615;&#1608;&#1576;</div><div class="fat" data-t="f8ayat">&ldquo;Ketahuilah, hanya dengan mengingati Allah hati menjadi tenang.&rdquo; &mdash; Ar-Ra&rsquo;d: 28</div></div><ul class="fps"><li data-t="f8l1"><strong>Zikir Jahar &amp; Khafi</strong> &mdash; aktif dengan streak harian</li><li data-t="f8l2">Khataman &middot; Manakiban &middot; Inabah &middot; Ziarah &mdash; akan datang</li><li data-t="f8l3">Pilihan amalan berasaskan Al-Quran dan Sunnah</li></ul><p class="fdesc" style="font-size:12px;color:var(--dim);margin-top:12px" data-t="f8note">Sebahagian amalan berasal dari tradisi Tasawwuf TQN (Qadiriyah Naqsyabandiyah) sebagai salah satu pilihan &mdash; tidak wajib, dan boleh diabaikan jika anda lebih selesa dengan zikir umum sahaja.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BPM ZIKIR SECTION -->
+<section class="bpm" id="bpm-zikir">
+  <div class="bpm-inner">
+    <div class="reveal">
+      <div class="bpm-badge">&#10022; Pertama Di Dunia</div>
+      <h2 class="bpm-title" data-t="bpm_title">Zikir Khafi Selaras<br><em>Degupan Jantung Anda</em></h2>
+      <p class="bpm-sub" data-t="bpm_sub">Buat pertama kali dalam sejarah teknologi Islam &mdash; Audit Jiwa menyegerakkan sebutan Zikir Khafi dengan irama jantung anda secara real-time. Bukan kawal nafas. Bukan metronom. <strong>Degupan jantung anda sendiri menjadi panduan zikir.</strong></p>
+    </div>
+
+    <div class="bpm-grid reveal">
+      <!-- LEFT: Info cards -->
+      <div class="bpm-left">
+        <div class="bpm-card highlight">
+          <div class="bpm-card-ey" data-t="bpm_c1ey">Inovasi Pertama Dunia</div>
+          <div class="bpm-card-t" data-t="bpm_c1t">Interoceptive Entrainment</div>
+          <div class="bpm-card-d" data-t="bpm_c1d">Apabila zikir diselaraskan dengan degupan jantung, otak masuk ke keadaan koherensi saraf yang meningkatkan HRV, menurunkan kortisol, dan membuka ruang untuk kehadiran hati yang lebih dalam &mdash; sesuatu yang tidak dapat dicapai oleh zikir lisan biasa.</div>
+        </div>
+
+        <div class="bpm-card">
+          <div class="bpm-card-ey" data-t="bpm_c2ey">Asas Saintifik</div>
+          <div class="bpm-card-t" data-t="bpm_c2t">Neurovisceral Integration</div>
+          <div class="bpm-card-d" data-t="bpm_c2d">Kajian HeartMath Institute dan Harvard Medical School mengesahkan: sinkronisasi antara aktiviti mental dengan irama jantung mengaktifkan laluan vagus &mdash; laluan yang sama yang digunakan dalam tafakkur dan khusyuk mendalam.</div>
+        </div>
+
+        <div class="bpm-card">
+          <div class="bpm-card-ey" data-t="bpm_c3ey">Asas Spiritual</div>
+          <div class="bpm-card-t" data-t="bpm_c3t">Zikir Khafi &mdash; Zikir Hati</div>
+          <div class="bpm-card-d" data-t="bpm_c3d">Para ulama Tasawwuf mengajarkan bahawa Zikir Khafi bukan dilafazkan &mdash; ia dirasakan dalam hati. Audit Jiwa menterjemahkan prinsip ini kepada realiti biometrik: hati yang berzikir sebenar akan terukur pada irama jantungnya.</div>
+        </div>
+
+        <div class="bpm-quran">
+          <div class="bpm-qar">&#1608;&#1614;&#1575;&#1584;&#1618;&#1603;&#1615;&#1585; &#1585;&#1614;&#1617;&#1576;&#1614;&#1617;&#1603;&#1614; &#1601;&#1616;&#1610; &#1606;&#1614;&#1601;&#1618;&#1587;&#1616;&#1603;&#1614; &#1578;&#1614;&#1590;&#1614;&#1617;&#1585;&#1615;&#1617;&#1593;&#1611;&#1575; &#1608;&#1614;&#1582;&#1616;&#1610;&#1601;&#1614;&#1577;&#1611;</div>
+          <div class="bpm-qt" data-t="bpm_ayat">&ldquo;Dan sebutlah nama Tuhanmu dalam hatimu dengan merendahkan diri dan rasa takut.&rdquo; &mdash; Al-A&rsquo;raf: 205</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Visual + Devices -->
+      <div>
+        <div class="bpm-vis">
+          <div class="bpm-vis-bg"></div>
+          <div class="bpm-heart" style="position:relative;z-index:1">
+            <span style="font-size:36px">&#10084;&#65039;</span>
+            <span class="bpm-heart-num">62</span>
+            <span class="bpm-heart-lbl" data-t="bpm_bpm">BPM &mdash; Ketenangan Mendalam</span>
+          </div>
+          <div class="bpm-wave" style="position:relative;z-index:1">
+            <svg viewBox="0 0 400 60" preserveAspectRatio="none">
+              <path d="M0,30 L40,30 L50,10 L60,50 L70,30 L120,30 L130,10 L140,50 L150,30 L200,30 L210,10 L220,50 L230,30 L280,30 L290,10 L300,50 L310,30 L360,30 L370,10 L380,50 L390,30 L400,30" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+            </svg>
+          </div>
+          <div class="bpm-tiers" style="position:relative;z-index:1">
+            <div class="bpm-tier"><div class="bpm-tier-dot" style="background:#60a5fa"></div><span class="bpm-tier-range" data-t="bpm_t1r">40&ndash;60</span><span class="bpm-tier-lbl" data-t="bpm_t1l">Ketenangan Mendalam</span><span class="bpm-tier-cur" data-t="bpm_t1tag">Sasaran</span></div>
+            <div class="bpm-tier"><div class="bpm-tier-dot" style="background:#4ade80"></div><span class="bpm-tier-range" data-t="bpm_t2r">61&ndash;70</span><span class="bpm-tier-lbl" data-t="bpm_t2l">Tenang &amp; Hadir</span></div>
+            <div class="bpm-tier"><div class="bpm-tier-dot" style="background:#facc15"></div><span class="bpm-tier-range" data-t="bpm_t3r">71&ndash;85</span><span class="bpm-tier-lbl" data-t="bpm_t3l">Sederhana</span></div>
+            <div class="bpm-tier"><div class="bpm-tier-dot" style="background:#fb923c"></div><span class="bpm-tier-range" data-t="bpm_t4r">86&ndash;100</span><span class="bpm-tier-lbl" data-t="bpm_t4l">Tertekan</span></div>
+            <div class="bpm-tier"><div class="bpm-tier-dot" style="background:#f87171"></div><span class="bpm-tier-range" data-t="bpm_t5r">100+</span><span class="bpm-tier-lbl" data-t="bpm_t5l">Kritikal</span></div>
+          </div>
+        </div>
+
+        <div class="bpm-devices">
+          <div class="bpm-dev-title" data-t="bpm_dev_title">Wrist Strap Disyorkan</div>
+          <div class="bpm-dev-grid">
+            <div class="bpm-dev best">
+              <div class="bpm-dev-ic">&#129304;</div>
+              <div>
+                <div class="bpm-dev-nm">CYCPLUS H1</div>
+                <div class="bpm-dev-d" data-t="bpm_cycplus_d">Wrist strap, mudah pakai</div>
+                <span class="bpm-dev-tag rec" data-t="bpm_cycplus_tag">Digunakan Kami</span>
+              </div>
+            </div>
+            <div class="bpm-dev best">
+              <div class="bpm-dev-ic">&#9899;</div>
+              <div>
+                <div class="bpm-dev-nm">Polar H10</div>
+                <div class="bpm-dev-d" data-t="bpm_polar_d">Chest strap, paling tepat</div>
+                <span class="bpm-dev-tag rec" data-t="bpm_polar_tag">Terbaik</span>
+              </div>
+            </div>
+            <div class="bpm-dev best">
+              <div class="bpm-dev-ic">&#9898;</div>
+              <div>
+                <div class="bpm-dev-nm">COOSPO H808S</div>
+                <div class="bpm-dev-d" data-t="bpm_coospo_d">Chest strap, nilai terbaik</div>
+                <span class="bpm-dev-tag rec" data-t="bpm_coospo_tag">Disyorkan</span>
+              </div>
+            </div>
+            <div class="bpm-dev">
+              <div class="bpm-dev-ic">&#9866;</div>
+              <div>
+                <div class="bpm-dev-nm">Garmin HRM-Dual</div>
+                <div class="bpm-dev-d" data-t="bpm_garmin_d">Dual-band Bluetooth + ANT+</div>
+                <span class="bpm-dev-tag good" data-t="bpm_garmin_tag">Baik</span>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:11px;color:var(--dim);margin-top:12px;line-height:1.6" data-t="bpm_dev_note">* Sebarang peranti Bluetooth LE yang menyokong protokol BLE Heart Rate Profile boleh digunakan. Chest strap memberikan bacaan R-R interval yang lebih tepat berbanding wrist-based sensor.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -803,6 +954,7 @@ bm:{
   ,card_problems_label:'Bidang yang perlu diperbaiki'
 
 
+,bpm_title:'Zikir Khafi Selaras<br><em>Degupan Jantung Anda</em>',bpm_sub:'Buat pertama kali dalam sejarah teknologi Islam &mdash; Audit Jiwa menyegerakkan Zikir Khafi dengan irama jantung anda secara real-time. <strong>Degupan jantung anda sendiri menjadi panduan zikir.</strong>',bpm_c1ey:'Inovasi Pertama Dunia',bpm_c1t:'Interoceptive Entrainment',bpm_c1d:'Apabila zikir diselaraskan dengan degupan jantung, otak masuk ke keadaan koherensi saraf yang meningkatkan HRV dan menurunkan kortisol.',bpm_c2ey:'Asas Saintifik',bpm_c2t:'Neurovisceral Integration',bpm_c2d:'Kajian HeartMath Institute dan Harvard mengesahkan: sinkronisasi aktiviti mental dengan irama jantung mengaktifkan laluan vagus &mdash; laluan yang sama dalam khusyuk mendalam.',bpm_c3ey:'Asas Spiritual',bpm_c3t:'Zikir Khafi &mdash; Zikir Hati',bpm_c3d:'Ulama Tasawwuf mengajarkan bahawa Zikir Khafi dirasakan dalam hati. Audit Jiwa menterjemahkan prinsip ini kepada realiti biometrik.',bpm_ayat:'Dan sebutlah nama Tuhanmu dalam hatimu dengan merendahkan diri dan rasa takut. &mdash; Al-Araf: 205',bpm_bpm:'BPM &mdash; Ketenangan Mendalam',bpm_t1r:'40-60',bpm_t1l:'Ketenangan Mendalam',bpm_t1tag:'Sasaran',bpm_t2r:'61-70',bpm_t2l:'Tenang & Hadir',bpm_t3r:'71-85',bpm_t3l:'Sederhana',bpm_t4r:'86-100',bpm_t4l:'Tertekan',bpm_t5r:'100+',bpm_t5l:'Kritikal',bpm_dev_title:'Peranti BPM Disyorkan',bpm_cycplus_d:'Wrist strap, senang dipakai',bpm_cycplus_tag:'Digunakan Kami',bpm_polar_d:'Chest strap, ketepatan tertinggi',bpm_polar_tag:'Terbaik',bpm_coospo_d:'Chest strap, nilai terbaik',bpm_coospo_tag:'Disyorkan',bpm_garmin_d:'Chest strap, dual-band BT+ANT+',bpm_garmin_tag:'Baik',bpm_cam_nm:'Kamera Telefon',bpm_cam_d:'PPG via kamera, percubaan',bpm_cam_tag:'Demo',bpm_dev_note:'Wrist strap: mudah, sesuai untuk penggunaan harian. Chest strap: lebih tepat untuk R-R interval. Sebarang peranti Bluetooth LE yang menyokong BLE Heart Rate Profile boleh digunakan.'
 },
 bi:{
   nav_cta:'Buka Aplikasi &#8594;',hero_title:'Audit <em>Jiwa</em> Anda<br>sebelum terlambat.',hero_ayat:'"Hendaklah setiap jiwa memperhatikan apa yang telah dipersembahkannya untuk hari esok." &mdash; Al-Hasyr: 18',hero_body:'Bukan aplikasi agama biasa.<br><strong>Audit Jiwa</strong> &mdash; sistem pemantauan jiwa yang lengkap, membimbing Anda dari ghaflah kembali kepada Allah.',hero_cta1:'&#127807; Mulai Audit Jiwa Saya &mdash; Gratis',hero_cta2:'&#8853; Mengapa saya perlu ini?',
@@ -853,6 +1005,7 @@ bi:{
   ,card_ref:'Al-Hasyr: 18'
   ,card_footer:'Audit jiwamu juga di'
   ,card_problems_label:'Bidang yang perlu diperbaiki'
+,bpm_title:'Zikir Khafi Selaras<br><em>Detak Jantung Anda</em>',bpm_sub:'Untuk pertama kalinya dalam sejarah teknologi Islam &mdash; Audit Jiwa menyinkronkan Zikir Khafi dengan irama jantung Anda secara real-time. <strong>Detak jantung Anda sendiri yang memandu zikir.</strong>',bpm_c1ey:'Inovasi Pertama Dunia',bpm_c1t:'Interoceptive Entrainment',bpm_c1d:'Ketika zikir diselaraskan dengan detak jantung, otak memasuki kondisi koherensi saraf yang meningkatkan HRV dan menurunkan kortisol.',bpm_c2ey:'Dasar Ilmiah',bpm_c2t:'Neurovisceral Integration',bpm_c2d:'Penelitian HeartMath Institute dan Harvard mengkonfirmasi: sinkronisasi aktivitas mental dengan irama jantung mengaktifkan jalur vagus &mdash; jalur yang sama dalam kekhusyukan mendalam.',bpm_c3ey:'Dasar Spiritual',bpm_c3t:'Zikir Khafi &mdash; Zikir Hati',bpm_c3d:'Ulama Tasawwuf mengajarkan bahwa Zikir Khafi dirasakan dalam hati. Audit Jiwa menerjemahkan prinsip ini ke realitas biometrik.',bpm_ayat:'Dan sebutlah nama Tuhanmu dalam hatimu dengan merendahkan diri dan rasa takut. &mdash; Al-Araf: 205',bpm_bpm:'BPM &mdash; Ketenangan Mendalam',bpm_t1r:'40-60',bpm_t1l:'Ketenangan Mendalam',bpm_t1tag:'Target',bpm_t2r:'61-70',bpm_t2l:'Tenang & Hadir',bpm_t3r:'71-85',bpm_t3l:'Sedang',bpm_t4r:'86-100',bpm_t4l:'Tertekan',bpm_t5r:'100+',bpm_t5l:'Kritis',bpm_dev_title:'Perangkat BPM yang Direkomendasikan',bpm_cycplus_d:'Wrist strap, mudah dipakai',bpm_cycplus_tag:'Yang Kami Gunakan',bpm_polar_d:'Chest strap, akurasi tertinggi',bpm_polar_tag:'Terbaik',bpm_coospo_d:'Chest strap, nilai terbaik',bpm_coospo_tag:'Direkomendasikan',bpm_garmin_d:'Chest strap, dual-band BT+ANT+',bpm_garmin_tag:'Baik',bpm_cam_nm:'Kamera Ponsel',bpm_cam_d:'PPG via kamera, untuk percobaan',bpm_cam_tag:'Demo',bpm_dev_note:'Wrist strap: mudah, cocok untuk penggunaan harian. Chest strap: lebih akurat untuk R-R interval. Perangkat Bluetooth LE apapun yang mendukung BLE Heart Rate Profile dapat digunakan.'
 },
 en:{
   nav_cta:'Open App &#8594;',hero_title:'Audit Your <em>Soul</em><br>before it is too late.',hero_ayat:'"Let every soul consider what it has sent forth for tomorrow." &mdash; Al-Hasyr: 18',hero_body:'Not another religious app.<br><strong>Audit Jiwa</strong> &mdash; a complete soul monitoring system, guiding you from heedlessness back to Allah.',hero_cta1:'&#127807; Start My Soul Audit &mdash; Free',hero_cta2:'&#8853; Why do I need this?',
@@ -903,8 +1056,8 @@ en:{
   ,card_ref:'Al-Hasyr: 18'
   ,card_footer:'Take your own Soul Audit at'
   ,card_problems_label:'Areas for improvement'
+,bpm_title:'Zikir Khafi Synchronised<br>with <em>Your Heartbeat</em>',bpm_sub:'For the first time in Islamic technology history &mdash; Audit Jiwa synchronises Zikir Khafi with your heartbeat in real-time. <strong>Your own heartbeat becomes the guide for dhikr.</strong>',bpm_c1ey:'World-First Innovation',bpm_c1t:'Interoceptive Entrainment',bpm_c1d:'When dhikr is synchronised with the heartbeat, the brain enters neural coherence that raises HRV and lowers cortisol &mdash; unachievable through conventional verbal dhikr alone.',bpm_c2ey:'Scientific Foundation',bpm_c2t:'Neurovisceral Integration',bpm_c2d:'Research from the HeartMath Institute and Harvard confirms: synchronisation of mental activity with cardiac rhythm activates the vagal pathway &mdash; the same pathway engaged in deep khushu.',bpm_c3ey:'Spiritual Foundation',bpm_c3t:'Zikir Khafi &mdash; Dhikr of the Heart',bpm_c3d:'Sufi scholars teach that Zikir Khafi is not spoken &mdash; it is felt in the heart. Audit Jiwa translates this into biometric reality.',bpm_ayat:'Remember your Lord within yourself in humility and in fear. &mdash; Al-Araf: 205',bpm_bpm:'BPM &mdash; Deep Stillness',bpm_t1r:'40-60',bpm_t1l:'Deep Stillness',bpm_t1tag:'Target',bpm_t2r:'61-70',bpm_t2l:'Calm & Present',bpm_t3r:'71-85',bpm_t3l:'Moderate',bpm_t4r:'86-100',bpm_t4l:'Under Stress',bpm_t5r:'100+',bpm_t5l:'Critical',bpm_dev_title:'Recommended BPM Devices',bpm_cycplus_d:'Wrist strap, easy to wear',bpm_cycplus_tag:'Used By Us',bpm_polar_d:'Chest strap, highest accuracy',bpm_polar_tag:'Best',bpm_coospo_d:'Chest strap, best value',bpm_coospo_tag:'Recommended',bpm_garmin_d:'Chest strap, dual-band BT+ANT+',bpm_garmin_tag:'Good',bpm_cam_nm:'Phone Camera',bpm_cam_d:'PPG via camera, demo mode',bpm_cam_tag:'Demo',bpm_dev_note:'Wrist strap: convenient, ideal for daily use. Chest strap: more accurate R-R interval readings. Any Bluetooth LE device supporting the BLE Heart Rate Profile may be used.'
 }
-
 ,ar:{
   nav_cta:'افتح التطبيق &#8594;',
   hero_title:'دقِّق في <em>روحك</em><br>قبل فوات الأوان.',
@@ -988,8 +1141,8 @@ en:{
     return '&#127807; *مراجعة روحي*\n\nالاسم: *'+name+'*\nالنتيجة: *'+score+'%* &mdash; '+level+'\n'+(p?'المجالات: '+p+'\n\n':'')+'&ldquo;وَلْتَنظُرْ نَفْسٌ مَّا قَدَّمَتْ لِغَدٍ.&rdquo;\n&mdash; الحشر: 18\n\nراجع روحك أنت أيضاً &#8594; '+url;
   },
   card_sub:'محاسبة روحية متكاملة',card_ayat:'وَلْتَنظُرْ نَفْسٌ مَّا قَدَّمَتْ لِغَدٍ',card_ayat2:'الحشر: 18',card_ref:'الحشر: 18',card_footer:'راجع روحك أيضاً على',card_problems_label:'مجالات تحتاج تحسين'
+,bpm_title:'ذكر الخفي متزامن<br>مع <em>نبضات قلبك</em>',bpm_sub:'للمرة الأولى في تاريخ التكنولوجيا الإسلامية &mdash; Audit Jiwa يزامن ذكر الخفي مع إيقاع قلبك في الوقت الفعلي. <strong>نبض قلبك هو اللي يقود الذكر.</strong>',bpm_c1ey:'ابتكار عالمي أول',bpm_c1t:'التزامن الاستيعابي',bpm_c1d:'لما الذكر يتزامن مع نبض القلب، الدماغ يدخل حالة تماسك عصبي ترفع HRV وتخفض الكورتيزول.',bpm_c2ey:'الأساس العلمي',bpm_c2t:'التكامل العصبي الحشوي',bpm_c2d:'أبحاث HeartMath Institute وHarvard تأكد: التزامن بين النشاط الذهني وإيقاع القلب ينشط مسار العصب الحائر.',bpm_c3ey:'الأساس الروحي',bpm_c3t:'الذكر الخفي &mdash; ذكر القلب',bpm_c3d:'علماء التصوف يعلمون أن الذكر الخفي يُحسّ في القلب. Audit Jiwa يترجم هذا إلى واقع بيومتري.',bpm_ayat:'واذكر ربك في نفسك تضرعاً وخيفة. &mdash; الأعراف: 205',bpm_bpm:'BPM &mdash; سكينة عميقة',bpm_t1r:'40-60',bpm_t1l:'سكينة عميقة',bpm_t1tag:'الهدف',bpm_t2r:'61-70',bpm_t2l:'هادئ وحاضر',bpm_t3r:'71-85',bpm_t3l:'متوسط',bpm_t4r:'86-100',bpm_t4l:'تحت ضغط',bpm_t5r:'100+',bpm_t5l:'حرج',bpm_dev_title:'الأجهزة الموصى بها',bpm_cycplus_d:'حزام رسغ، سهل الاستخدام',bpm_cycplus_tag:'اللي نستخدمه',bpm_polar_d:'حزام صدر، الأدق',bpm_polar_tag:'الأفضل',bpm_coospo_d:'حزام صدر، أفضل قيمة',bpm_coospo_tag:'موصى به',bpm_garmin_d:'حزام صدر، Bluetooth مزدوج + ANT+',bpm_garmin_tag:'جيد',bpm_cam_nm:'كاميرا الهاتف',bpm_cam_d:'PPG عبر الكاميرا، تجريبي',bpm_cam_tag:'تجريبي',bpm_dev_note:'حزام الرسغ: مريح، مثالي للاستخدام اليومي. حزام الصدر: أدق في قراءات R-R interval. أي جهاز Bluetooth LE يدعم BLE Heart Rate Profile يمكن استخدامه.'
 }
-
 };
 
 </script>

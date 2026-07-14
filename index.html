@@ -425,6 +425,45 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
 .bpm-qt{font-size:13px;color:var(--muted);font-style:italic;line-height:1.6}
 @media(max-width:768px){.bpm-grid{grid-template-columns:1fr}.bpm-dev-grid{grid-template-columns:1fr 1fr}}
 
+
+/* ── SYMPTOM BRIDGE SECTION ── */
+.sym-wrap{margin-top:48px}
+.sym-intro{text-align:center;margin-bottom:32px}
+.sym-intro-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#f87171;margin-bottom:10px}
+.sym-intro-t{font-family:'Playfair Display',serif;font-size:clamp(20px,2.5vw,28px);font-weight:600;color:var(--wh);margin-bottom:10px;line-height:1.3}
+.sym-intro-d{font-size:14px;color:var(--muted);max-width:560px;margin:0 auto;line-height:1.7}
+.sym-flow{display:flex;align-items:center;justify-content:center;gap:12px;margin:28px 0;flex-wrap:wrap}
+.sym-flow-node{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:10px 16px;font-size:13px;font-weight:600;color:var(--txt);text-align:center;line-height:1.4}
+.sym-flow-node.root{border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.08);color:#f87171}
+.sym-flow-node.mid{border-color:rgba(251,146,60,.3);background:rgba(251,146,60,.08);color:#fb923c}
+.sym-flow-arrow{color:var(--dim);font-size:18px;flex-shrink:0}
+.sym-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sym-card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--r);padding:20px;position:relative;overflow:hidden;transition:border-color .2s}
+.sym-card:hover{border-color:rgba(255,255,255,.12)}
+.sym-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;border-radius:2px 0 0 2px}
+.sym-card.red::before{background:linear-gradient(180deg,#ef4444,rgba(239,68,68,0))}
+.sym-card.orange::before{background:linear-gradient(180deg,#f97316,rgba(249,115,22,0))}
+.sym-card.purple::before{background:linear-gradient(180deg,#a855f7,rgba(168,85,247,0))}
+.sym-card.blue::before{background:linear-gradient(180deg,#3b82f6,rgba(59,130,246,0))}
+.sym-card.amber::before{background:linear-gradient(180deg,#f59e0b,rgba(245,158,11,0))}
+.sym-card.teal::before{background:linear-gradient(180deg,var(--teal),rgba(29,184,138,0))}
+.sym-ic{font-size:28px;margin-bottom:10px;display:block}
+.sym-nm{font-size:14px;font-weight:700;color:var(--wh);margin-bottom:6px}
+.sym-stat{font-size:22px;font-weight:800;margin-bottom:4px}
+.sym-stat-lbl{font-size:11px;color:var(--muted);margin-bottom:10px;line-height:1.4}
+.sym-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.05)}
+.sym-link{font-size:10px;font-weight:600;padding:3px 8px;border-radius:6px;letter-spacing:.5px}
+.sym-link.red{background:rgba(239,68,68,.12);color:#f87171}
+.sym-link.orange{background:rgba(249,115,22,.12);color:#fb923c}
+.sym-link.purple{background:rgba(168,85,247,.12);color:#c084fc}
+.sym-src{font-size:10px;color:var(--dim);margin-top:8px;line-height:1.4}
+.sym-quran{margin-top:28px;background:linear-gradient(135deg,rgba(239,68,68,.06),rgba(201,168,76,.06));border:1px solid rgba(201,168,76,.2);border-radius:var(--r);padding:24px 28px;text-align:center}
+.sym-qar{font-family:'Amiri',serif;font-size:24px;color:var(--gold);direction:rtl;margin-bottom:10px}
+.sym-qt{font-size:14px;color:var(--muted);font-style:italic;line-height:1.6;margin-bottom:6px}
+.sym-qref{font-size:12px;color:var(--dim)}
+@media(max-width:768px){.sym-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.sym-grid{grid-template-columns:1fr}.sym-flow{flex-direction:column;gap:6px}.sym-flow-arrow{transform:rotate(90deg)}}
+
 </style>
 </head>
 <body>
@@ -506,6 +545,113 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
     <div class="sbox">
       <div style="font-size:28px;flex-shrink:0">&#128302;</div>
       <div><div class="ssrc">Harvard Medical School &middot; 2021</div><div class="stxt" data-t="sains">Stres kronik meningkatkan risiko penyakit kardiovaskular 40%, mengganggu sistem imun, dan mempercepatkan penuaan sel &mdash; semuanya bermula dari keadaan jiwa yang tidak tenang.</div></div>
+        <!-- SYMPTOM BRIDGE -->
+        <div class="sym-wrap reveal">
+          <div class="sym-intro">
+            <div class="sym-intro-ey" data-t="sym_ey">Akibat Kepada Badan & Minda</div>
+            <h3 class="sym-intro-t" data-t="sym_title">Bila jiwa sakit, badan ikut sakit.</h3>
+            <p class="sym-intro-d" data-t="sym_sub">Sains moden telah mengesahkan apa yang Al-Quran ajarkan sejak 1,400 tahun — keadaan jiwa secara langsung mempengaruhi kesihatan fizikal dan mental.</p>
+          </div>
+
+          <!-- Flow diagram -->
+          <div class="sym-flow">
+            <div class="sym-flow-node root" data-t="sym_f1">Ghaflah<br>Nafsu &bull; Was-was</div>
+            <div class="sym-flow-arrow">&#8594;</div>
+            <div class="sym-flow-node mid" data-t="sym_f2">Stres Kronik<br>HPA Axis tertekan</div>
+            <div class="sym-flow-arrow">&#8594;</div>
+            <div class="sym-flow-node mid" data-t="sym_f3">Kortisol tinggi<br>Saraf terganggu</div>
+            <div class="sym-flow-arrow">&#8594;</div>
+            <div class="sym-flow-node root" data-t="sym_f4">Penyakit<br>fizikal & mental</div>
+          </div>
+
+          <div class="sym-grid">
+            <!-- 1. Jantung -->
+            <div class="sym-card red">
+              <span class="sym-ic">&#10084;&#65039;</span>
+              <div class="sym-nm" data-t="sym_heart_nm">Penyakit Jantung</div>
+              <div class="sym-stat" style="color:#f87171">+40%</div>
+              <div class="sym-stat-lbl" data-t="sym_heart_lbl">risiko kardiovaskular akibat stres kronik</div>
+              <div class="sym-src" data-t="sym_heart_src">Harvard Medical School, 2021 &bull; JAMA Cardiology</div>
+              <div class="sym-links">
+                <span class="sym-link orange" data-t="sym_heart_l1">Nafsu Amm&#257;rah</span>
+                <span class="sym-link red" data-t="sym_heart_l2">Ghaflah</span>
+              </div>
+            </div>
+
+            <!-- 2. Diabetes -->
+            <div class="sym-card blue">
+              <span class="sym-ic">&#128167;</span>
+              <div class="sym-nm" data-t="sym_dm_nm">Diabetes Jenis 2</div>
+              <div class="sym-stat" style="color:#60a5fa">+45%</div>
+              <div class="sym-stat-lbl" data-t="sym_dm_lbl">peningkatan risiko diabetes akibat kortisol berterusan</div>
+              <div class="sym-src" data-t="sym_dm_src">The Lancet Diabetes & Endocrinology, 2023</div>
+              <div class="sym-links">
+                <span class="sym-link red" data-t="sym_dm_l1">Ghaflah</span>
+                <span class="sym-link orange" data-t="sym_dm_l2">Was-was</span>
+              </div>
+            </div>
+
+            <!-- 3. Mental Health -->
+            <div class="sym-card purple">
+              <span class="sym-ic">&#129504;</span>
+              <div class="sym-nm" data-t="sym_mh_nm">Kemurungan & Anxiety</div>
+              <div class="sym-stat" style="color:#c084fc">280 juta</div>
+              <div class="sym-stat-lbl" data-t="sym_mh_lbl">orang dunia — punca terbesar: kehilangan makna spiritual</div>
+              <div class="sym-src" data-t="sym_mh_src">WHO Global Health Report, 2023</div>
+              <div class="sym-links">
+                <span class="sym-link red" data-t="sym_mh_l1">Ghaflah</span>
+                <span class="sym-link purple" data-t="sym_mh_l2">Was-was Syaitan</span>
+              </div>
+            </div>
+
+            <!-- 4. Tekanan Darah -->
+            <div class="sym-card orange">
+              <span class="sym-ic">&#129657;</span>
+              <div class="sym-nm" data-t="sym_bp_nm">Darah Tinggi</div>
+              <div class="sym-stat" style="color:#fb923c">+15 mmHg</div>
+              <div class="sym-stat-lbl" data-t="sym_bp_lbl">peningkatan tekanan darah sistolik akibat stres psikologi</div>
+              <div class="sym-src" data-t="sym_bp_src">Harvard Health Publishing, 2021</div>
+              <div class="sym-links">
+                <span class="sym-link orange" data-t="sym_bp_l1">Nafsu Amm&#257;rah</span>
+                <span class="sym-link red" data-t="sym_bp_l2">Was-was</span>
+              </div>
+            </div>
+
+            <!-- 5. Tidur -->
+            <div class="sym-card amber">
+              <span class="sym-ic">&#128164;</span>
+              <div class="sym-nm" data-t="sym_sleep_nm">Gangguan Tidur</div>
+              <div class="sym-stat" style="color:#fbbf24">72%</div>
+              <div class="sym-stat-lbl" data-t="sym_sleep_lbl">penghidap tekanan kronik alami insomnia dan tidur tidak berkualiti</div>
+              <div class="sym-src" data-t="sym_sleep_src">American Psychological Association, 2022</div>
+              <div class="sym-links">
+                <span class="sym-link purple" data-t="sym_sleep_l1">Was-was Syaitan</span>
+                <span class="sym-link red" data-t="sym_sleep_l2">Ghaflah</span>
+              </div>
+            </div>
+
+            <!-- 6. Imun & Penuaan -->
+            <div class="sym-card teal">
+              <span class="sym-ic">&#129516;</span>
+              <div class="sym-nm" data-t="sym_imun_nm">Imun Lemah & Penuaan Awal</div>
+              <div class="sym-stat" style="color:var(--teal)">3&times;</div>
+              <div class="sym-stat-lbl" data-t="sym_imun_lbl">lebih cepat penuaan sel (telomere pendek) akibat stres oksidatif</div>
+              <div class="sym-src" data-t="sym_imun_src">Nobel Prize in Medicine, 2009 &bull; Elizabeth Blackburn</div>
+              <div class="sym-links">
+                <span class="sym-link red" data-t="sym_imun_l1">Ghaflah</span>
+                <span class="sym-link orange" data-t="sym_imun_l2">Nafsu Amm&#257;rah</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quran closing -->
+          <div class="sym-quran">
+            <div class="sym-qar">&#1571;&#1614;&#1604;&#1614;&#1575; &#1576;&#1616;&#1584;&#1616;&#1603;&#1618;&#1585;&#1616; &#1575;&#1604;&#1604;&#1614;&#1617;&#1607;&#1616; &#1578;&#1614;&#1591;&#1618;&#1605;&#1614;&#1574;&#1616;&#1606;&#1615;&#1617; &#1575;&#1604;&#1618;&#1602;&#1615;&#1604;&#1615;&#1608;&#1576;</div>
+            <div class="sym-qt" data-t="sym_quran_t">&ldquo;Ketahuilah, hanya dengan mengingati Allah hati menjadi tenang.&rdquo;</div>
+            <div class="sym-qref" data-t="sym_quran_ref">&mdash; Ar-Ra&rsquo;d: 28 &bull; Ubat sebenar bukan pil. Ia zikir.</div>
+          </div>
+        </div>
+
     </div>
   </div>
 </section>
@@ -955,7 +1101,7 @@ bm:{
 
 
 ,bpm_title:'Zikir Khafi Selaras<br><em>Degupan Jantung Anda</em>',bpm_sub:'Buat pertama kali dalam sejarah teknologi Islam &mdash; Audit Jiwa menyegerakkan Zikir Khafi dengan irama jantung anda secara real-time. <strong>Degupan jantung anda sendiri menjadi panduan zikir.</strong>',bpm_c1ey:'Inovasi Pertama Dunia',bpm_c1t:'Interoceptive Entrainment',bpm_c1d:'Apabila zikir diselaraskan dengan degupan jantung, otak masuk ke keadaan koherensi saraf yang meningkatkan HRV dan menurunkan kortisol.',bpm_c2ey:'Asas Saintifik',bpm_c2t:'Neurovisceral Integration',bpm_c2d:'Kajian HeartMath Institute dan Harvard mengesahkan: sinkronisasi aktiviti mental dengan irama jantung mengaktifkan laluan vagus &mdash; laluan yang sama dalam khusyuk mendalam.',bpm_c3ey:'Asas Spiritual',bpm_c3t:'Zikir Khafi &mdash; Zikir Hati',bpm_c3d:'Ulama Tasawwuf mengajarkan bahawa Zikir Khafi dirasakan dalam hati. Audit Jiwa menterjemahkan prinsip ini kepada realiti biometrik.',bpm_ayat:'Dan sebutlah nama Tuhanmu dalam hatimu dengan merendahkan diri dan rasa takut. &mdash; Al-Araf: 205',bpm_bpm:'BPM &mdash; Ketenangan Mendalam',bpm_t1r:'40-60',bpm_t1l:'Ketenangan Mendalam',bpm_t1tag:'Sasaran',bpm_t2r:'61-70',bpm_t2l:'Tenang & Hadir',bpm_t3r:'71-85',bpm_t3l:'Sederhana',bpm_t4r:'86-100',bpm_t4l:'Tertekan',bpm_t5r:'100+',bpm_t5l:'Kritikal',bpm_dev_title:'Peranti BPM Disyorkan',bpm_cycplus_d:'Wrist strap, senang dipakai',bpm_cycplus_tag:'Digunakan Kami',bpm_polar_d:'Chest strap, ketepatan tertinggi',bpm_polar_tag:'Terbaik',bpm_coospo_d:'Chest strap, nilai terbaik',bpm_coospo_tag:'Disyorkan',bpm_garmin_d:'Chest strap, dual-band BT+ANT+',bpm_garmin_tag:'Baik',bpm_cam_nm:'Kamera Telefon',bpm_cam_d:'PPG via kamera, percubaan',bpm_cam_tag:'Demo',bpm_dev_note:'Wrist strap: mudah, sesuai untuk penggunaan harian. Chest strap: lebih tepat untuk R-R interval. Sebarang peranti Bluetooth LE yang menyokong BLE Heart Rate Profile boleh digunakan.'
-},
+,sym_ey:'Akibat Kepada Badan & Minda',sym_title:'Bila jiwa sakit, badan ikut sakit.',sym_sub:'Sains moden telah mengesahkan apa yang Al-Quran ajarkan sejak 1,400 tahun &mdash; keadaan jiwa secara langsung mempengaruhi kesihatan fizikal dan mental.',sym_f1:'Ghaflah<br>Nafsu &bull; Was-was',sym_f2:'Stres Kronik<br>HPA Axis tertekan',sym_f3:'Kortisol tinggi<br>Saraf terganggu',sym_f4:'Penyakit<br>fizikal & mental',sym_heart_nm:'Penyakit Jantung',sym_heart_lbl:'risiko kardiovaskular akibat stres kronik',sym_heart_src:'Harvard Medical School, 2021 &bull; JAMA Cardiology',sym_heart_l1:'Nafsu Amm&#257;rah',sym_heart_l2:'Ghaflah',sym_dm_nm:'Diabetes Jenis 2',sym_dm_lbl:'peningkatan risiko diabetes akibat kortisol berterusan',sym_dm_src:'The Lancet Diabetes & Endocrinology, 2023',sym_dm_l1:'Ghaflah',sym_dm_l2:'Was-was',sym_mh_nm:'Kemurungan & Anxiety',sym_mh_lbl:'orang dunia &mdash; punca terbesar: kehilangan makna spiritual',sym_mh_src:'WHO Global Health Report, 2023',sym_mh_l1:'Ghaflah',sym_mh_l2:'Was-was Syaitan',sym_bp_nm:'Darah Tinggi',sym_bp_lbl:'peningkatan tekanan darah sistolik akibat stres psikologi',sym_bp_src:'Harvard Health Publishing, 2021',sym_bp_l1:'Nafsu Amm&#257;rah',sym_bp_l2:'Was-was',sym_sleep_nm:'Gangguan Tidur',sym_sleep_lbl:'penghidap tekanan kronik alami insomnia dan tidur tidak berkualiti',sym_sleep_src:'American Psychological Association, 2022',sym_sleep_l1:'Was-was Syaitan',sym_sleep_l2:'Ghaflah',sym_imun_nm:'Imun Lemah & Penuaan Awal',sym_imun_lbl:'lebih cepat penuaan sel (telomere pendek) akibat stres oksidatif',sym_imun_src:'Nobel Prize in Medicine, 2009 &bull; Elizabeth Blackburn',sym_imun_l1:'Ghaflah',sym_imun_l2:'Nafsu Amm&#257;rah',sym_quran_t:'&ldquo;Ketahuilah, hanya dengan mengingati Allah hati menjadi tenang.&rdquo;',sym_quran_ref:'&mdash; Ar-Ra&#39;d: 28 &bull; Ubat sebenar bukan pil. Ia zikir.'},
 bi:{
   nav_cta:'Buka Aplikasi &#8594;',hero_title:'Audit <em>Jiwa</em> Anda<br>sebelum terlambat.',hero_ayat:'"Hendaklah setiap jiwa memperhatikan apa yang telah dipersembahkannya untuk hari esok." &mdash; Al-Hasyr: 18',hero_body:'Bukan aplikasi agama biasa.<br><strong>Audit Jiwa</strong> &mdash; sistem pemantauan jiwa yang lengkap, membimbing Anda dari ghaflah kembali kepada Allah.',hero_cta1:'&#127807; Mulai Audit Jiwa Saya &mdash; Gratis',hero_cta2:'&#8853; Mengapa saya perlu ini?',
   hook_ey:'Pertanyaan yang perlu dijawab',hook_title:'Anda sudah shalat.<br>Anda sudah baca Al-Quran.<br>Tapi mengapa hati masih terasa kosong?',hook_p1:'Anda bukan orang yang tidak beragama. Anda shalat. Anda berpuasa. Mungkin Anda mengikuti pengajian, menghafal hadis.',hook_p2:'Namun di dalam &mdash; ada sesuatu yang tidak beres.<br>Gelisah yang tidak hilang meski setelah shalat.<br>Rasa hampa yang datang tanpa sebab.',hook_hl:'Ini bukan tanda Anda kurang ilmu. Ini bukan karena kurang amalan.<br><br><strong>Ini karena Anda beragama dengan lisan dan anggota &mdash; namun hati Anda belum sampai kepada Allah.</strong>',hook_p3:'Al-Quran dibaca. Namun tidak dirasakan.<br>Shalat didirikan. Namun hati tidak hadir.<br>Zikir dilafalkan. Namun jiwa masih jauh.',ghaflah_desc:'Hati yang lupa. Jiwa yang lalai.<br>Bukan karena tidak beramal &mdash; melainkan karena ruh dari amalan itu telah pergi.',hook_close:'Audit Jiwa dibangun untuk satu tujuan:<br><strong style="color:var(--teal2)">Membawa Anda dari amalan yang kosong menuju kehadiran yang nyata.</strong>',hook_cta:'Saya Ingin Merasakan Allah &mdash; Mulai Sekarang',
@@ -1006,7 +1152,7 @@ bi:{
   ,card_footer:'Audit jiwamu juga di'
   ,card_problems_label:'Bidang yang perlu diperbaiki'
 ,bpm_title:'Zikir Khafi Selaras<br><em>Detak Jantung Anda</em>',bpm_sub:'Untuk pertama kalinya dalam sejarah teknologi Islam &mdash; Audit Jiwa menyinkronkan Zikir Khafi dengan irama jantung Anda secara real-time. <strong>Detak jantung Anda sendiri yang memandu zikir.</strong>',bpm_c1ey:'Inovasi Pertama Dunia',bpm_c1t:'Interoceptive Entrainment',bpm_c1d:'Ketika zikir diselaraskan dengan detak jantung, otak memasuki kondisi koherensi saraf yang meningkatkan HRV dan menurunkan kortisol.',bpm_c2ey:'Dasar Ilmiah',bpm_c2t:'Neurovisceral Integration',bpm_c2d:'Penelitian HeartMath Institute dan Harvard mengkonfirmasi: sinkronisasi aktivitas mental dengan irama jantung mengaktifkan jalur vagus &mdash; jalur yang sama dalam kekhusyukan mendalam.',bpm_c3ey:'Dasar Spiritual',bpm_c3t:'Zikir Khafi &mdash; Zikir Hati',bpm_c3d:'Ulama Tasawwuf mengajarkan bahwa Zikir Khafi dirasakan dalam hati. Audit Jiwa menerjemahkan prinsip ini ke realitas biometrik.',bpm_ayat:'Dan sebutlah nama Tuhanmu dalam hatimu dengan merendahkan diri dan rasa takut. &mdash; Al-Araf: 205',bpm_bpm:'BPM &mdash; Ketenangan Mendalam',bpm_t1r:'40-60',bpm_t1l:'Ketenangan Mendalam',bpm_t1tag:'Target',bpm_t2r:'61-70',bpm_t2l:'Tenang & Hadir',bpm_t3r:'71-85',bpm_t3l:'Sedang',bpm_t4r:'86-100',bpm_t4l:'Tertekan',bpm_t5r:'100+',bpm_t5l:'Kritis',bpm_dev_title:'Perangkat BPM yang Direkomendasikan',bpm_cycplus_d:'Wrist strap, mudah dipakai',bpm_cycplus_tag:'Yang Kami Gunakan',bpm_polar_d:'Chest strap, akurasi tertinggi',bpm_polar_tag:'Terbaik',bpm_coospo_d:'Chest strap, nilai terbaik',bpm_coospo_tag:'Direkomendasikan',bpm_garmin_d:'Chest strap, dual-band BT+ANT+',bpm_garmin_tag:'Baik',bpm_cam_nm:'Kamera Ponsel',bpm_cam_d:'PPG via kamera, untuk percobaan',bpm_cam_tag:'Demo',bpm_dev_note:'Wrist strap: mudah, cocok untuk penggunaan harian. Chest strap: lebih akurat untuk R-R interval. Perangkat Bluetooth LE apapun yang mendukung BLE Heart Rate Profile dapat digunakan.'
-},
+,sym_ey:'Akibat Pada Tubuh & Pikiran',sym_title:'Ketika jiwa sakit, tubuh ikut sakit.',sym_sub:'Sains modern telah mengkonfirmasi apa yang Al-Quran ajarkan sejak 1.400 tahun &mdash; kondisi jiwa secara langsung mempengaruhi kesehatan fisik dan mental.',sym_f1:'Ghaflah<br>Nafsu &bull; Was-was',sym_f2:'Stres Kronis<br>HPA Axis tertekan',sym_f3:'Kortisol tinggi<br>Saraf terganggu',sym_f4:'Penyakit<br>fisik & mental',sym_heart_nm:'Penyakit Jantung',sym_heart_lbl:'risiko kardiovaskular akibat stres kronis',sym_heart_src:'Harvard Medical School, 2021 &bull; JAMA Cardiology',sym_heart_l1:'Nafsu Amm&#257;rah',sym_heart_l2:'Ghaflah',sym_dm_nm:'Diabetes Tipe 2',sym_dm_lbl:'peningkatan risiko diabetes akibat kortisol berkepanjangan',sym_dm_src:'The Lancet Diabetes & Endocrinology, 2023',sym_dm_l1:'Ghaflah',sym_dm_l2:'Was-was',sym_mh_nm:'Depresi & Kecemasan',sym_mh_lbl:'orang di dunia &mdash; penyebab terbesar: hilangnya makna spiritual',sym_mh_src:'WHO Global Health Report, 2023',sym_mh_l1:'Ghaflah',sym_mh_l2:'Was-was Syaitan',sym_bp_nm:'Darah Tinggi',sym_bp_lbl:'peningkatan tekanan darah sistolik akibat stres psikologis',sym_bp_src:'Harvard Health Publishing, 2021',sym_bp_l1:'Nafsu Amm&#257;rah',sym_bp_l2:'Was-was',sym_sleep_nm:'Gangguan Tidur',sym_sleep_lbl:'penderita stres kronis mengalami insomnia dan kualitas tidur buruk',sym_sleep_src:'American Psychological Association, 2022',sym_sleep_l1:'Was-was Syaitan',sym_sleep_l2:'Ghaflah',sym_imun_nm:'Imun Lemah & Penuaan Dini',sym_imun_lbl:'lebih cepat penuaan sel (telomere pendek) akibat stres oksidatif',sym_imun_src:'Nobel Prize in Medicine, 2009 &bull; Elizabeth Blackburn',sym_imun_l1:'Ghaflah',sym_imun_l2:'Nafsu Amm&#257;rah',sym_quran_t:'&ldquo;Ketahuilah, hanya dengan mengingat Allah hati menjadi tenang.&rdquo;',sym_quran_ref:'&mdash; Ar-Ra&#39;d: 28 &bull; Obat sejati bukan pil. Ia adalah zikir.'},
 en:{
   nav_cta:'Open App &#8594;',hero_title:'Audit Your <em>Soul</em><br>before it is too late.',hero_ayat:'"Let every soul consider what it has sent forth for tomorrow." &mdash; Al-Hasyr: 18',hero_body:'Not another religious app.<br><strong>Audit Jiwa</strong> &mdash; a complete soul monitoring system, guiding you from heedlessness back to Allah.',hero_cta1:'&#127807; Start My Soul Audit &mdash; Free',hero_cta2:'&#8853; Why do I need this?',
   hook_ey:'A question that needs answering',hook_title:'You already pray.<br>You already read the Quran.<br>So why does your heart still feel empty?',hook_p1:'You are not someone who neglects religion. You pray. You fast. Perhaps you attend Islamic talks and memorise hadith.',hook_p2:'But inside &mdash; something is wrong.<br>A restlessness that persists even after prayer.<br>A sense of emptiness that arrives without reason.',hook_hl:'This is not a sign that you lack knowledge. It is not because you lack acts of worship.<br><br><strong>It is because you practise religion with the tongue and body &mdash; yet your heart has not reached Allah.</strong>',hook_p3:'The Quran is recited. But not felt.<br>Prayer is performed. But the heart is absent.<br>Dhikr is uttered. But the soul remains distant.',ghaflah_desc:'A heart that has forgotten. A soul in heedlessness.<br>Not because of the absence of worship &mdash; but because its spirit has departed.',hook_close:'Audit Jiwa is built for one purpose:<br><strong style="color:var(--teal2)">To bring you from hollow worship to genuine Divine presence.</strong>',hook_cta:'I Want to Feel Allah &mdash; Begin Now',
@@ -1057,8 +1203,8 @@ en:{
   ,card_footer:'Take your own Soul Audit at'
   ,card_problems_label:'Areas for improvement'
 ,bpm_title:'Zikir Khafi Synchronised<br>with <em>Your Heartbeat</em>',bpm_sub:'For the first time in Islamic technology history &mdash; Audit Jiwa synchronises Zikir Khafi with your heartbeat in real-time. <strong>Your own heartbeat becomes the guide for dhikr.</strong>',bpm_c1ey:'World-First Innovation',bpm_c1t:'Interoceptive Entrainment',bpm_c1d:'When dhikr is synchronised with the heartbeat, the brain enters neural coherence that raises HRV and lowers cortisol &mdash; unachievable through conventional verbal dhikr alone.',bpm_c2ey:'Scientific Foundation',bpm_c2t:'Neurovisceral Integration',bpm_c2d:'Research from the HeartMath Institute and Harvard confirms: synchronisation of mental activity with cardiac rhythm activates the vagal pathway &mdash; the same pathway engaged in deep khushu.',bpm_c3ey:'Spiritual Foundation',bpm_c3t:'Zikir Khafi &mdash; Dhikr of the Heart',bpm_c3d:'Sufi scholars teach that Zikir Khafi is not spoken &mdash; it is felt in the heart. Audit Jiwa translates this into biometric reality.',bpm_ayat:'Remember your Lord within yourself in humility and in fear. &mdash; Al-Araf: 205',bpm_bpm:'BPM &mdash; Deep Stillness',bpm_t1r:'40-60',bpm_t1l:'Deep Stillness',bpm_t1tag:'Target',bpm_t2r:'61-70',bpm_t2l:'Calm & Present',bpm_t3r:'71-85',bpm_t3l:'Moderate',bpm_t4r:'86-100',bpm_t4l:'Under Stress',bpm_t5r:'100+',bpm_t5l:'Critical',bpm_dev_title:'Recommended BPM Devices',bpm_cycplus_d:'Wrist strap, easy to wear',bpm_cycplus_tag:'Used By Us',bpm_polar_d:'Chest strap, highest accuracy',bpm_polar_tag:'Best',bpm_coospo_d:'Chest strap, best value',bpm_coospo_tag:'Recommended',bpm_garmin_d:'Chest strap, dual-band BT+ANT+',bpm_garmin_tag:'Good',bpm_cam_nm:'Phone Camera',bpm_cam_d:'PPG via camera, demo mode',bpm_cam_tag:'Demo',bpm_dev_note:'Wrist strap: convenient, ideal for daily use. Chest strap: more accurate R-R interval readings. Any Bluetooth LE device supporting the BLE Heart Rate Profile may be used.'
-}
-,ar:{
+,sym_ey:'Impact on Body & Mind',sym_title:'When the soul is sick, the body follows.',sym_sub:'Modern science has confirmed what the Quran taught 1,400 years ago — the state of the soul directly affects physical and mental health.',sym_f1:'Ghaflah<br>Nafs &bull; Whispers',sym_f2:'Chronic Stress<br>HPA Axis disrupted',sym_f3:'High Cortisol<br>Nervous system impaired',sym_f4:'Physical &<br>Mental Illness',sym_heart_nm:'Heart Disease',sym_heart_lbl:'increased cardiovascular risk from chronic stress',sym_heart_src:'Harvard Medical School, 2021 &bull; JAMA Cardiology',sym_heart_l1:'Commanding Nafs',sym_heart_l2:'Ghaflah',sym_dm_nm:'Type 2 Diabetes',sym_dm_lbl:'increased diabetes risk from sustained high cortisol',sym_dm_src:'The Lancet Diabetes & Endocrinology, 2023',sym_dm_l1:'Ghaflah',sym_dm_l2:'Whispers',sym_mh_nm:'Depression & Anxiety',sym_mh_lbl:'people worldwide — leading cause: loss of spiritual meaning',sym_mh_src:'WHO Global Health Report, 2023',sym_mh_l1:'Ghaflah',sym_mh_l2:'Devil&#39;s Whispers',sym_bp_nm:'High Blood Pressure',sym_bp_lbl:'rise in systolic blood pressure from psychological stress',sym_bp_src:'Harvard Health Publishing, 2021',sym_bp_l1:'Commanding Nafs',sym_bp_l2:'Whispers',sym_sleep_nm:'Sleep Disorders',sym_sleep_lbl:'of chronic stress sufferers experience insomnia and poor sleep quality',sym_sleep_src:'American Psychological Association, 2022',sym_sleep_l1:'Devil&#39;s Whispers',sym_sleep_l2:'Ghaflah',sym_imun_nm:'Weak Immunity & Early Ageing',sym_imun_lbl:'faster cellular ageing (shortened telomeres) from oxidative stress',sym_imun_src:'Nobel Prize in Medicine, 2009 &bull; Elizabeth Blackburn',sym_imun_l1:'Ghaflah',sym_imun_l2:'Commanding Nafs',sym_quran_t:'&ldquo;Verily, it is in the remembrance of Allah that hearts find rest.&rdquo;',sym_quran_ref:'&mdash; Ar-Ra&#39;d: 28 &bull; The true cure is not a pill. It is dhikr.'
+},ar:{
   nav_cta:'افتح التطبيق &#8594;',
   hero_title:'دقِّق في <em>روحك</em><br>قبل فوات الأوان.',
   hero_ayat:'&ldquo;وَلْتَنظُرْ نَفْسٌ مَّا قَدَّمَتْ لِغَدٍ.&rdquo; &mdash; الحشر: 18',
@@ -1142,6 +1288,7 @@ en:{
   },
   card_sub:'محاسبة روحية متكاملة',card_ayat:'وَلْتَنظُرْ نَفْسٌ مَّا قَدَّمَتْ لِغَدٍ',card_ayat2:'الحشر: 18',card_ref:'الحشر: 18',card_footer:'راجع روحك أيضاً على',card_problems_label:'مجالات تحتاج تحسين'
 ,bpm_title:'ذكر الخفي متزامن<br>مع <em>نبضات قلبك</em>',bpm_sub:'للمرة الأولى في تاريخ التكنولوجيا الإسلامية &mdash; Audit Jiwa يزامن ذكر الخفي مع إيقاع قلبك في الوقت الفعلي. <strong>نبض قلبك هو اللي يقود الذكر.</strong>',bpm_c1ey:'ابتكار عالمي أول',bpm_c1t:'التزامن الاستيعابي',bpm_c1d:'لما الذكر يتزامن مع نبض القلب، الدماغ يدخل حالة تماسك عصبي ترفع HRV وتخفض الكورتيزول.',bpm_c2ey:'الأساس العلمي',bpm_c2t:'التكامل العصبي الحشوي',bpm_c2d:'أبحاث HeartMath Institute وHarvard تأكد: التزامن بين النشاط الذهني وإيقاع القلب ينشط مسار العصب الحائر.',bpm_c3ey:'الأساس الروحي',bpm_c3t:'الذكر الخفي &mdash; ذكر القلب',bpm_c3d:'علماء التصوف يعلمون أن الذكر الخفي يُحسّ في القلب. Audit Jiwa يترجم هذا إلى واقع بيومتري.',bpm_ayat:'واذكر ربك في نفسك تضرعاً وخيفة. &mdash; الأعراف: 205',bpm_bpm:'BPM &mdash; سكينة عميقة',bpm_t1r:'40-60',bpm_t1l:'سكينة عميقة',bpm_t1tag:'الهدف',bpm_t2r:'61-70',bpm_t2l:'هادئ وحاضر',bpm_t3r:'71-85',bpm_t3l:'متوسط',bpm_t4r:'86-100',bpm_t4l:'تحت ضغط',bpm_t5r:'100+',bpm_t5l:'حرج',bpm_dev_title:'الأجهزة الموصى بها',bpm_cycplus_d:'حزام رسغ، سهل الاستخدام',bpm_cycplus_tag:'اللي نستخدمه',bpm_polar_d:'حزام صدر، الأدق',bpm_polar_tag:'الأفضل',bpm_coospo_d:'حزام صدر، أفضل قيمة',bpm_coospo_tag:'موصى به',bpm_garmin_d:'حزام صدر، Bluetooth مزدوج + ANT+',bpm_garmin_tag:'جيد',bpm_cam_nm:'كاميرا الهاتف',bpm_cam_d:'PPG عبر الكاميرا، تجريبي',bpm_cam_tag:'تجريبي',bpm_dev_note:'حزام الرسغ: مريح، مثالي للاستخدام اليومي. حزام الصدر: أدق في قراءات R-R interval. أي جهاز Bluetooth LE يدعم BLE Heart Rate Profile يمكن استخدامه.'
+,sym_ey:'التأثير على الجسد والعقل',sym_title:'لما الروح تمرض، الجسد يتبعها.',sym_sub:'العلم الحديث أكد ما علّمه القرآن منذ 1400 سنة — حال الروح يؤثر مباشرة على الصحة الجسدية والنفسية.',sym_f1:'الغفلة<br>النفس &bull; الوسواس',sym_f2:'ضغط مزمن<br>اضطراب محور HPA',sym_f3:'كورتيزول مرتفع<br>الجهاز العصبي مضطرب',sym_f4:'أمراض<br>جسدية ونفسية',sym_heart_nm:'أمراض القلب',sym_heart_lbl:'زيادة خطر أمراض القلب بسبب الضغط المزمن',sym_heart_src:'Harvard Medical School, 2021 &bull; JAMA Cardiology',sym_heart_l1:'النفس الأمارة',sym_heart_l2:'الغفلة',sym_dm_nm:'السكري النوع 2',sym_dm_lbl:'زيادة خطر السكري بسبب ارتفاع الكورتيزول المستمر',sym_dm_src:'The Lancet Diabetes & Endocrinology, 2023',sym_dm_l1:'الغفلة',sym_dm_l2:'الوسواس',sym_mh_nm:'الاكتئاب والقلق',sym_mh_lbl:'شخص حول العالم — السبب الأكبر: غياب المعنى الروحي',sym_mh_src:'WHO Global Health Report, 2023',sym_mh_l1:'الغفلة',sym_mh_l2:'وسوسة الشيطان',sym_bp_nm:'ضغط الدم المرتفع',sym_bp_lbl:'ارتفاع ضغط الدم الانقباضي بسبب الضغط النفسي',sym_bp_src:'Harvard Health Publishing, 2021',sym_bp_l1:'النفس الأمارة',sym_bp_l2:'الوسواس',sym_sleep_nm:'اضطرابات النوم',sym_sleep_lbl:'من مرضى الضغط المزمن يعانون الأرق وضعف جودة النوم',sym_sleep_src:'American Psychological Association, 2022',sym_sleep_l1:'وسوسة الشيطان',sym_sleep_l2:'الغفلة',sym_imun_nm:'ضعف المناعة والشيخوخة المبكرة',sym_imun_lbl:'أسرع في شيخوخة الخلايا (قِصَر التيلوميرات) بسبب الإجهاد التأكسدي',sym_imun_src:'Nobel Prize in Medicine, 2009 &bull; Elizabeth Blackburn',sym_imun_l1:'الغفلة',sym_imun_l2:'النفس الأمارة',sym_quran_t:'&ldquo;أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ.&rdquo;',sym_quran_ref:'&mdash; الرعد: 28 &bull; الدواء الحقيقي مش حبة. هو الذكر.'
 }
 };
 

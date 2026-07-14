@@ -276,15 +276,9 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
 .ftbtm a{color:var(--teal);text-decoration:none}
 
 /* RESPONSIVE */
-@media(max-width:768px){
-  nav{padding:0 16px}
-  .nlang{display:none}
-  section{padding:64px 16px}
-  .fi,.fi.rv{grid-template-columns:1fr;direction:ltr}
-  .fv{min-height:220px}
-}
-@media(max-width:640px){.pg,.pgrid,.kgrid{grid-template-columns:1fr}}
-@media(max-width:480px){.hero{padding:88px 16px 64px}.bp,.bs{min-width:0;width:100%}.obc{padding:24px 16px}}
+
+
+
 
 /* Arabic RTL text support */
 [lang="ar"] .hbod,
@@ -423,7 +417,7 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
 .bpm-quran{margin-top:32px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:var(--r);padding:24px}
 .bpm-qar{font-family:'Amiri',serif;font-size:22px;color:var(--gold);direction:rtl;text-align:right;margin-bottom:10px}
 .bpm-qt{font-size:13px;color:var(--muted);font-style:italic;line-height:1.6}
-@media(max-width:768px){.bpm-grid{grid-template-columns:1fr}.bpm-dev-grid{grid-template-columns:1fr 1fr}}
+
 
 
 /* ── SYMPTOM BRIDGE SECTION ── */
@@ -461,9 +455,215 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:6
 .sym-qar{font-family:'Amiri',serif;font-size:24px;color:var(--gold);direction:rtl;margin-bottom:10px}
 .sym-qt{font-size:14px;color:var(--muted);font-style:italic;line-height:1.6;margin-bottom:6px}
 .sym-qref{font-size:12px;color:var(--dim)}
-@media(max-width:768px){.sym-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.sym-grid{grid-template-columns:1fr}.sym-flow{flex-direction:column;gap:6px}.sym-flow-arrow{transform:rotate(90deg)}}
 
+
+
+
+/* ═══════════════════════════════════════
+   MOBILE RESPONSIVE — COMPREHENSIVE FIX
+   Max-width: 768px (tablet & phone)
+   Max-width: 480px (phone only)
+═══════════════════════════════════════ */
+
+/* ── NAV ── */
+@media(max-width:768px){
+  nav{padding:0 12px;gap:8px}
+  .nt{font-size:13px}
+  .ns{display:none}
+  .ni{width:30px;height:30px;font-size:13px}
+  .ncta{padding:7px 12px;font-size:12px}
+  .nlang button{padding:5px 10px;font-size:11px}
+}
+
+/* ── HERO ── */
+@media(max-width:768px){
+  .hero{padding:90px 20px 60px;min-height:auto}
+  .htitle{font-size:clamp(36px,9vw,60px)}
+  .hayat{font-size:17px}
+  .hbody{font-size:15px}
+  .hctas{width:100%}
+  .bp,.bs{min-width:0;width:100%;font-size:14px;padding:14px 20px}
+}
+
+/* ── SECTIONS GENERAL ── */
+@media(max-width:768px){
+  section{padding:64px 16px}
+  .onboard{padding:64px 16px}
+  .bpm{padding:64px 16px}
+  .st{font-size:clamp(24px,5vw,36px)}
+  .ss{font-size:14px}
+  .dv{margin:16px 0}
+}
+
+/* ── DIAGNOSIS (4 punca grid) ── */
+@media(max-width:768px){
+  .pg{grid-template-columns:1fr;gap:12px}
+  .sbox{flex-direction:column;gap:12px;padding:16px}
+}
+
+/* ── FEATURES (fi grid) ── */
+@media(max-width:768px){
+  .fi,.fi.rv{grid-template-columns:1fr!important;direction:ltr!important;gap:24px;margin-bottom:48px;padding-bottom:48px}
+  .fv{min-height:180px;padding:24px 20px}
+  .ftitle{font-size:clamp(18px,4vw,24px)}
+  .fdesc{font-size:14px}
+  .fps li{font-size:13px}
+  /* Rezeki categories grid */
+  .rcg{grid-template-columns:repeat(3,1fr)!important}
+  /* TQN tabs */
+  .tsg{grid-template-columns:1fr 1fr}
+  .ttabs{gap:4px}
+  .ttab{padding:4px 8px;font-size:10px}
+  /* I AM questions */
+  .iqw{font-size:12px;padding:10px 12px}
+}
+
+/* ── HABLUM items ── */
+@media(max-width:768px){
+  .hbt{font-size:13px;padding:11px 14px}
+  .hai{font-size:12px}
+}
+
+/* ── PRICING ── */
+@media(max-width:768px){
+  .pgrid{grid-template-columns:1fr;gap:16px}
+  .pcard{padding:24px 20px}
+}
+
+/* ── KREDIT ── */
+@media(max-width:768px){
+  .kgrid{grid-template-columns:1fr;gap:12px}
+  .kcard{padding:18px}
+  .fq{padding:24px 20px}
+}
+
+/* ── ONBOARDING ── */
+@media(max-width:768px){
+  .obc{padding:24px 16px;border-radius:16px}
+  .ogrid{grid-template-columns:1fr 1fr;gap:8px}
+  .oitem{padding:12px 10px}
+  .oic{font-size:20px}
+  .oit{font-size:12px}
+  .ois{font-size:10px}
+  .ostats{grid-template-columns:1fr 1fr;gap:8px}
+  .ostat{padding:12px}
+  .ostatv{font-size:22px}
+  .oscr{padding:20px 16px}
+  .oscrv{font-size:44px}
+  .oapp{padding:16px}
+  .oappi{font-size:12px}
+  .obtn{font-size:14px;padding:13px}
+  /* Sliders */
+  .slc{padding:14px}
+  .slv{font-size:22px}
+  /* Sains cards */
+  .scc{padding:12px 14px}
+}
+
+/* ── BPM SECTION ── */
+@media(max-width:768px){
+  .bpm-grid{grid-template-columns:1fr;gap:20px}
+  .bpm-title{font-size:clamp(24px,6vw,38px)}
+  .bpm-sub{font-size:14px}
+  .bpm-left{gap:14px}
+  .bpm-card{padding:18px}
+  .bpm-vis{padding:20px 16px}
+  .bpm-heart-num{font-size:56px}
+  .bpm-tiers{gap:6px}
+  .bpm-tier{padding:8px 10px;font-size:12px}
+  .bpm-tier-range{min-width:60px;font-size:11px}
+  .bpm-dev-grid{grid-template-columns:1fr 1fr}
+  .bpm-dev{padding:12px;gap:8px}
+  .bpm-dev-nm{font-size:12px}
+  .bpm-dev-d{font-size:10px}
+  .bpm-quran{padding:18px}
+}
+
+/* ── SYMPTOMS SECTION ── */
+@media(max-width:768px){
+  .sym-flow{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:6px}
+  .sym-flow-node{padding:8px 12px;font-size:12px}
+  .sym-flow-arrow{font-size:14px}
+  .sym-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .sym-card{padding:14px 12px}
+  .sym-ic{font-size:22px;margin-bottom:6px}
+  .sym-nm{font-size:12px}
+  .sym-stat{font-size:18px}
+  .sym-stat-lbl{font-size:10px}
+  .sym-src{font-size:9px}
+  .sym-link{font-size:9px;padding:2px 6px}
+  .sym-quran{padding:18px 16px}
+  .sym-qar{font-size:18px}
+  .sym-qt{font-size:13px}
+}
+
+/* ── SHARE SECTION ── */
+@media(max-width:768px){
+  .share-section{margin-top:20px;padding-top:20px}
+  .share-btn{font-size:13px;padding:11px 14px}
+  .share-modal-inner{padding:20px 16px}
+}
+
+/* ── FOOTER ── */
+@media(max-width:768px){
+  footer{padding:48px 16px 32px}
+  .ftar{font-size:22px}
+  .ftt{font-size:13px}
+  .ftmsg{font-size:14px}
+}
+
+/* ═══════════════
+   PHONE ONLY (480px)
+═══════════════ */
+@media(max-width:480px){
+  /* Hero */
+  .hero{padding:88px 16px 56px}
+  .htitle{font-size:clamp(32px,10vw,52px)}
+  .bp,.bs{padding:13px 16px;font-size:13px}
+  .hurl{font-size:11px}
+
+  /* Nav */
+  .nlang button{padding:4px 8px;font-size:10px}
+  .ncta{display:none}
+
+  /* Features */
+  .rcg{grid-template-columns:repeat(2,1fr)!important}
+  .rci{padding:10px 8px;font-size:12px}
+  .rcic{font-size:20px}
+  .dp{gap:4px}
+  .dpi{font-size:10px;padding:4px 8px}
+  .fvt{font-size:22px}
+
+  /* Onboarding */
+  .ogrid{grid-template-columns:1fr 1fr}
+  .odots{gap:4px}
+  .ostep{min-height:auto}
+
+  /* BPM */
+  .bpm-dev-grid{grid-template-columns:1fr 1fr}
+  .bpm-tier-cur{display:none}
+  .bpm-heart-num{font-size:48px}
+  .bpm-flow-arrow{display:none}
+
+  /* Symptoms */
+  .sym-grid{grid-template-columns:1fr 1fr}
+  .sym-flow-arrow{font-size:12px}
+  .sym-flow-node{font-size:11px;padding:6px 10px}
+
+  /* Pricing */
+  .pft{font-size:12px}
+  .pb{font-size:13px;padding:12px}
+
+  /* Kredit */
+  .kcard{flex-direction:row;align-items:flex-start}
+  .kic{font-size:20px}
+  .kt{font-size:13px}
+  .kd{font-size:12px}
+
+  /* Share modal */
+  .share-modal{padding:12px}
+  .share-modal-inner{border-radius:14px;padding:16px}
+}
 </style>
 </head>
 <body>
